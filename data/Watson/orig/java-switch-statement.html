@@ -1,0 +1,233 @@
+<h1>The switch Statement</h1>
+<p>Unlike <strong>if-then</strong> and <strong>if-then-else</strong> statements, the <strong>switch</strong> statement can have a number of possible execution paths. A <strong>switch</strong> works with the <strong>byte</strong>, <strong>short</strong>, <strong>char</strong>, and <strong>int</strong> primitive data types. It also works with <span id="italics">enumerated types</span id="italics"> (discussed in 
+<a class="TutorialLink" target="_top" href="../javaOO/enum.html">Enum Types</a>), the 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html"><strong>String</strong></a> class, and a few special classes that wrap certain primitive types: 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Character.html"><strong>Character</strong></a>, 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html"><strong>Byte</strong></a>, 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Short.html"><strong>Short</strong></a>, and 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html"><strong>Integer</strong></a> (discussed in 
+<a class="TutorialLink" target="_top" href="../data/index.html">Numbers and Strings</a>).</p>
+<p>The following code example, 
+<a class="SourceLink" target="_blank" href="examples/SwitchDemo.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemo.java'); return false;"><strong>SwitchDemo</strong></a>, declares an <strong>int</strong> named <strong>month</strong> whose value represents a month. The code displays the name of the month, based on the value of <strong>month</strong>, using the <strong>switch</strong> statement.</p>
+<p><i>
+
+public class SwitchDemo {
+    public static void main(String[] args) {
+
+        int month = 8;
+        String monthString;
+        switch (month) {
+            case 1:  monthString = "January";
+                     break;
+            case 2:  monthString = "February";
+                     break;
+            case 3:  monthString = "March";
+                     break;
+            case 4:  monthString = "April";
+                     break;
+            case 5:  monthString = "May";
+                     break;
+            case 6:  monthString = "June";
+                     break;
+            case 7:  monthString = "July";
+                     break;
+            case 8:  monthString = "August";
+                     break;
+            case 9:  monthString = "September";
+                     break;
+            case 10: monthString = "October";
+                     break;
+            case 11: monthString = "November";
+                     break;
+            case 12: monthString = "December";
+                     break;
+            default: monthString = "Invalid month";
+                     break;
+        }
+        System.out.println(monthString);
+    }
+}
+</i><p>
+<p>In this case, <strong>August</strong> is printed to standard output.</p>
+<p>The body of a <strong>switch</strong> statement is known as a <span id="italics">switch block</span id="italics">. A statement in the <strong>switch</strong> block can be labeled with one or more <strong>case</strong> or <strong>default</strong> labels. The <strong>switch</strong> statement evaluates its expression, then executes all statements that follow the matching <strong>case</strong> label.</p>
+<p>You could also display the name of the month with <strong>if-then-else</strong> statements:</p>
+<p><i>
+int month = 8;
+if (month == 1) {
+    System.out.println("January");
+} else if (month == 2) {
+    System.out.println("February");
+}
+...  // and so on
+</i><p>
+<p>Deciding whether to use <strong>if-then-else</strong> statements or a <strong>switch</strong> statement is based on readability and the expression that the statement is testing. An <strong>if-then-else</strong> statement can test expressions based on ranges of values or conditions, whereas a <strong>switch</strong> statement tests expressions based only on a single integer, enumerated value, or <strong>String</strong> object.</p>
+<p>Another point of interest is the <strong>break</strong> statement. Each <strong>break</strong> statement terminates the enclosing <strong>switch</strong> statement. Control flow continues with the first statement following the <strong>switch</strong> block. The <strong>break</strong> statements are necessary because without them, statements in <strong>switch</strong> blocks <em>fall through</em>: All statements after the matching <strong>case</strong> label are executed in sequence, regardless of the expression of subsequent <strong>case</strong> labels, until a <strong>break</strong> statement is encountered. The program 
+<a class="SourceLink" target="_blank" href="examples/SwitchDemoFallThrough.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemoFallThrough.java'); return false;"><strong>SwitchDemoFallThrough</strong></a> shows statements in a <strong>switch</strong> block that fall through. The program displays the month corresponding to the integer <strong>month</strong> and the months that follow in the year:</p>
+<p><i>
+
+public class SwitchDemoFallThrough {
+
+    public static void main(String[] args) {
+        java.util.ArrayList&lt;String&gt; futureMonths =
+            new java.util.ArrayList&lt;String&gt;();
+
+        int month = 8;
+
+        switch (month) {
+            case 1:  futureMonths.add("January");
+            case 2:  futureMonths.add("February");
+            case 3:  futureMonths.add("March");
+            case 4:  futureMonths.add("April");
+            case 5:  futureMonths.add("May");
+            case 6:  futureMonths.add("June");
+            case 7:  futureMonths.add("July");
+            case 8:  futureMonths.add("August");
+            case 9:  futureMonths.add("September");
+            case 10: futureMonths.add("October");
+            case 11: futureMonths.add("November");
+            case 12: futureMonths.add("December");
+                     break;
+            default: break;
+        }
+
+        if (futureMonths.isEmpty()) {
+            System.out.println("Invalid month number");
+        } else {
+            for (String monthName : futureMonths) {
+               System.out.println(monthName);
+            }
+        }
+    }
+}
+</i><p>
+<p>This is the output from the code:</p>
+<p><i>
+August
+September
+October
+November
+December
+</i><p>
+<p>Technically, the final <strong>break</strong> is not required because flow falls out of the <strong>switch</strong> statement. Using a <strong>break</strong> is recommended so that modifying the code is easier and less error prone. The <strong>default</strong> section handles all values that are not explicitly handled by one of the <strong>case</strong> sections.</p>
+<p>The following code example, 
+<a class="SourceLink" target="_blank" href="examples/SwitchDemo2.java" onclick="showCode('../../displayCode.html', 'examples/SwitchDemo2.java'); return false;"><strong>SwitchDemo2</strong></a>, shows how a statement can have multiple <strong>case</strong> labels. The code example calculates the number of days in a particular month:</p>
+<p><i>
+
+class SwitchDemo2 {
+    public static void main(String[] args) {
+
+        int month = 2;
+        int year = 2000;
+        int numDays = 0;
+
+        switch (month) {
+            case 1: case 3: case 5:
+            case 7: case 8: case 10:
+            case 12:
+                numDays = 31;
+                break;
+            case 4: case 6:
+            case 9: case 11:
+                numDays = 30;
+                break;
+            case 2:
+                if (((year % 4 == 0) &amp;&amp; 
+                     !(year % 100 == 0))
+                     || (year % 400 == 0))
+                    numDays = 29;
+                else
+                    numDays = 28;
+                break;
+            default:
+                System.out.println("Invalid month.");
+                break;
+        }
+        System.out.println("Number of Days = "
+                           + numDays);
+    }
+}
+</i><p>
+<p>This is the output from the code:</p>
+<p><i>
+Number of Days = 29
+</i><p>
+<h2>Using Strings in switch Statements</h2>
+<p>In Java SE 7 and later, you can use a <strong>String</strong> object in the <strong>switch</strong> statement's expression. The following code example, 
+<a class="SourceLink" target="_blank" href="examples/StringSwitchDemo.java" onclick="showCode('../../displayCode.html', 'examples/StringSwitchDemo.java'); return false;"><strong>StringSwitchDemo</strong></a>, displays the number of the month based on the value of the <strong>String</strong> named <strong>month</strong>:</p>
+<p><i>
+
+public class StringSwitchDemo {
+
+    public static int getMonthNumber(String month) {
+
+        int monthNumber = 0;
+
+        if (month == null) {
+            return monthNumber;
+        }
+
+        switch (month.toLowerCase()) {
+            case "january":
+                monthNumber = 1;
+                break;
+            case "february":
+                monthNumber = 2;
+                break;
+            case "march":
+                monthNumber = 3;
+                break;
+            case "april":
+                monthNumber = 4;
+                break;
+            case "may":
+                monthNumber = 5;
+                break;
+            case "june":
+                monthNumber = 6;
+                break;
+            case "july":
+                monthNumber = 7;
+                break;
+            case "august":
+                monthNumber = 8;
+                break;
+            case "september":
+                monthNumber = 9;
+                break;
+            case "october":
+                monthNumber = 10;
+                break;
+            case "november":
+                monthNumber = 11;
+                break;
+            case "december":
+                monthNumber = 12;
+                break;
+            default: 
+                monthNumber = 0;
+                break;
+        }
+
+        return monthNumber;
+    }
+
+    public static void main(String[] args) {
+
+        String month = "August";
+
+        int returnedMonthNumber =
+            StringSwitchDemo.getMonthNumber(month);
+
+        if (returnedMonthNumber == 0) {
+            System.out.println("Invalid month");
+        } else {
+            System.out.println(returnedMonthNumber);
+        }
+    }
+}
+</i><p>
+<p>The output from this code is <strong>8</strong>.</p>
+<p>The <strong>String</strong> in the <strong>switch</strong> expression is compared with the expressions associated with each <strong>case</strong> label as if the 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#equals-java.lang.Object-"><strong>String.equals</strong></a> method were being used. In order for the <strong>StringSwitchDemo</strong> example to accept any month regardless of case, <strong>month</strong> is converted to lowercase (with the 
+<a class="APILink" target="_blank" href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--"><strong>toLowerCase</strong></a> method), and all the strings associated with the <strong>case</strong> labels are in lowercase.</p>
+<p><strong>Note</strong>: This example checks if the expression in the <strong>switch</strong> statement is <strong>null</strong>. Ensure that the expression in any <strong>switch</strong> statement is not null to prevent a <strong>NullPointerException</strong> from being thrown.</p>

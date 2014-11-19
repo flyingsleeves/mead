@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Hash table - Wikipedia, the free encyclopedia</title>
+<meta name="generator" content="MediaWiki 1.25wmf6" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Hash_table" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Hash_table&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Hash_table&amp;action=edit" />
+<link rel="apple-touch-icon" href="//bits.wikimedia.org/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="//bits.wikimedia.org/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="alternate" hreflang="x-default" href="/wiki/Hash_table" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="http://en.wikipedia.org/wiki/Hash_table" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cteahouse%7Cext.rtlcite%2Cwikihiero%2CwikimediaBadges%7Cext.uls.nojs%7Cext.visualEditor.viewPageTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector&amp;*" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector&amp;*" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: enwiki:resourceloader:filter:minify-css:7:3904d24a08aa08f6a68dc338f9be277e */</style>
+<script src="//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Hash_table","wgTitle":"Hash table","wgCurRevisionId":631959154,"wgRevisionId":631959154,"wgArticleId":13833,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages using duplicate arguments in template calls","Use mdy dates from January 2013","All articles with unsourced statements","Articles with unsourced statements from July 2014","Articles with unsourced statements from January 2014","Articles with unsourced statements from April 2011","Articles with unsourced statements from March 2012","Articles needing additional references from July 2013","All articles needing additional references","Commons category with local link same as on Wikidata","Articles with example C code","Hashing","Search algorithms","Data structures"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Hash_table","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"preview":false,"previewDialog":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"isPageWatched":false,"pageLanguageCode":"en","pageLanguageDir":"ltr","svgMaxSize":4096,"namespacesWithSubpages":{"6":0,"8":0,"1":true,"2":true,"3":true,"4":true,"5":true,"7":true,"9":true,"10":true,"11":true,"12":true,"13":true,"14":true,"15":true,"100":true,"101":true,"102":true,"103":true,"104":true,"105":true,"106":true,"107":true,"108":true,"109":true,"110":true,"111":true,"830":true,"831":true,"447":true,"2600":false,"828":true,"829":true}},"wikilove-recipient":"","wikilove-anon":0,"wgPoweredByHHVM":true,"wgHHVMStart":1412726400000,"wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q207440"});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":false,"shownumberswatching":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"watchrollback":0,
+"wllimit":250,"useeditwarning":1,"prefershttps":1,"flaggedrevssimpleui":1,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"visualeditor-enable":0,"visualeditor-betatempdisable":0,"visualeditor-enable-experimental":0,"visualeditor-enable-language":0,"visualeditor-hidebetawelcome":0,"wikilove-enabled":1,"echo-subscriptions-web-page-review":true,"echo-subscriptions-email-page-review":false,"ep_showtoplink":false,"ep_bulkdelorgs":false,"ep_bulkdelcourses":true,"ep_showdyk":true,"echo-subscriptions-web-education-program":true,"echo-subscriptions-email-education-program":false,"echo-notify-show-link":true,"echo-show-alert":true,"echo-email-frequency":0,"echo-email-format":"html","echo-subscriptions-email-system":true,"echo-subscriptions-web-system":true,"echo-subscriptions-email-user-rights":true,"echo-subscriptions-web-user-rights":true,"echo-subscriptions-email-other":false,"echo-subscriptions-web-other":true,
+"echo-subscriptions-email-edit-user-talk":false,"echo-subscriptions-web-edit-user-talk":true,"echo-subscriptions-email-reverted":false,"echo-subscriptions-web-reverted":true,"echo-subscriptions-email-article-linked":false,"echo-subscriptions-web-article-linked":false,"echo-subscriptions-email-mention":false,"echo-subscriptions-web-mention":true,"echo-subscriptions-web-edit-thank":true,"echo-subscriptions-email-edit-thank":false,"echo-subscriptions-web-flow-discussion":true,"echo-subscriptions-email-flow-discussion":false,"gettingstarted-task-toolbar-show-intro":true,"uls-preferences":"","multimediaviewer-enable":true,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":
+false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false,"searchNs118":false,"searchNs119":false,"searchNs446":false,"searchNs447":false,"searchNs710":false,"searchNs711":false,"searchNs828":false,"searchNs829":false,"searchNs2600":false,"gadget-teahouse":1,"gadget-ReferenceTooltips":1,"gadget-geonotice":1,"gadget-DRN-wizard":1,"gadget-charinsert":1,"gadget-refToolbar":1,"gadget-mySandbox":1,"gadget-featured-articles-links":1,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{});
+/* cache key: enwiki:resourceloader:filter:minify-js:7:fb6d33a792758dc6c0c50bd882524047 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralauth.centralautologin","mmv.head","ext.visualEditor.viewPageTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+}</script>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static-1.25wmf6/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Hash_table skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Hash table</span></h1>
+						<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-navigation">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hatnote">Not to be confused with <a href="/wiki/Hash_list" title="Hash list">Hash list</a>&#160;or <a href="/wiki/Hash_tree_(disambiguation)" title="Hash tree (disambiguation)" class="mw-redirect">Hash tree</a>.</div>
+<table class="infobox" style="width: 22em">
+<tr>
+<th colspan="3" style="font-size: 125%; text-align: center;">Hash table</th>
+</tr>
+<tr>
+<th><a href="/wiki/List_of_data_structures" title="List of data structures">Type</a></th>
+<td colspan="2">Unordered <a href="/wiki/Associative_array" title="Associative array">associative array</a></td>
+</tr>
+<tr>
+<th>Invented</th>
+<td colspan="2">1953</td>
+</tr>
+<tr>
+<th colspan="3" class="navbox-abovebelow"><a href="/wiki/Time_complexity" title="Time complexity">Time complexity</a><br />
+in <a href="/wiki/Big_O_notation" title="Big O notation">big O notation</a></th>
+</tr>
+<tr>
+<td></td>
+<td>Average</td>
+<td>Worst case</td>
+</tr>
+<tr>
+<th>Space</th>
+<td>O(<i>n</i>)<sup id="cite_ref-Cormen_et_al_1-0" class="reference"><a href="#cite_note-Cormen_et_al-1"><span>[</span>1<span>]</span></a></sup></td>
+<td>O(<i>n</i>)</td>
+</tr>
+<tr>
+<th>Search</th>
+<td>O(1)</td>
+<td>O(<i>n</i>)</td>
+</tr>
+<tr>
+<th>Insert</th>
+<td>O(1)</td>
+<td>O(<i>n</i>)</td>
+</tr>
+<tr>
+<th>Delete</th>
+<td>O(1)</td>
+<td>O(<i>n</i>)</td>
+</tr>
+</table>
+<div class="thumb tright">
+<div class="thumbinner" style="width:317px;"><a href="/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" width="315" height="230" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/473px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Hash_table_3_1_1_0_1_0_0_SP.svg/630px-Hash_table_3_1_1_0_1_0_0_SP.svg.png 2x" data-file-width="315" data-file-height="230" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hash_table_3_1_1_0_1_0_0_SP.svg" class="internal" title="Enlarge"></a></div>
+A small phone book as a hash table</div>
+</div>
+</div>
+<p>In <a href="/wiki/Computing" title="Computing">computing</a>, a <b>hash table</b> (<b>hash map</b>) is a <a href="/wiki/Data_structure" title="Data structure">data structure</a> used to implement an <a href="/wiki/Associative_array" title="Associative array">associative array</a>, a structure that can map <a href="/wiki/Unique_key" title="Unique key">keys</a> to <a href="/wiki/Value_(computer_science)" title="Value (computer science)">values</a>. A hash table uses a <a href="/wiki/Hash_function" title="Hash function">hash function</a> to compute an <i>index</i> into an array of <i>buckets</i> or <i>slots</i>, from which the correct value can be found.</p>
+<p>Ideally, the hash function will assign each key to a unique bucket, but this situation is rarely achievable in practice (usually some keys will hash to the same bucket). Instead, most hash table designs assume that <i><a href="/wiki/Collision_(computer_science)" title="Collision (computer science)">hash collisions</a></i>—different keys that are assigned by the hash function to the same bucket—will occur and must be accommodated in some way.</p>
+<p>In a well-dimensioned hash table, the average cost (number of <a href="/wiki/Instruction_(computer_science)" title="Instruction (computer science)" class="mw-redirect">instructions</a>) for each lookup is independent of the number of elements stored in the table. Many hash table designs also allow arbitrary insertions and deletions of key-value pairs, at (<a href="/wiki/Amortized_analysis" title="Amortized analysis">amortized</a><sup id="cite_ref-leiser_2-0" class="reference"><a href="#cite_note-leiser-2"><span>[</span>2<span>]</span></a></sup>) constant average cost per operation.<sup id="cite_ref-knuth_3-0" class="reference"><a href="#cite_note-knuth-3"><span>[</span>3<span>]</span></a></sup><sup id="cite_ref-cormen_4-0" class="reference"><a href="#cite_note-cormen-4"><span>[</span>4<span>]</span></a></sup></p>
+<p>In many situations, hash tables turn out to be more efficient than <a href="/wiki/Search_tree" title="Search tree">search trees</a> or any other <a href="/wiki/Table_(computing)" title="Table (computing)" class="mw-redirect">table</a> lookup structure. For this reason, they are widely used in many kinds of computer <a href="/wiki/Software" title="Software">software</a>, particularly for associative arrays, <a href="/wiki/Database_index" title="Database index">database indexing</a>, <a href="/wiki/Cache_(computing)" title="Cache (computing)">caches</a>, and <a href="/wiki/Set_(abstract_data_type)" title="Set (abstract data type)">sets</a>.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Hashing"><span class="tocnumber">1</span> <span class="toctext">Hashing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Choosing_a_good_hash_function"><span class="tocnumber">1.1</span> <span class="toctext">Choosing a good hash function</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Perfect_hash_function"><span class="tocnumber">1.2</span> <span class="toctext">Perfect hash function</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Key_statistics"><span class="tocnumber">2</span> <span class="toctext">Key statistics</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Collision_resolution"><span class="tocnumber">3</span> <span class="toctext">Collision resolution</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Separate_chaining"><span class="tocnumber">3.1</span> <span class="toctext">Separate chaining</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Separate_chaining_with_linked_lists"><span class="tocnumber">3.1.1</span> <span class="toctext">Separate chaining with linked lists</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Separate_chaining_with_list_head_cells"><span class="tocnumber">3.1.2</span> <span class="toctext">Separate chaining with list head cells</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Separate_chaining_with_other_structures"><span class="tocnumber">3.1.3</span> <span class="toctext">Separate chaining with other structures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Open_addressing"><span class="tocnumber">3.2</span> <span class="toctext">Open addressing</span></a>
+<ul>
+<li class="toclevel-3 tocsection-11"><a href="#Coalesced_hashing"><span class="tocnumber">3.2.1</span> <span class="toctext">Coalesced hashing</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Cuckoo_hashing"><span class="tocnumber">3.2.2</span> <span class="toctext">Cuckoo hashing</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Hopscotch_hashing"><span class="tocnumber">3.2.3</span> <span class="toctext">Hopscotch hashing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="#Robin_Hood_hashing"><span class="tocnumber">3.3</span> <span class="toctext">Robin Hood hashing</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#2-choice_hashing"><span class="tocnumber">3.4</span> <span class="toctext">2-choice hashing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Dynamic_resizing"><span class="tocnumber">4</span> <span class="toctext">Dynamic resizing</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Resizing_by_copying_all_entries"><span class="tocnumber">4.1</span> <span class="toctext">Resizing by copying all entries</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Incremental_resizing"><span class="tocnumber">4.2</span> <span class="toctext">Incremental resizing</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Monotonic_keys"><span class="tocnumber">4.3</span> <span class="toctext">Monotonic keys</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Other_solutions"><span class="tocnumber">4.4</span> <span class="toctext">Other solutions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="#Performance_analysis"><span class="tocnumber">5</span> <span class="toctext">Performance analysis</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="#Features"><span class="tocnumber">6</span> <span class="toctext">Features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Advantages"><span class="tocnumber">6.1</span> <span class="toctext">Advantages</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Drawbacks"><span class="tocnumber">6.2</span> <span class="toctext">Drawbacks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="#Uses"><span class="tocnumber">7</span> <span class="toctext">Uses</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="#Associative_arrays"><span class="tocnumber">7.1</span> <span class="toctext">Associative arrays</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="#Database_indexing"><span class="tocnumber">7.2</span> <span class="toctext">Database indexing</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="#Caches"><span class="tocnumber">7.3</span> <span class="toctext">Caches</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Sets"><span class="tocnumber">7.4</span> <span class="toctext">Sets</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="#Object_representation"><span class="tocnumber">7.5</span> <span class="toctext">Object representation</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="#Unique_data_representation"><span class="tocnumber">7.6</span> <span class="toctext">Unique data representation</span></a></li>
+<li class="toclevel-2 tocsection-32"><a href="#String_interning"><span class="tocnumber">7.7</span> <span class="toctext">String interning</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-33"><a href="#Implementations"><span class="tocnumber">8</span> <span class="toctext">Implementations</span></a>
+<ul>
+<li class="toclevel-2 tocsection-34"><a href="#In_programming_languages"><span class="tocnumber">8.1</span> <span class="toctext">In programming languages</span></a></li>
+<li class="toclevel-2 tocsection-35"><a href="#Independent_packages"><span class="tocnumber">8.2</span> <span class="toctext">Independent packages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="#History"><span class="tocnumber">9</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2 tocsection-38"><a href="#Related_data_structures"><span class="tocnumber">10.1</span> <span class="toctext">Related data structures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-39"><a href="#References"><span class="tocnumber">11</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-40"><a href="#Further_reading"><span class="tocnumber">12</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-41"><a href="#External_links"><span class="tocnumber">13</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Hashing">Hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=1" title="Edit section: Hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="hatnote relarticle mainarticle">Main article: <a href="/wiki/Hash_function" title="Hash function">Hash function</a></div>
+<p>The idea of hashing is to distribute the entries (key/value pairs) across an array of <i>buckets</i>. Given a key, the algorithm computes an <i>index</i> that suggests where the entry can be found:</p>
+<pre>
+index = f(key, array_size)
+</pre>
+<p>Often this is done in two steps:</p>
+<pre>
+hash = hashfunc(key)
+index = hash % array_size
+</pre>
+<p>In this method, the <i>hash</i> is independent of the array size, and it is then <i>reduced</i> to an index (a number between <code>0</code> and <code>array_size&#160;−&#160;1</code>) using the <a href="/wiki/Modulo_operation" title="Modulo operation">modulo operator</a> (<code>%</code>).</p>
+<p>In the case that the array size is a <a href="/wiki/Power_of_two" title="Power of two">power of two</a>, the remainder operation is reduced to <a href="/wiki/Mask_(computing)" title="Mask (computing)">masking</a>, which improves speed, but can increase problems with a poor hash function.</p>
+<h3><span class="mw-headline" id="Choosing_a_good_hash_function">Choosing a good hash function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=2" title="Edit section: Choosing a good hash function">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A good hash function and implementation algorithm are essential for good hash table performance, but may be difficult to achieve.</p>
+<p>A basic requirement is that the function should provide a <a href="/wiki/Uniform_distribution_(discrete)" title="Uniform distribution (discrete)">uniform distribution</a> of hash values. A non-uniform distribution increases the number of collisions and the cost of resolving them. Uniformity is sometimes difficult to ensure by design, but may be evaluated empirically using statistical tests, e.g. a <a href="/wiki/Pearson%27s_chi-squared_test#Discrete_uniform_distribution" title="Pearson's chi-squared test">Pearson's chi-squared test</a> for discrete uniform distributions.<sup id="cite_ref-chernoff_5-0" class="reference"><a href="#cite_note-chernoff-5"><span>[</span>5<span>]</span></a></sup><sup id="cite_ref-plackett_6-0" class="reference"><a href="#cite_note-plackett-6"><span>[</span>6<span>]</span></a></sup></p>
+<p>The distribution needs to be uniform only for table sizes that occur in the application. In particular, if one uses dynamic resizing with exact doubling and halving of the table size <i>s</i>, then the hash function needs to be uniform only when <i>s</i> is a <a href="/wiki/Power_of_two" title="Power of two">power of two</a>. On the other hand, some hashing algorithms provide uniform hashes only when <i>s</i> is a <a href="/wiki/Prime_number" title="Prime number">prime number</a>.<sup id="cite_ref-twang1_7-0" class="reference"><a href="#cite_note-twang1-7"><span>[</span>7<span>]</span></a></sup></p>
+<p>For <a href="/wiki/Open_addressing" title="Open addressing">open addressing</a> schemes, the hash function should also avoid <i>clustering</i>, the mapping of two or more keys to consecutive slots. Such clustering may cause the lookup cost to skyrocket, even if the load factor is low and collisions are infrequent. The popular multiplicative hash<sup id="cite_ref-knuth_3-1" class="reference"><a href="#cite_note-knuth-3"><span>[</span>3<span>]</span></a></sup> is claimed to have particularly poor clustering behavior.<sup id="cite_ref-twang1_7-1" class="reference"><a href="#cite_note-twang1-7"><span>[</span>7<span>]</span></a></sup></p>
+<p><a href="/wiki/Cryptographic_hash_function" title="Cryptographic hash function">Cryptographic hash functions</a> are believed to provide good hash functions for any table size <i>s</i>, either by <a href="/wiki/Modulo_operation" title="Modulo operation">modulo</a> reduction or by <a href="/wiki/Mask_(computing)" title="Mask (computing)">bit masking</a><sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (July 2014)">citation needed</span></a></i>]</sup>. They may also be appropriate if there is a risk of malicious users trying to <a href="/wiki/Denial_of_service_attack" title="Denial of service attack" class="mw-redirect">sabotage</a> a network service by submitting requests designed to generate a large number of collisions in the server's hash tables. However, the risk of sabotage can also be avoided by cheaper methods (such as applying a secret <a href="/wiki/Salt_(cryptography)" title="Salt (cryptography)">salt</a> to the data, or using a <a href="/wiki/Universal_hash_function" title="Universal hash function" class="mw-redirect">universal hash function</a>).</p>
+<h3><span class="mw-headline" id="Perfect_hash_function">Perfect hash function</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=3" title="Edit section: Perfect hash function">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If all keys are known ahead of time, a <a href="/wiki/Perfect_hash_function" title="Perfect hash function">perfect hash function</a> can be used to create a perfect hash table that has no collisions. If <a href="/wiki/Perfect_hash_function#Minimal_perfect_hash_function" title="Perfect hash function">minimal perfect hashing</a> is used, every location in the hash table can be used as well.</p>
+<p>Perfect hashing allows for <a href="/wiki/Constant_time" title="Constant time" class="mw-redirect">constant time</a> lookups in the worst case. This is in contrast to most chaining and open addressing methods, where the time for lookup is low on average, but may be very large (proportional to the number of entries) for some sets of keys.</p>
+<h2><span class="mw-headline" id="Key_statistics">Key statistics</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=4" title="Edit section: Key statistics">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A critical statistic for a hash table is called the <i>load factor</i>. This is simply the number of entries divided by the number of buckets, that is, <i>n</i>/<i>k</i> where <i>n</i> is the number of entries and <i>k</i> is the number of buckets.</p>
+<p>If the load factor is kept reasonable, the hash table should perform well, provided the hashing is good. If the load factor grows too large, the hash table will become slow, or it may fail to work (depending on the method used). The expected <a href="/wiki/Constant_time" title="Constant time" class="mw-redirect">constant time</a> property of a hash table assumes that the load factor is kept below some bound. For a <i>fixed</i> number of buckets, the time for a lookup grows with the number of entries and so does not achieve the desired constant time.</p>
+<p>Second to that, one can examine the variance of number of entries per bucket. For example, two tables both have 1000 entries and 1000 buckets; one has exactly one entry in each bucket, the other has all entries in the same bucket. Clearly the hashing is not working in the second one.</p>
+<p>A low load factor is not especially beneficial. As the load factor approaches 0, the proportion of unused areas in the hash table increases, but there is not necessarily any reduction in search cost. This results in wasted memory.</p>
+<h2><span class="mw-headline" id="Collision_resolution">Collision resolution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=5" title="Edit section: Collision resolution">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Hash <a href="/wiki/Collision_(computer_science)" title="Collision (computer science)">collisions</a> are practically unavoidable when hashing a random subset of a large set of possible keys. For example, if 2,450 keys are hashed into a million buckets, even with a perfectly uniform random distribution, according to the <a href="/wiki/Birthday_problem" title="Birthday problem">birthday problem</a> there is approximately a 95% chance of at least two of the keys being hashed to the same slot.</p>
+<p>Therefore, most hash table implementations have some collision resolution strategy to handle such events. Some common strategies are described below. All these methods require that the keys (or pointers to them) be stored in the table, together with the associated values.</p>
+<h3><span class="mw-headline" id="Separate_chaining">Separate chaining</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=6" title="Edit section: Separate chaining">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:452px;"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_1_LL.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png" width="450" height="310" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/675px-Hash_table_5_0_1_1_1_1_1_LL.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/900px-Hash_table_5_0_1_1_1_1_1_LL.svg.png 2x" data-file-width="450" data-file-height="310" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_1_LL.svg" class="internal" title="Enlarge"></a></div>
+Hash collision resolved by separate chaining.</div>
+</div>
+</div>
+<p>In the method known as <i>separate chaining</i>, each bucket is independent, and has some sort of <a href="/wiki/List_(abstract_data_type)" title="List (abstract data type)">list</a> of entries with the same index. The time for hash table operations is the time to find the bucket (which is constant) plus the time for the list operation. (The technique is also called <i>open hashing</i> or <i>closed addressing</i>.)</p>
+<p>In a good hash table, each bucket has zero or one entries, and sometimes two or three, but rarely more than that. Therefore, structures that are efficient in time and space for these cases are preferred. Structures that are efficient for a fairly large number of entries per bucket are not needed or desirable. If these cases happen often, the hashing is not working well, and this needs to be fixed.</p>
+<h4><span class="mw-headline" id="Separate_chaining_with_linked_lists">Separate chaining with linked lists</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=7" title="Edit section: Separate chaining with linked lists">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Chained hash tables with <a href="/wiki/Linked_list" title="Linked list">linked lists</a> are popular because they require only basic data structures with simple algorithms, and can use simple hash functions that are unsuitable for other methods.</p>
+<p>The cost of a table operation is that of scanning the entries of the selected bucket for the desired key. If the distribution of keys is <a href="/wiki/SUHA" title="SUHA" class="mw-redirect">sufficiently uniform</a>, the <i>average</i> cost of a lookup depends only on the average number of keys per bucket—that is, on the load factor.</p>
+<p>Chained hash tables remain effective even when the number of table entries <i>n</i> is much higher than the number of slots. Their performance <a href="/wiki/Graceful_degradation" title="Graceful degradation" class="mw-redirect">degrades more gracefully</a> (linearly) with the load factor. For example, a chained hash table with 1000 slots and 10,000 stored keys (load factor 10) is five to ten times slower than a 10,000-slot table (load factor 1); but still 1000 times faster than a plain sequential list, and possibly even faster than a balanced search tree.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2014)">citation needed</span></a></i>]</sup></p>
+<p>For separate-chaining, the worst-case scenario is when all entries are inserted into the same bucket, in which case the hash table is ineffective and the cost is that of searching the bucket data structure. If the latter is a linear list, the lookup procedure may have to scan all its entries, so the worst-case cost is proportional to the number <i>n</i> of entries in the table.</p>
+<p>The bucket chains are often implemented as <a href="/wiki/Sequence" title="Sequence">ordered lists</a>, sorted by the key field; this choice approximately halves the average cost of unsuccessful lookups, compared to an unordered list<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (April 2011)">citation needed</span></a></i>]</sup>. However, if some keys are much more likely to come up than others, an unordered list with <a href="/wiki/Move-to-front_heuristic" title="Move-to-front heuristic" class="mw-redirect">move-to-front heuristic</a> may be more effective. More sophisticated data structures, such as balanced search trees, are worth considering only if the load factor is large (about 10 or more), or if the hash distribution is likely to be very non-uniform, or if one must guarantee good performance even in a worst-case scenario. However, using a larger table and/or a better hash function may be even more effective in those cases.</p>
+<p>Chained hash tables also inherit the disadvantages of linked lists. When storing small keys and values, the space overhead of the <code>next</code> pointer in each entry record can be significant. An additional disadvantage is that traversing a linked list has poor <a href="/wiki/Locality_of_reference" title="Locality of reference">cache performance</a>, making the processor cache ineffective.</p>
+<h4><span class="mw-headline" id="Separate_chaining_with_list_head_cells">Separate chaining with list head cells</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=8" title="Edit section: Separate chaining with list head cells">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<div class="thumb tright">
+<div class="thumbinner" style="width:502px;"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_0_LL.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/500px-Hash_table_5_0_1_1_1_1_0_LL.svg.png" width="500" height="250" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/750px-Hash_table_5_0_1_1_1_1_0_LL.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Hash_table_5_0_1_1_1_1_0_LL.svg/1000px-Hash_table_5_0_1_1_1_1_0_LL.svg.png 2x" data-file-width="620" data-file-height="310" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_0_LL.svg" class="internal" title="Enlarge"></a></div>
+Hash collision by separate chaining with head records in the bucket array.</div>
+</div>
+</div>
+<p>Some chaining implementations store the first record of each chain in the slot array itself.<sup id="cite_ref-cormen_4-1" class="reference"><a href="#cite_note-cormen-4"><span>[</span>4<span>]</span></a></sup> The number of pointer traversals is decreased by one for most cases. The purpose is to increase cache efficiency of hash table access.</p>
+<p>The disadvantage is that an empty bucket takes the same space as a bucket with one entry. To save space, such hash tables often have about as many slots as stored entries, meaning that many slots have two or more entries.</p>
+<h4><span class="mw-headline" id="Separate_chaining_with_other_structures">Separate chaining with other structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=9" title="Edit section: Separate chaining with other structures">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Instead of a list, one can use any other data structure that supports the required operations. For example, by using a <a href="/wiki/Self-balancing_binary_search_tree" title="Self-balancing binary search tree">self-balancing tree</a>, the theoretical worst-case time of common hash table operations (insertion, deletion, lookup) can be brought down to <a href="/wiki/Big_O_notation" title="Big O notation">O(log <i>n</i>)</a> rather than O(<i>n</i>). However, this approach is only worth the trouble and extra memory cost if long delays must be avoided at all costs (e.g. in a real-time application), or if one must guard against many entries hashed to the same slot (e.g. if one expects extremely non-uniform distributions, or in the case of web sites or other publicly accessible services, which are vulnerable to malicious key distributions in requests).</p>
+<p>The variant called <a href="/w/index.php?title=Array_hash_table&amp;action=edit&amp;redlink=1" class="new" title="Array hash table (page does not exist)">array hash table</a> uses a <a href="/wiki/Dynamic_array" title="Dynamic array">dynamic array</a> to store all the entries that hash to the same slot.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8"><span>[</span>8<span>]</span></a></sup><sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup><sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup> Each newly inserted entry gets appended to the end of the dynamic array that is assigned to the slot. The dynamic array is resized in an <i>exact-fit</i> manner, meaning it is grown only by as many bytes as needed. Alternative techniques such as growing the array by block sizes or <i>pages</i> were found to improve insertion performance, but at a cost in space. This variation makes more efficient use of <a href="/wiki/CPU_cache" title="CPU cache">CPU caching</a> and the <a href="/wiki/Translation_lookaside_buffer" title="Translation lookaside buffer">translation lookaside buffer</a> (TLB), because slot entries are stored in sequential memory positions. It also dispenses with the <code>next</code> pointers that are required by linked lists, which saves space. Despite frequent array resizing, space overheads incurred by operating system such as memory fragmentation, were found to be small.</p>
+<p>An elaboration on this approach is the so-called <a href="/wiki/Dynamic_perfect_hashing" title="Dynamic perfect hashing">dynamic perfect hashing</a>,<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup> where a bucket that contains <i>k</i> entries is organized as a perfect hash table with <i>k</i><sup>2</sup> slots. While it uses more memory (<i>n</i><sup>2</sup> slots for <i>n</i> entries, in the worst case and <i>n*k</i> slots in the average case), this variant has guaranteed constant worst-case lookup time, and low amortized time for insertion.</p>
+<h3><span class="mw-headline" id="Open_addressing">Open addressing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=10" title="Edit section: Open addressing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:382px;"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_0_SP.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/380px-Hash_table_5_0_1_1_1_1_0_SP.svg.png" width="380" height="330" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/570px-Hash_table_5_0_1_1_1_1_0_SP.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Hash_table_5_0_1_1_1_1_0_SP.svg/760px-Hash_table_5_0_1_1_1_1_0_SP.svg.png 2x" data-file-width="380" data-file-height="330" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hash_table_5_0_1_1_1_1_0_SP.svg" class="internal" title="Enlarge"></a></div>
+Hash collision resolved by open addressing with linear probing (interval=1). Note that "Ted Baker" has a unique hash, but nevertheless collided with "Sandra Dee", that had previously collided with "John Smith".</div>
+</div>
+</div>
+<p>In another strategy, called <a href="/wiki/Open_addressing" title="Open addressing">open addressing</a>, all entry records are stored in the bucket array itself. When a new entry has to be inserted, the buckets are examined, starting with the hashed-to slot and proceeding in some <i>probe sequence</i>, until an unoccupied slot is found. When searching for an entry, the buckets are scanned in the same sequence, until either the target record is found, or an unused array slot is found, which indicates that there is no such key in the table.<sup id="cite_ref-tenenbaum90_12-0" class="reference"><a href="#cite_note-tenenbaum90-12"><span>[</span>12<span>]</span></a></sup> The name "open addressing" refers to the fact that the location ("address") of the item is not determined by its hash value. (This method is also called <b>closed hashing</b>; it should not be confused with "open hashing" or "closed addressing" that usually mean separate chaining.)</p>
+<p>Well-known probe sequences include:</p>
+<ul>
+<li><a href="/wiki/Linear_probing" title="Linear probing">Linear probing</a>, in which the interval between probes is fixed (usually 1)</li>
+<li><a href="/wiki/Quadratic_probing" title="Quadratic probing">Quadratic probing</a>, in which the interval between probes is increased by adding the successive outputs of a quadratic polynomial to the starting value given by the original hash computation</li>
+<li><a href="/wiki/Double_hashing" title="Double hashing">Double hashing</a>, in which the interval between probes is computed by another hash function</li>
+</ul>
+<p>A drawback of all these open addressing schemes is that the number of stored entries cannot exceed the number of slots in the bucket array. In fact, even with good hash functions, their performance dramatically degrades when the load factor grows beyond 0.7 or so. For many applications, these restrictions mandate the use of dynamic resizing, with its attendant costs.</p>
+<p>Open addressing schemes also put more stringent requirements on the hash function: besides distributing the keys more uniformly over the buckets, the function must also minimize the clustering of hash values that are consecutive in the probe order. Using separate chaining, the only concern is that too many objects map to the <i>same</i> hash value; whether they are adjacent or nearby is completely irrelevant.</p>
+<p>Open addressing only saves memory if the entries are small (less than four times the size of a pointer) and the load factor is not too small. If the load factor is close to zero (that is, there are far more buckets than stored entries), open addressing is wasteful even if each entry is just two <a href="/wiki/Word_(computer_architecture)" title="Word (computer architecture)">words</a>.</p>
+<div class="thumb tright">
+<div class="thumbinner" style="width:364px;"><a href="/wiki/File:Hash_table_average_insertion_time.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/362px-Hash_table_average_insertion_time.png" width="362" height="235" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/543px-Hash_table_average_insertion_time.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Hash_table_average_insertion_time.png/724px-Hash_table_average_insertion_time.png 2x" data-file-width="954" data-file-height="620" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hash_table_average_insertion_time.png" class="internal" title="Enlarge"></a></div>
+This graph compares the average number of cache misses required to look up elements in tables with chaining and linear probing. As the table passes the 80%-full mark, linear probing's performance drastically degrades.</div>
+</div>
+</div>
+<p>Open addressing avoids the time overhead of allocating each new entry record, and can be implemented even in the absence of a memory allocator. It also avoids the extra indirection required to access the first entry of each bucket (that is, usually the only one). It also has better <a href="/wiki/Locality_of_reference" title="Locality of reference">locality of reference</a>, particularly with linear probing. With small record sizes, these factors can yield better performance than chaining, particularly for lookups. Hash tables with open addressing are also easier to <a href="/wiki/Serialization" title="Serialization">serialize</a>, because they do not use pointers.</p>
+<p>On the other hand, normal open addressing is a poor choice for large elements, because these elements fill entire <a href="/wiki/CPU_cache" title="CPU cache">CPU cache</a> lines (negating the cache advantage), and a large amount of space is wasted on large empty table slots. If the open addressing table only stores references to elements (external storage), it uses space comparable to chaining even for large records but loses its speed advantage.</p>
+<p>Generally speaking, open addressing is better used for hash tables with small records that can be stored within the table (internal storage) and fit in a cache line. They are particularly suitable for elements of one <a href="/wiki/Word_(computer_architecture)" title="Word (computer architecture)">word</a> or less. If the table is expected to have a high load factor, the records are large, or the data is variable-sized, chained hash tables often perform as well or better.</p>
+<p>Ultimately, used sensibly, any kind of hash table algorithm is usually fast <i>enough</i>; and the percentage of a calculation spent in hash table code is low. Memory usage is rarely considered excessive. Therefore, in most cases the differences between these algorithms are marginal, and other considerations typically come into play.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (March 2012)">citation needed</span></a></i>]</sup></p>
+<h4><span class="mw-headline" id="Coalesced_hashing">Coalesced hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=11" title="Edit section: Coalesced hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>A hybrid of chaining and open addressing, <a href="/wiki/Coalesced_hashing" title="Coalesced hashing">coalesced hashing</a> links together chains of nodes within the table itself.<sup id="cite_ref-tenenbaum90_12-1" class="reference"><a href="#cite_note-tenenbaum90-12"><span>[</span>12<span>]</span></a></sup> Like open addressing, it achieves space usage and (somewhat diminished) cache advantages over chaining. Like chaining, it does not exhibit clustering effects; in fact, the table can be efficiently filled to a high density. Unlike chaining, it cannot have more elements than table slots.</p>
+<h4><span class="mw-headline" id="Cuckoo_hashing">Cuckoo hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=12" title="Edit section: Cuckoo hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Another alternative open-addressing solution is <a href="/wiki/Cuckoo_hashing" title="Cuckoo hashing">cuckoo hashing</a>, which ensures constant lookup time in the worst case, and constant amortized time for insertions and deletions. It uses two or more hash functions, which means any key/value pair could be in two or more locations. For lookup, the first hash function is used; if the key/value is not found, then the second hash function is used, and so on. If a collision happens during insertion, then the key is re-hashed with the second hash function to map it to another bucket. If all hash functions are used and there is still a collision, then the key it collided with is removed to make space for the new key, and the old key is re-hashed with one of the other hash functions, which maps it to another bucket. If that location also results in a collision, then the process repeats until there is no collision or the process traverses all the buckets, at which point the table is resized. By combining multiple hash functions with multiple cells per bucket, very high space utilisation can be achieved.</p>
+<h4><span class="mw-headline" id="Hopscotch_hashing">Hopscotch hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=13" title="Edit section: Hopscotch hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<p>Another alternative open-addressing solution is <a href="/wiki/Hopscotch_hashing" title="Hopscotch hashing">hopscotch hashing</a>,<sup id="cite_ref-13" class="reference"><a href="#cite_note-13"><span>[</span>13<span>]</span></a></sup> which combines the approaches of <a href="/wiki/Cuckoo_hashing" title="Cuckoo hashing">cuckoo hashing</a> and <a href="/wiki/Linear_probing" title="Linear probing">linear probing</a>, yet seems in general to avoid their limitations. In particular it works well even when the load factor grows beyond 0.9. The algorithm is well suited for implementing a resizable <a href="/w/index.php?title=Concurrent_hash_table&amp;action=edit&amp;redlink=1" class="new" title="Concurrent hash table (page does not exist)">concurrent hash table</a>.</p>
+<p>The hopscotch hashing algorithm works by defining a neighborhood of buckets near the original hashed bucket, where a given entry is always found. Thus, search is limited to the number of entries in this neighborhood, which is logarithmic in the worst case, constant on average, and with proper alignment of the neighborhood typically requires one cache miss. When inserting an entry, one first attempts to add it to a bucket in the neighborhood. However, if all buckets in this neighborhood are occupied, the algorithm traverses buckets in sequence until an open slot (an unoccupied bucket) is found (as in linear probing). At that point, since the empty bucket is outside the neighborhood, items are repeatedly displaced in a sequence of hops. (This is similar to cuckoo hashing, but with the difference that in this case the empty slot is being moved into the neighborhood, instead of items being moved out with the hope of eventually finding an empty slot.) Each hop brings the open slot closer to the original neighborhood, without invalidating the neighborhood property of any of the buckets along the way. In the end, the open slot has been moved into the neighborhood, and the entry being inserted can be added to it.</p>
+<h3><span class="mw-headline" id="Robin_Hood_hashing">Robin Hood hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=14" title="Edit section: Robin Hood hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>One interesting variation on double-hashing collision resolution is Robin Hood hashing.<sup id="cite_ref-14" class="reference"><a href="#cite_note-14"><span>[</span>14<span>]</span></a></sup><sup id="cite_ref-15" class="reference"><a href="#cite_note-15"><span>[</span>15<span>]</span></a></sup> The idea is that a new key may displace a key already inserted, if its probe count is larger than that of the key at the current position. The net effect of this is that it reduces worst case search times in the table. This is similar to ordered hash tables<sup id="cite_ref-16" class="reference"><a href="#cite_note-16"><span>[</span>16<span>]</span></a></sup> except that the criterion for bumping a key does not depend on a direct relationship between the keys. Since both the worst case and the variation in the number of probes is reduced dramatically, an interesting variation is to probe the table starting at the expected successful probe value and then expand from that position in both directions.<sup id="cite_ref-17" class="reference"><a href="#cite_note-17"><span>[</span>17<span>]</span></a></sup> External Robin Hashing is an extension of this algorithm where the table is stored in an external file and each table position corresponds to a fixed-sized page or bucket with <i>B</i> records.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18"><span>[</span>18<span>]</span></a></sup></p>
+<h3><span class="mw-headline" id="2-choice_hashing">2-choice hashing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=15" title="Edit section: 2-choice hashing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="/wiki/2-choice_hashing" title="2-choice hashing">2-choice hashing</a> employs 2 different hash functions, <i>h<sub>1</sub></i>(<i>x</i>) and <i>h<sub>2</sub></i>(<i>x</i>), for the hash table. Both hash functions are used to compute two table locations. When an object is inserted in the table, then it is placed in the table location that contains fewer objects (with the default being the <i>h<sub>1</sub></i>(<i>x</i>) table location if there is equality in bucket size). 2-choice hashing employs the principle of the power of two choices.<sup id="cite_ref-19" class="reference"><a href="#cite_note-19"><span>[</span>19<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Dynamic_resizing">Dynamic resizing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=16" title="Edit section: Dynamic resizing">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The good functioning of a hash table depends on the fact that the table size is proportional to the number of entries. With a fixed size, and the common structures, it is similar to linear search, except with a better constant factor. In some cases, the number of entries may be definitely known in advance, for example keywords in a language. More commonly, this is not known for sure, if only due to later changes in code and data. It is one serious, although common, mistake to not provide <i>any</i> way for the table to resize. A general-purpose hash table "class" will almost always have some way to resize, and it is good practice even for simple "custom" tables. An implementation should check the load factor, and do something if it becomes too large (this needs to be done only on inserts, since that is the only thing that would increase it).</p>
+<p>To keep the load factor under a certain limit, e.g. under 3/4, many table implementations expand the table when items are inserted. For example, in <a href="/wiki/Java_(programming_language)" title="Java (programming language)">Java's</a> <code>HashMap</code> class the default load factor threshold for table expansion is 0.75 and in <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python's</a> <code>dict</code>, table size is resized when load factor is greater than 2/3.</p>
+<p>Since buckets are usually implemented on top of a <a href="/wiki/Dynamic_array" title="Dynamic array">dynamic array</a> and any constant proportion for resizing greater than 1 will keep the load factor under the desired limit, the exact choice of the constant is determined by the same <a href="/wiki/Space-time_tradeoff" title="Space-time tradeoff" class="mw-redirect">space-time tradeoff</a> as for <a href="/wiki/Dynamic_array" title="Dynamic array">dynamic arrays</a>.</p>
+<p>Resizing is accompanied by a full or incremental table <b>rehash</b> whereby existing items are mapped to new bucket locations.</p>
+<p>To limit the proportion of memory wasted due to empty buckets, some implementations also shrink the size of the table—followed by a rehash—when items are deleted. From the point of <a href="/wiki/Space-time_tradeoff" title="Space-time tradeoff" class="mw-redirect">space-time tradeoffs</a>, this operation is similar to the deallocation in dynamic arrays.</p>
+<h3><span class="mw-headline" id="Resizing_by_copying_all_entries">Resizing by copying all entries</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=17" title="Edit section: Resizing by copying all entries">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A common approach is to automatically trigger a complete resizing when the load factor exceeds some threshold <i>r</i><sub>max</sub>. Then a new larger table is <a href="/wiki/Dynamic_memory_allocation" title="Dynamic memory allocation" class="mw-redirect">allocated</a>, all the entries of the old table are removed and inserted into this new table, and the old table is returned to the free storage pool. Symmetrically, when the load factor falls below a second threshold <i>r</i><sub>min</sub>, all entries are moved to a new smaller table.</p>
+<p>If the table size increases or decreases by a fixed percentage at each expansion, the total cost of these resizings, <a href="/wiki/Amortized_analysis" title="Amortized analysis">amortized</a> over all insert and delete operations, is still a constant, independent of the number of entries <i>n</i> and of the number <i>m</i> of operations performed.</p>
+<p>For example, consider a table that was created with the minimum possible size and is doubled each time the load ratio exceeds some threshold. If <i>m</i> elements are inserted into that table, the total number of extra re-insertions that occur in all dynamic resizings of the table is at most <i>m</i>&#160;−&#160;1. In other words, dynamic resizing roughly doubles the cost of each insert or delete operation.</p>
+<h3><span class="mw-headline" id="Incremental_resizing">Incremental resizing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=18" title="Edit section: Incremental resizing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Some hash table implementations, notably in <a href="/wiki/Real-time_system" title="Real-time system" class="mw-redirect">real-time systems</a>, cannot pay the price of enlarging the hash table all at once, because it may interrupt time-critical operations. If one cannot avoid dynamic resizing, a solution is to perform the resizing gradually:</p>
+<ul>
+<li>During the resize, allocate the new hash table, but keep the old table unchanged.</li>
+<li>In each lookup or delete operation, check both tables.</li>
+<li>Perform insertion operations only in the new table.</li>
+<li>At each insertion also move <i>r</i> elements from the old table to the new table.</li>
+<li>When all elements are removed from the old table, deallocate it.</li>
+</ul>
+<p>To ensure that the old table is completely copied over before the new table itself needs to be enlarged, it is necessary to increase the size of the table by a factor of at least (<i>r</i> + 1)/<i>r</i> during resizing.</p>
+<h3><span class="mw-headline" id="Monotonic_keys">Monotonic keys</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=19" title="Edit section: Monotonic keys">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>If it is known that key values will always increase (or decrease) <a href="/wiki/Monotonic_function" title="Monotonic function">monotonically</a>, then a variation of <a href="/wiki/Consistent_hashing" title="Consistent hashing">consistent hashing</a> can be achieved by keeping a list of the single most recent key value at each hash table resize operation. Upon lookup, keys that fall in the ranges defined by these list entries are directed to the appropriate hash function—and indeed hash table—both of which can be different for each range. Since it is common to grow the overall number of entries by doubling, there will only be O(lg(N)) ranges to check, and binary search time for the redirection would be O(lg(lg(N))). As with consistent hashing, this approach guarantees that any key's hash, once issued, will never change, even when the hash table is later grown.</p>
+<h3><span class="mw-headline" id="Other_solutions">Other solutions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=20" title="Edit section: Other solutions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><a href="/wiki/Linear_hashing" title="Linear hashing">Linear hashing</a><sup id="cite_ref-20" class="reference"><a href="#cite_note-20"><span>[</span>20<span>]</span></a></sup> is a hash table algorithm that permits incremental hash table expansion. It is implemented using a single hash table, but with two possible look-up functions.</p>
+<p>Another way to decrease the cost of table resizing is to choose a hash function in such a way that the hashes of most values do not change when the table is resized. This approach, called <a href="/wiki/Consistent_hashing" title="Consistent hashing">consistent hashing</a>, is prevalent in disk-based and distributed hashes, where rehashing is prohibitively costly.</p>
+<h2><span class="mw-headline" id="Performance_analysis">Performance analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=21" title="Edit section: Performance analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In the simplest model, the hash function is completely unspecified and the table does not resize. For the best possible choice of hash function, a table of size <i>k</i> with open addressing has no collisions and holds up to <i>k</i> elements, with a single comparison for successful lookup, and a table of size <i>k</i> with chaining and <i>n</i> keys has the minimum max(0, <i>n</i>-<i>k</i>) collisions and O(1 + <i>n</i>/<i>k</i>) comparisons for lookup. For the worst choice of hash function, every insertion causes a collision, and hash tables degenerate to linear search, with Ω(<i>n</i>) amortized comparisons per insertion and up to <i>n</i> comparisons for a successful lookup.</p>
+<p>Adding rehashing to this model is straightforward. As in a <a href="/wiki/Dynamic_array" title="Dynamic array">dynamic array</a>, geometric resizing by a factor of <i>b</i> implies that only <i>n</i>/<i>b</i><sup><i>i</i></sup> keys are inserted <i>i</i> or more times, so that the total number of insertions is bounded above by <i>bn</i>/(<i>b</i>-1), which is O(<i>n</i>). By using rehashing to maintain <i>n</i> &lt; <i>k</i>, tables using both chaining and open addressing can have unlimited elements and perform successful lookup in a single comparison for the best choice of hash function.</p>
+<p>In more realistic models, the hash function is a <a href="/wiki/Random_variable" title="Random variable">random variable</a> over a probability distribution of hash functions, and performance is computed on average over the choice of hash function. When this distribution is <a href="/wiki/Uniform_distribution_(discrete)" title="Uniform distribution (discrete)">uniform</a>, the assumption is called "simple uniform hashing" and it can be shown that hashing with chaining requires Θ(1 + <i>n</i>/<i>k</i>) comparisons on average for an unsuccessful lookup, and hashing with open addressing requires Θ(1/(1 - <i>n</i>/<i>k</i>)).<sup id="cite_ref-21" class="reference"><a href="#cite_note-21"><span>[</span>21<span>]</span></a></sup> Both these bounds are constant, if we maintain <i>n</i>/<i>k</i> &lt; <i>c</i> using table resizing, where <i>c</i> is a fixed constant less than 1.</p>
+<h2><span class="mw-headline" id="Features">Features</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=22" title="Edit section: Features">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Advantages">Advantages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=23" title="Edit section: Advantages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The main advantage of hash tables over other table data structures is speed. This advantage is more apparent when the number of entries is large. Hash tables are particularly efficient when the maximum number of entries can be predicted in advance, so that the bucket array can be allocated once with the optimum size and never resized.</p>
+<p>If the set of key-value pairs is fixed and known ahead of time (so insertions and deletions are not allowed), one may reduce the average lookup cost by a careful choice of the hash function, bucket table size, and internal data structures. In particular, one may be able to devise a hash function that is collision-free, or even perfect (see below). In this case the keys need not be stored in the table.</p>
+<h3><span class="mw-headline" id="Drawbacks">Drawbacks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=24" title="Edit section: Drawbacks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Although operations on a hash table take constant time on average, the cost of a good hash function can be significantly higher than the inner loop of the lookup algorithm for a sequential list or search tree. Thus hash tables are not effective when the number of entries is very small. (However, in some cases the high cost of computing the hash function can be mitigated by saving the hash value together with the key.)</p>
+<p>For certain string processing applications, such as <a href="/wiki/Spell_checker" title="Spell checker">spell-checking</a>, hash tables may be less efficient than <a href="/wiki/Trie" title="Trie">tries</a>, <a href="/wiki/Finite_automata" title="Finite automata" class="mw-redirect">finite automata</a>, or <a href="/wiki/Judy_array" title="Judy array">Judy arrays</a>. Also, if each key is represented by a small enough number of bits, then, instead of a hash table, one may use the key directly as the index into an array of values. Note that there are no collisions in this case.</p>
+<p>The entries stored in a hash table can be enumerated efficiently (at constant cost per entry), but only in some pseudo-random order. Therefore, there is no efficient way to locate an entry whose key is <i>nearest</i> to a given key. Listing all <i>n</i> entries in some specific order generally requires a separate sorting step, whose cost is proportional to log(<i>n</i>) per entry. In comparison, ordered search trees have lookup and insertion cost proportional to log(<i>n</i>), but allow finding the nearest key at about the same cost, and <i>ordered</i> enumeration of all entries at constant cost per entry.</p>
+<p>If the keys are not stored (because the hash function is collision-free), there may be no easy way to enumerate the keys that are present in the table at any given moment.</p>
+<p>Although the <i>average</i> cost per operation is constant and fairly small, the cost of a single operation may be quite high. In particular, if the hash table uses <a href="#Dynamic_resizing">dynamic resizing</a>, an insertion or deletion operation may occasionally take time proportional to the number of entries. This may be a serious drawback in real-time or interactive applications.</p>
+<p>Hash tables in general exhibit poor <a href="/wiki/Locality_of_reference" title="Locality of reference">locality of reference</a>—that is, the data to be accessed is distributed seemingly at random in memory. Because hash tables cause access patterns that jump around, this can trigger <a href="/wiki/CPU_cache" title="CPU cache">microprocessor cache</a> misses that cause long delays. Compact data structures such as arrays searched with <a href="/wiki/Linear_search" title="Linear search">linear search</a> may be faster, if the table is relatively small and keys are compact. The optimal performance point varies from system to system.</p>
+<p>Hash tables become quite inefficient when there are many collisions. While extremely uneven hash distributions are extremely unlikely to arise by chance, a <a href="/wiki/Black_hat_hacking" title="Black hat hacking" class="mw-redirect">malicious adversary</a> with knowledge of the hash function may be able to supply information to a hash that creates worst-case behavior by causing excessive collisions, resulting in very poor performance, e.g. a <a href="/wiki/Denial_of_service_attack" title="Denial of service attack" class="mw-redirect">denial of service attack</a>.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22"><span>[</span>22<span>]</span></a></sup> In critical applications, <a href="/wiki/Universal_hashing" title="Universal hashing">universal hashing</a> can be used; a data structure with better worst-case guarantees may be preferable.<sup id="cite_ref-23" class="reference"><a href="#cite_note-23"><span>[</span>23<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="Uses">Uses</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=25" title="Edit section: Uses">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="metadata plainlinks ambox ambox-content ambox-Unreferenced" role="presentation">
+<tr>
+<td class="mbox-image">
+<div style="width:52px;"><a href="/wiki/File:Question_book-new.svg" class="image"><img alt="Question book-new.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" width="50" height="39" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" data-file-width="262" data-file-height="204" /></a></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This section <b>does not <a href="/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">cite</a> any <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">references or sources</a></b>. <span class="hide-when-compact">Please help improve this section by <a href="/wiki/Help:Introduction_to_referencing/1" title="Help:Introduction to referencing/1">adding citations to reliable sources</a>. Unsourced material may be challenged and <a href="/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>.</span> <small><i>(July 2013)</i></small></span></td>
+</tr>
+</table>
+<h3><span class="mw-headline" id="Associative_arrays">Associative arrays</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=26" title="Edit section: Associative arrays">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Hash tables are commonly used to implement many types of in-memory tables. They are used to implement <a href="/wiki/Associative_array" title="Associative array">associative arrays</a> (arrays whose indices are arbitrary <a href="/wiki/String_(computing)" title="String (computing)" class="mw-redirect">strings</a> or other complicated objects), especially in <a href="/wiki/Interpreter_(computer_science)" title="Interpreter (computer science)" class="mw-redirect">interpreted</a> <a href="/wiki/Programming_language" title="Programming language">programming languages</a> like <a href="/wiki/Ruby" title="Ruby">Ruby</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, and <a href="/wiki/PHP" title="PHP">PHP</a>.</p>
+<p>When storing a new item into a <a href="/wiki/Multimap" title="Multimap">multimap</a> and a hash collision occurs, the multimap unconditionally stores both items.</p>
+<p>When storing a new item into a typical associative array and a hash collision occurs, but the actual keys themselves are different, the associative array likewise stores both items. However, if the key of the new item exactly matches the key of an old item, the associative array typically erases the old item and overwrites it with the new item, so every item in the table has a unique key.</p>
+<h3><span class="mw-headline" id="Database_indexing">Database indexing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=27" title="Edit section: Database indexing">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Hash tables may also be used as <a href="/wiki/Disk_drive" title="Disk drive" class="mw-redirect">disk</a>-based data structures and <a href="/wiki/Index_(database)" title="Index (database)" class="mw-redirect">database indices</a> (such as in <a href="/wiki/Dbm" title="Dbm">dbm</a>) although <a href="/wiki/B-tree" title="B-tree">B-trees</a> are more popular in these applications.</p>
+<h3><span class="mw-headline" id="Caches">Caches</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=28" title="Edit section: Caches">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Hash tables can be used to implement <a href="/wiki/Cache_(computing)" title="Cache (computing)">caches</a>, auxiliary data tables that are used to speed up the access to data that is primarily stored in slower media. In this application, hash collisions can be handled by discarding one of the two colliding entries—usually erasing the old item that is currently stored in the table and overwriting it with the new item, so every item in the table has a unique hash value.</p>
+<h3><span class="mw-headline" id="Sets">Sets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=29" title="Edit section: Sets">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Besides recovering the entry that has a given key, many hash table implementations can also tell whether such an entry exists or not.</p>
+<p>Those structures can therefore be used to implement a <a href="/wiki/Set_data_structure" title="Set data structure" class="mw-redirect">set data structure</a>, which merely records whether a given key belongs to a specified set of keys. In this case, the structure can be simplified by eliminating all parts that have to do with the entry values. Hashing can be used to implement both static and dynamic sets.</p>
+<h3><span class="mw-headline" id="Object_representation">Object representation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=30" title="Edit section: Object representation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Several dynamic languages, such as <a href="/wiki/Perl" title="Perl">Perl</a>, <a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>, <a href="/wiki/JavaScript" title="JavaScript">JavaScript</a>, and <a href="/wiki/Ruby_(programming_language)" title="Ruby (programming language)">Ruby</a>, use hash tables to implement objects. In this representation, the keys are the names of the members and methods of the object, and the values are pointers to the corresponding member or method.</p>
+<h3><span class="mw-headline" id="Unique_data_representation">Unique data representation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=31" title="Edit section: Unique data representation">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Hash tables can be used by some programs to avoid creating multiple character strings with the same contents. For that purpose, all strings in use by the program are stored in a single <i>string pool</i> implemented as a hash table, which is checked whenever a new string has to be created. This technique was introduced in <a href="/wiki/Lisp_(programming_language)" title="Lisp (programming language)">Lisp</a> interpreters under the name <a href="/wiki/Hash_consing" title="Hash consing">hash consing</a>, and can be used with many other kinds of data (<a href="/wiki/Expression_tree" title="Expression tree" class="mw-redirect">expression trees</a> in a symbolic algebra system, records in a database, files in a file system, binary decision diagrams, etc.)</p>
+<h3><span class="mw-headline" id="String_interning">String interning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=32" title="Edit section: String interning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="hatnote relarticle mainarticle">Main article: <a href="/wiki/String_interning" title="String interning">String interning</a></div>
+<h2><span class="mw-headline" id="Implementations">Implementations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=33" title="Edit section: Implementations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="In_programming_languages">In programming languages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=34" title="Edit section: In programming languages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Many programming languages provide hash table functionality, either as built-in associative arrays or as standard <a href="/wiki/Library_(computing)" title="Library (computing)">library</a> modules. In <a href="/wiki/C%2B%2B11" title="C++11">C++11</a>, for example, the <code><a href="/wiki/Unordered_map_(C%2B%2B)" title="Unordered map (C++)" class="mw-redirect">unordered_map</a></code> class provides hash tables for keys and values of arbitrary type.</p>
+<p>In <a href="/wiki/PHP" title="PHP">PHP</a> 5, the Zend 2 engine uses one of the hash functions from <a href="/wiki/Daniel_J._Bernstein" title="Daniel J. Bernstein">Daniel J. Bernstein</a> to generate the hash values used in managing the mappings of data pointers stored in a hash table. In the PHP source code, it is labelled as <code>DJBX33A</code> (Daniel J. Bernstein, Times 33 with Addition).</p>
+<p><a href="/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>'s built-in hash table implementation, in the form of the <code>dict</code> type, as well as <a href="/wiki/Perl" title="Perl">Perl</a>'s hash type (%) are used internally to implement namespaces and therefore need to pay more attention to security, i.e. collision attacks.</p>
+<p>In the <a href="/wiki/.NET_Framework" title=".NET Framework">.NET Framework</a>, support for hash tables is provided via the non-generic <code>Hashtable</code> and generic <code>Dictionary</code> classes, which store key-value pairs, and the generic <code>HashSet</code> class, which stores only values.</p>
+<h3><span class="mw-headline" id="Independent_packages">Independent packages</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=35" title="Edit section: Independent packages">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://code.google.com/p/sparsehash/">SparseHash</a> (formerly Google SparseHash) An extremely memory-efficient hash_map implementation, with only 2 bits/entry of overhead. The SparseHash library has several C++ hash map implementations with different performance characteristics, including one that optimizes for memory use and another that optimizes for speed.</li>
+<li><a rel="nofollow" class="external text" href="http://www.sunrisetel.net/software/devtools/sunrise-data-dictionary.shtml">SunriseDD</a> An open source C library for hash table storage of arbitrary data objects with lock-free lookups, built-in reference counting and guaranteed order iteration. The library can participate in external reference counting systems or use its own built-in reference counting. It comes with a variety of hash functions and allows the use of runtime supplied hash functions via callback mechanism. Source code is well documented.</li>
+<li><a rel="nofollow" class="external text" href="http://uthash.sourceforge.net/">uthash</a> This is an easy-to-use hash table for C structures.</li>
+</ul>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=36" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The idea of hashing arose independently in different places. In January 1953, H. P. Luhn wrote an internal IBM memorandum that used hashing with chaining.<sup id="cite_ref-hashhist_24-0" class="reference"><a href="#cite_note-hashhist-24"><span>[</span>24<span>]</span></a></sup> <a href="/wiki/Gene_Amdahl" title="Gene Amdahl">G. N. Amdahl</a>, E. M. Boehme, <a href="/wiki/Nathaniel_Rochester_(computer_scientist)" title="Nathaniel Rochester (computer scientist)">N. Rochester</a>, and <a href="/wiki/Arthur_Samuel" title="Arthur Samuel">Arthur Samuel</a> implemented a program using hashing at about the same time. Open addressing with linear probing (relatively prime stepping) is credited to Amdahl, but Ershov (in Russia) had the same idea.<sup id="cite_ref-hashhist_24-1" class="reference"><a href="#cite_note-hashhist-24"><span>[</span>24<span>]</span></a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=37" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="/wiki/Rabin%E2%80%93Karp_string_search_algorithm" title="Rabin–Karp string search algorithm" class="mw-redirect">Rabin–Karp string search algorithm</a></li>
+<li><a href="/wiki/Stable_hashing" title="Stable hashing">Stable hashing</a></li>
+<li><a href="/wiki/Consistent_hashing" title="Consistent hashing">Consistent hashing</a></li>
+<li><a href="/wiki/Extendible_hashing" title="Extendible hashing">Extendible hashing</a></li>
+<li><a href="/wiki/Lazy_deletion" title="Lazy deletion">Lazy deletion</a></li>
+<li><a href="/wiki/Pearson_hashing" title="Pearson hashing">Pearson hashing</a></li>
+</ul>
+<h3><span class="mw-headline" id="Related_data_structures">Related data structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=38" title="Edit section: Related data structures">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are several data structures that use hash functions but cannot be considered special cases of hash tables:</p>
+<ul>
+<li><a href="/wiki/Bloom_filter" title="Bloom filter">Bloom filter</a>, memory efficient data-structure designed for constant-time approximate lookups; uses hash function(s) and can be seen as an approximate hash table.</li>
+<li><a href="/wiki/Distributed_hash_table" title="Distributed hash table">Distributed hash table</a> (DHT), a resilient dynamic table spread over several nodes of a network.</li>
+<li><a href="/wiki/Hash_array_mapped_trie" title="Hash array mapped trie">Hash array mapped trie</a>, a <a href="/wiki/Trie" title="Trie">trie</a> structure, similar to the <a href="/w/index.php?title=Array_mapped_trie&amp;action=edit&amp;redlink=1" class="new" title="Array mapped trie (page does not exist)">array mapped trie</a>, but where each key is hashed first.</li>
+</ul>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=39" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist references-column-width" style="-moz-column-width: 30em; -webkit-column-width: 30em; column-width: 30em; list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-Cormen_et_al-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-Cormen_et_al_1-0">^</a></b></span> <span class="reference-text"><span class="citation book"><a href="/wiki/Thomas_H._Cormen" title="Thomas H. Cormen">Cormen, Thomas H.</a>; <a href="/wiki/Charles_E._Leiserson" title="Charles E. Leiserson">Leiserson, Charles E.</a>; <a href="/wiki/Ronald_L._Rivest" title="Ronald L. Rivest" class="mw-redirect">Rivest, Ronald L.</a>; <a href="/wiki/Clifford_Stein" title="Clifford Stein">Stein, Clifford</a> (2009). <i><a href="/wiki/Introduction_to_Algorithms" title="Introduction to Algorithms">Introduction to Algorithms</a></i> (3rd ed.). Massachusetts Institute of Technology. pp.&#160;253–280. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0-262-03384-8" title="Special:BookSources/978-0-262-03384-8">978-0-262-03384-8</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.au=Cormen%2C+Thomas+H.&amp;rft.aufirst=Thomas+H.&amp;rft.aulast=Cormen&amp;rft.au=Leiserson%2C+Charles+E.&amp;rft.au=Rivest%2C+Ronald+L.&amp;rft.au=Stein%2C+Clifford&amp;rft.btitle=Introduction+to+Algorithms&amp;rft.date=2009&amp;rft.edition=3rd&amp;rft.genre=book&amp;rft.isbn=978-0-262-03384-8&amp;rft.pages=253-280&amp;rft.pub=Massachusetts+Institute+of+Technology&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-leiser-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-leiser_2-0">^</a></b></span> <span class="reference-text"><a href="/wiki/Charles_E._Leiserson" title="Charles E. Leiserson">Charles E. Leiserson</a>, <a rel="nofollow" class="external text" href="http://videolectures.net/mit6046jf05_leiserson_lec13/"><i>Amortized Algorithms, Table Doubling, Potential Method</i></a> Lecture 13, course MIT 6.046J/18.410J Introduction to Algorithms—Fall 2005</span></li>
+<li id="cite_note-knuth-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-knuth_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-knuth_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book"><a href="/wiki/Donald_Knuth" title="Donald Knuth">Knuth, Donald</a> (1998). <i>'The Art of Computer Programming'</i>. 3: <i>Sorting and Searching</i> (2nd ed.). Addison-Wesley. pp.&#160;513–558. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-201-89685-0" title="Special:BookSources/0-201-89685-0">0-201-89685-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.aufirst=Donald&amp;rft.au=Knuth%2C+Donald&amp;rft.aulast=Knuth&amp;rft.btitle=%27The+Art+of+Computer+Programming%27&amp;rft.date=1998&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.isbn=0-201-89685-0&amp;rft.pages=513-558&amp;rft.pub=Addison-Wesley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.volume=3%3A+%27%27Sorting+and+Searching%27%27" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-cormen-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-cormen_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-cormen_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book"><a href="/wiki/Thomas_H._Cormen" title="Thomas H. Cormen">Cormen, Thomas H.</a>; <a href="/wiki/Charles_E._Leiserson" title="Charles E. Leiserson">Leiserson, Charles E.</a>; <a href="/wiki/Ronald_L._Rivest" title="Ronald L. Rivest" class="mw-redirect">Rivest, Ronald L.</a>; <a href="/wiki/Clifford_Stein" title="Clifford Stein">Stein, Clifford</a> (2001). <i><a href="/wiki/Introduction_to_Algorithms" title="Introduction to Algorithms">Introduction to Algorithms</a></i> (2nd ed.). MIT Press and McGraw-Hill. 221–252. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-0-262-53196-2" title="Special:BookSources/978-0-262-53196-2">978-0-262-53196-2</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.au=Cormen%2C+Thomas+H.&amp;rft.aufirst=Thomas+H.&amp;rft.aulast=Cormen&amp;rft.au=Leiserson%2C+Charles+E.&amp;rft.au=Rivest%2C+Ronald+L.&amp;rft.au=Stein%2C+Clifford&amp;rft.btitle=Introduction+to+Algorithms&amp;rft.date=2001&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.isbn=978-0-262-53196-2&amp;rft.pages=221-252&amp;rft.pub=MIT+Press+and+McGraw-Hill&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-chernoff-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-chernoff_5-0">^</a></b></span> <span class="reference-text"><span class="citation news"><a href="/wiki/Karl_Pearson" title="Karl Pearson">Pearson, Karl</a> (1900). "On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling". <i>Philosophical Magazine, Series 5</i> <b>50</b> (302). pp.&#160;157–175. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1080%2F14786440009463897">10.1080/14786440009463897</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=On+the+criterion+that+a+given+system+of+deviations+from+the+probable+in+the+case+of+a+correlated+system+of+variables+is+such+that+it+can+be+reasonably+supposed+to+have+arisen+from+random+sampling&amp;rft.aufirst=Karl&amp;rft.aulast=Pearson&amp;rft.au=Pearson%2C+Karl&amp;rft.date=1900&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1080%2F14786440009463897&amp;rft.issue=302&amp;rft.jtitle=Philosophical+Magazine%2C+Series+5&amp;rft.pages=157-175&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=50" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-plackett-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-plackett_6-0">^</a></b></span> <span class="reference-text"><span class="citation news"><a href="/wiki/Robin_Plackett" title="Robin Plackett">Plackett, Robin</a> (1983). "Karl Pearson and the Chi-Squared Test". <i>International Statistical Review (International Statistical Institute (ISI))</i> <b>51</b> (1). pp.&#160;59–72. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.2307%2F1402731">10.2307/1402731</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Karl+Pearson+and+the+Chi-Squared+Test&amp;rft.aufirst=Robin&amp;rft.aulast=Plackett&amp;rft.au=Plackett%2C+Robin&amp;rft.date=1983&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.2307%2F1402731&amp;rft.issue=1&amp;rft.jtitle=International+Statistical+Review+%28International+Statistical+Institute+%28ISI%29%29&amp;rft.pages=59-72&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=51" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-twang1-7"><span class="mw-cite-backlink">^ <a href="#cite_ref-twang1_7-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-twang1_7-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">Thomas Wang (1997), <a rel="nofollow" class="external text" href="http://www.concentric.net/~Ttwang/tech/primehash.htm">Prime Double Hash Table</a>. Retrieved April 27, 2012</span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><span class="citation book">Askitis, Nikolas; Zobel, Justin (October 2005). <a rel="nofollow" class="external text" href="http://www.springerlink.com/content/b61721172558qt03/"><i>Cache-conscious Collision Resolution in String Hash Tables</i></a>. <i>Proceedings of the 12th International Conference, String Processing and Information Retrieval (SPIRE 2005)</i>. 3772/2005. pp.&#160;91–102. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2F11575832_11">10.1007/11575832_11</a>. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-3-540-29740-6" title="Special:BookSources/978-3-540-29740-6">978-3-540-29740-6</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Cache-conscious+Collision+Resolution+in+String+Hash+Tables&amp;rft.au=Askitis%2C+Nikolas&amp;rft.aufirst=Nikolas&amp;rft.aulast=Askitis&amp;rft.au=Zobel%2C+Justin&amp;rft.date=October+2005&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2Fb61721172558qt03%2F&amp;rft_id=info%3Adoi%2F10.1007%2F11575832_11&amp;rft.isbn=978-3-540-29740-6&amp;rft.jtitle=Proceedings+of+the+12th+International+Conference%2C+String+Processing+and+Information+Retrieval+%28SPIRE+2005%29&amp;rft.pages=91-102&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=3772%2F2005" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><span class="citation journal">Askitis, Nikolas; Sinha, Ranjan (2010). <a rel="nofollow" class="external text" href="http://www.springerlink.com/content/86574173183j6565/">"Engineering scalable, cache and space efficient tries for strings"</a>. <i>The VLDB Journal</i> <b>17</b> (5): 633–660. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1007%2Fs00778-010-0183-9">10.1007/s00778-010-0183-9</a>. <a href="/wiki/International_Standard_Serial_Number" title="International Standard Serial Number">ISSN</a>&#160;<a rel="nofollow" class="external text" href="//www.worldcat.org/issn/1066-8888">1066-8888</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Engineering+scalable%2C+cache+and+space+efficient+tries+for+strings&amp;rft.au=Askitis%2C+Nikolas&amp;rft.aufirst=Nikolas&amp;rft.aulast=Askitis&amp;rft.au=Sinha%2C+Ranjan&amp;rft.date=2010&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fwww.springerlink.com%2Fcontent%2F86574173183j6565%2F&amp;rft_id=info%3Adoi%2F10.1007%2Fs00778-010-0183-9&amp;rft.issn=1066-8888&amp;rft.issue=5&amp;rft.jtitle=The+VLDB+Journal&amp;rft.pages=633-660&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=17" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><span class="citation book">Askitis, Nikolas (2009). <a rel="nofollow" class="external text" href="http://crpit.com/confpapers/CRPITV91Askitis.pdf"><i>Fast and Compact Hash Tables for Integer Keys</i></a>. <i>Proceedings of the 32nd Australasian Computer Science Conference (ACSC 2009)</i> <b>91</b>. pp.&#160;113–122. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/978-1-920682-72-9" title="Special:BookSources/978-1-920682-72-9">978-1-920682-72-9</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Fast+and+Compact+Hash+Tables+for+Integer+Keys&amp;rft.au=Askitis%2C+Nikolas&amp;rft.aufirst=Nikolas&amp;rft.aulast=Askitis&amp;rft.date=2009&amp;rft.genre=article&amp;rft_id=http%3A%2F%2Fcrpit.com%2Fconfpapers%2FCRPITV91Askitis.pdf&amp;rft.isbn=978-1-920682-72-9&amp;rft.jtitle=Proceedings+of+the+32nd+Australasian+Computer+Science+Conference+%28ACSC+2009%29&amp;rft.pages=113-122&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=91" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text">Erik Demaine, Jeff Lind. 6.897: Advanced Data Structures. MIT Computer Science and Artificial Intelligence Laboratory. Spring 2003. <a rel="nofollow" class="external free" href="http://courses.csail.mit.edu/6.897/spring03/scribe_notes/L2/lecture2.pdf">http://courses.csail.mit.edu/6.897/spring03/scribe_notes/L2/lecture2.pdf</a></span></li>
+<li id="cite_note-tenenbaum90-12"><span class="mw-cite-backlink">^ <a href="#cite_ref-tenenbaum90_12-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-tenenbaum90_12-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book">Tenenbaum, Aaron M.; Langsam, Yedidyah; Augenstein, Moshe J. (1990). <i>Data Structures Using C</i>. Prentice Hall. pp.&#160;456–461, p. 472. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-13-199746-7" title="Special:BookSources/0-13-199746-7">0-13-199746-7</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.au=Augenstein%2C+Moshe+J.&amp;rft.aufirst=Aaron+M.&amp;rft.au=Langsam%2C+Yedidyah&amp;rft.aulast=Tenenbaum&amp;rft.au=Tenenbaum%2C+Aaron+M.&amp;rft.btitle=Data+Structures+Using+C&amp;rft.date=1990&amp;rft.genre=book&amp;rft.isbn=0-13-199746-7&amp;rft.pages=456-461%2C+p.+472&amp;rft.pub=Prentice+Hall&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><span class="citation conference">Herlihy, Maurice; Shavit, Nir; Tzafrir, Moran (2008). "Hopscotch Hashing". "DISC '08: Proceedings of the 22nd international symposium on Distributed Computing". Berlin, Heidelberg: Springer-Verlag. pp.&#160;350–364.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=DISC+%2708%3A+Proceedings+of+the+22nd+international+symposium+on+Distributed+Computing&amp;rft.aufirst=Maurice&amp;rft.au=Herlihy%2C+Maurice&amp;rft.aulast=Herlihy&amp;rft.au=Shavit%2C+Nir&amp;rft.au=Tzafrir%2C+Moran&amp;rft.btitle=Hopscotch+Hashing&amp;rft.date=2008&amp;rft.genre=bookitem&amp;rft.pages=350-364&amp;rft.place=Berlin%2C+Heidelberg&amp;rft.pub=Springer-Verlag&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><span class="citation techreport"><a href="/wiki/Pedro_Celis" title="Pedro Celis">Celis, Pedro</a> (1986). <a rel="nofollow" class="external text" href="https://cs.uwaterloo.ca/research/tr/1986/CS-86-14.pdf"><i>Robin Hood hashing</i></a> (Technical report). Computer Science Department, University of Waterloo. CS-86-14.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.au=Celis%2C+Pedro&amp;rft.aufirst=Pedro&amp;rft.aulast=Celis&amp;rft.btitle=Robin+Hood+hashing&amp;rft.date=1986&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fcs.uwaterloo.ca%2Fresearch%2Ftr%2F1986%2FCS-86-14.pdf&amp;rft.pub=Computer+Science+Department%2C+University+of+Waterloo&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><span class="citation web">Goossaert, Emmanuel (2013). <a rel="nofollow" class="external text" href="http://codecapsule.com/2013/11/11/robin-hood-hashing/">"Robin Hood hashing"</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.aufirst=Emmanuel&amp;rft.au=Goossaert%2C+Emmanuel&amp;rft.aulast=Goossaert&amp;rft.btitle=Robin+Hood+hashing&amp;rft.date=2013&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fcodecapsule.com%2F2013%2F11%2F11%2Frobin-hood-hashing%2F&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><span class="citation journal">Amble, Ole; Knuth, Don (1974). "Ordered hash tables". <i>Computer Journal</i> <b>17</b> (2): 135. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1093%2Fcomjnl%2F17.2.135">10.1093/comjnl/17.2.135</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Ordered+hash+tables&amp;rft.au=Amble%2C+Ole&amp;rft.aufirst=Ole&amp;rft.au=Knuth%2C+Don&amp;rft.aulast=Amble&amp;rft.date=1974&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1093%2Fcomjnl%2F17.2.135&amp;rft.issue=2&amp;rft.jtitle=Computer+Journal&amp;rft.pages=135&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=17" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><span class="citation journal">Viola, Alfredo (October 2005). "Exact distribution of individual displacements in linear probing hashing". <i>Transactions on Algorithms (TALG)</i> (ACM) <b>1</b> (2,): 214–242. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1145%2F1103963.1103965">10.1145/1103963.1103965</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Exact+distribution+of+individual+displacements+in+linear+probing+hashing&amp;rft.aufirst=Alfredo&amp;rft.aulast=Viola&amp;rft.au=Viola%2C+Alfredo&amp;rft.date=October+2005&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1145%2F1103963.1103965&amp;rft.issue=2%2C&amp;rft.jtitle=Transactions+on+Algorithms+%28TALG%29&amp;rft.pages=214-242&amp;rft.pub=ACM&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=1" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><span class="citation techreport"><a href="/wiki/Pedro_Celis" title="Pedro Celis">Celis, Pedro</a> (March 1988). <i>External Robin Hood Hashing</i> (Technical report). Computer Science Department, Indiana University. TR246.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.au=Celis%2C+Pedro&amp;rft.aufirst=Pedro&amp;rft.aulast=Celis&amp;rft.btitle=External+Robin+Hood+Hashing&amp;rft.date=March+1988&amp;rft.genre=book&amp;rft.pub=Computer+Science+Department%2C+Indiana+University&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf">http://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf</a></span></li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><span class="citation conference">Litwin, Witold (1980). "Linear hashing: A new tool for file and table addressing". "Proc. 6th Conference on Very Large Databases". pp.&#160;212–223.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Proc.+6th+Conference+on+Very+Large+Databases&amp;rft.aufirst=Witold&amp;rft.aulast=Litwin&amp;rft.au=Litwin%2C+Witold&amp;rft.btitle=Linear+hashing%3A+A+new+tool+for+file+and+table+addressing&amp;rft.date=1980&amp;rft.genre=bookitem&amp;rft.pages=212-223&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text">Doug Dunham. <a rel="nofollow" class="external text" href="http://www.duluth.umn.edu/~ddunham/cs4521s09/notes/ch11.txt">CS 4521 Lecture Notes</a>. University of Minnesota Duluth. Theorems 11.2, 11.6. Last modified April 21, 2009.</span></li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text">Alexander Klink and Julian Wälde's <i><a rel="nofollow" class="external text" href="http://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a></i>, December 28, 2011, 28th Chaos Communication Congress. Berlin, Germany.</span></li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text">Crosby and Wallach's <i><a rel="nofollow" class="external text" href="http://www.cs.rice.edu/~scrosby/hash/CrosbyWallach_UsenixSec2003.pdf">Denial of Service via Algorithmic Complexity Attacks</a></i>.</span></li>
+<li id="cite_note-hashhist-24"><span class="mw-cite-backlink">^ <a href="#cite_ref-hashhist_24-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-hashhist_24-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><span class="citation book">Mehta, Dinesh P.; <a href="/wiki/Sartaj_Sahni" title="Sartaj Sahni">Sahni, Sartaj</a>. <i>Handbook of Datastructures and Applications</i>. pp.&#160;9–15. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/1-58488-435-5" title="Special:BookSources/1-58488-435-5">1-58488-435-5</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.aufirst=Dinesh+P.&amp;rft.aulast=Mehta&amp;rft.au=Mehta%2C+Dinesh+P.&amp;rft.au=Sahni%2C+Sartaj&amp;rft.btitle=Handbook+of+Datastructures+and+Applications&amp;rft.genre=book&amp;rft.isbn=1-58488-435-5&amp;rft.pages=9-15&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="Further_reading">Further reading</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=40" title="Edit section: Further reading">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><span class="citation book">Tamassia, Roberto; Goodrich, Michael T. (2006). "Chapter Nine: Maps and Dictionaries". <i>Data structures and algorithms in Java&#160;: [updated for Java 5.0]</i> (4th ed.). Hoboken, NJ: Wiley. pp.&#160;369–418. <a href="/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&#160;<a href="/wiki/Special:BookSources/0-471-73884-0" title="Special:BookSources/0-471-73884-0">0-471-73884-0</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Data+structures+and+algorithms+in+Java+%3A+%5Bupdated+for+Java+5.0%5D&amp;rft.aufirst=Roberto&amp;rft.au=Goodrich%2C+Michael+T.&amp;rft.aulast=Tamassia&amp;rft.au=Tamassia%2C+Roberto&amp;rft.btitle=Chapter+Nine%3A+Maps+and+Dictionaries&amp;rft.date=2006&amp;rft.edition=4th&amp;rft.genre=bookitem&amp;rft.isbn=0-471-73884-0&amp;rft.pages=369-418&amp;rft.place=Hoboken%2C+NJ&amp;rft.pub=Wiley&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<ul>
+<li><span class="citation journal">McKenzie, B. J.; Harries, R.; Bell, T. (Feb 1990). "Selecting a hashing algorithm". <i>Software Practice &amp; Experience</i> <b>20</b> (2): 209–224. <a href="/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="http://dx.doi.org/10.1002%2Fspe.4380200207">10.1002/spe.4380200207</a>.</span><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AHash+table&amp;rft.atitle=Selecting+a+hashing+algorithm&amp;rft.au=Bell%2C+T.&amp;rft.aufirst=B.+J.&amp;rft.au=Harries%2C+R.&amp;rft.aulast=McKenzie&amp;rft.au=McKenzie%2C+B.+J.&amp;rft.date=Feb+1990&amp;rft.genre=article&amp;rft_id=info%3Adoi%2F10.1002%2Fspe.4380200207&amp;rft.issue=2&amp;rft.jtitle=Software+Practice+%26+Experience&amp;rft.pages=209-224&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=20" class="Z3988"><span style="display:none;">&#160;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Hash_table&amp;action=edit&amp;section=41" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="mbox-small plainlinks" style="border:1px solid #aaa;background-color:#f9f9f9">
+<tr>
+<td class="mbox-image"><img alt="" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png" width="30" height="40" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /></td>
+<td class="mbox-text plainlist">Wikimedia Commons has media related to <i><b><a href="//commons.wikimedia.org/wiki/Category:Hash_tables" class="extiw" title="commons:Category:Hash tables">Hash tables</a></b></i>.</td>
+</tr>
+</table>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.burtleburtle.net/bob/hash/doobs.html">A Hash Function for Hash Table Lookup</a> by Bob Jenkins.</li>
+<li><a rel="nofollow" class="external text" href="http://www.sparknotes.com/cs/searching/hashtables/summary.html">Hash Tables</a> by SparkNotes—explanation using C</li>
+<li><a rel="nofollow" class="external text" href="http://www.azillionmonkeys.com/qed/hash.html">Hash functions</a> by Paul Hsieh</li>
+<li><a rel="nofollow" class="external text" href="http://blog.griddynamics.com/2011/03/ultimate-sets-and-maps-for-java-part-i.html">Design of Compact and Efficient Hash Tables for Java</a> link not working</li>
+<li><a rel="nofollow" class="external text" href="http://libhashish.sourceforge.net/">Libhashish</a> hash library</li>
+<li><a href="/wiki/NIST" title="NIST" class="mw-redirect">NIST</a> entry on <a rel="nofollow" class="external text" href="http://www.nist.gov/dads/HTML/hashtab.html">hash tables</a></li>
+<li>Open addressing hash table removal algorithm from <a href="/wiki/ICI_programming_language" title="ICI programming language" class="mw-redirect">ICI programming language</a>, <i>ici_set_unassign</i> in <a rel="nofollow" class="external text" href="http://ici.cvs.sourceforge.net/ici/ici/set.c?view=markup">set.c</a> (and other occurrences, with permission).</li>
+<li><a rel="nofollow" class="external text" href="http://www.relisoft.com/book/lang/pointer/8hash.html">A basic explanation of how the hash table works by Reliable Software</a></li>
+<li><a rel="nofollow" class="external text" href="http://compgeom.cs.uiuc.edu/~jeffe/teaching/373/notes/06-hashing.pdf">Lecture on Hash Tables</a></li>
+<li><a rel="nofollow" class="external text" href="http://task3.cc/308/hash-maps-with-linear-probing-and-separate-chaining/">Hash-tables in C</a>—two simple and clear examples of hash tables implementation in C with linear probing and chaining</li>
+<li><a rel="nofollow" class="external text" href="http://opendatastructures.org/versions/edition-0.1e/ods-java/5_Hash_Tables.html">Open Data Structures - Chapter 5 - Hash Tables</a></li>
+<li><a rel="nofollow" class="external text" href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-7-hashing-hash-functions/">MIT's Introduction to Algorithms: Hashing 1</a> MIT OCW lecture Video</li>
+<li><a rel="nofollow" class="external text" href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/video-lectures/lecture-8-universal-hashing-perfect-hashing/">MIT's Introduction to Algorithms: Hashing 2</a> MIT OCW lecture Video</li>
+<li><a rel="nofollow" class="external text" href="http://www.lampos.net/sort-hashmap">How to sort a HashMap (Java) and keep the duplicate entries</a></li>
+<li><a rel="nofollow" class="external text" href="http://www.laurentluce.com/posts/python-dictionary-implementation/">How python dictionary works</a></li>
+</ul>
+<table cellspacing="0" class="navbox" style="border-spacing:0;">
+<tr>
+<td style="padding:2px;">
+<table cellspacing="0" class="nowraplinks hlist collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit;">
+<tr>
+<th scope="col" class="navbox-title" colspan="2">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="/wiki/Template:Data_structures" title="Template:Data structures"><span title="View this template" style=";;background:none transparent;border:none;;">v</span></a></li>
+<li class="nv-talk"><a href="/wiki/Template_talk:Data_structures" title="Template talk:Data structures"><span title="Discuss this template" style=";;background:none transparent;border:none;;">t</span></a></li>
+<li class="nv-edit"><a class="external text" href="//en.wikipedia.org/w/index.php?title=Template:Data_structures&amp;action=edit"><span title="Edit this template" style=";;background:none transparent;border:none;;">e</span></a></li>
+</ul>
+</div>
+<div style="font-size:110%;"><a href="/wiki/Data_structure" title="Data structure">Data structures</a></div>
+</th>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group">Types</th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/Collection_(abstract_data_type)" title="Collection (abstract data type)">Collection</a></li>
+<li><a href="/wiki/Container_(abstract_data_type)" title="Container (abstract data type)">Container</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Abstract_data_type" title="Abstract data type">Abstract</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/Associative_array" title="Associative array">Associative array</a></li>
+<li><a href="/wiki/Double-ended_priority_queue" title="Double-ended priority queue">Double-ended priority queue</a></li>
+<li><a href="/wiki/Double-ended_queue" title="Double-ended queue">Double-ended queue</a></li>
+<li><a href="/wiki/List_(abstract_data_type)" title="List (abstract data type)">List</a></li>
+<li><a href="/wiki/Associative_array" title="Associative array">Map</a></li>
+<li><a href="/wiki/Multimap" title="Multimap">Multimap</a></li>
+<li><a href="/wiki/Priority_queue" title="Priority queue">Priority queue</a></li>
+<li><a href="/wiki/Queue_(abstract_data_type)" title="Queue (abstract data type)">Queue</a></li>
+<li><a href="/wiki/Set_(abstract_data_type)" title="Set (abstract data type)">Set</a>
+<ul>
+<li><a href="/wiki/Set_(abstract_data_type)#Multiset" title="Set (abstract data type)">multiset</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Disjoint-set_data_structure" title="Disjoint-set data structure">Disjoint Sets</a></li>
+<li><a href="/wiki/Stack_(abstract_data_type)" title="Stack (abstract data type)">Stack</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Array_data_structure" title="Array data structure">Arrays</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/Bit_array" title="Bit array">Bit array</a></li>
+<li><a href="/wiki/Circular_buffer" title="Circular buffer">Circular buffer</a></li>
+<li><a href="/wiki/Dynamic_array" title="Dynamic array">Dynamic array</a></li>
+<li><strong class="selflink">Hash table</strong></li>
+<li><a href="/wiki/Hashed_array_tree" title="Hashed array tree">Hashed array tree</a></li>
+<li><a href="/wiki/Sparse_array" title="Sparse array">Sparse array</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Linked_data_structure" title="Linked data structure">Linked</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/Association_list" title="Association list">Association list</a></li>
+<li><a href="/wiki/Linked_list" title="Linked list">Linked list</a></li>
+<li><a href="/wiki/Skip_list" title="Skip list">Skip list</a></li>
+<li><a href="/wiki/Unrolled_linked_list" title="Unrolled linked list">Unrolled linked list</a></li>
+<li><a href="/wiki/XOR_linked_list" title="XOR linked list">XOR linked list</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Tree_(data_structure)" title="Tree (data structure)">Trees</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/B-tree" title="B-tree">B-tree</a></li>
+<li><a href="/wiki/Binary_search_tree" title="Binary search tree">Binary search tree</a>
+<ul>
+<li><a href="/wiki/AA_tree" title="AA tree">AA</a></li>
+<li><a href="/wiki/AVL_tree" title="AVL tree">AVL</a></li>
+<li><a href="/wiki/Red%E2%80%93black_tree" title="Red–black tree">red-black</a></li>
+<li><a href="/wiki/Self-balancing_binary_search_tree" title="Self-balancing binary search tree">self-balancing</a></li>
+<li><a href="/wiki/Splay_tree" title="Splay tree">splay</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Heap_(data_structure)" title="Heap (data structure)">Heap</a>
+<ul>
+<li><a href="/wiki/Binary_heap" title="Binary heap">binary</a></li>
+<li><a href="/wiki/Binomial_heap" title="Binomial heap">binomial</a></li>
+<li><a href="/wiki/Fibonacci_heap" title="Fibonacci heap">Fibonacci</a></li>
+</ul>
+</li>
+<li><a href="/wiki/R-tree" title="R-tree">R-tree</a>
+<ul>
+<li><a href="/wiki/R*_tree" title="R* tree">R*</a></li>
+<li><a href="/wiki/R%2B_tree" title="R+ tree">R+</a></li>
+<li><a href="/wiki/Hilbert_R-tree" title="Hilbert R-tree">Hilbert</a></li>
+</ul>
+</li>
+<li><a href="/wiki/Trie" title="Trie">Trie</a>
+<ul>
+<li><a href="/wiki/Hash_tree_(persistent_data_structure)" title="Hash tree (persistent data structure)">Hash tree</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Graph_(abstract_data_type)" title="Graph (abstract data type)">Graphs</a></th>
+<td class="navbox-list navbox-even" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px;">
+<div style="padding:0em 0.25em;">
+<ul>
+<li><a href="/wiki/Binary_decision_diagram" title="Binary decision diagram">Binary decision diagram</a></li>
+<li><a href="/wiki/Directed_acyclic_graph" title="Directed acyclic graph">Directed acyclic graph</a></li>
+<li><a href="/wiki/Directed_acyclic_word_graph" title="Directed acyclic word graph">Directed acyclic word graph</a></li>
+</ul>
+</div>
+</td>
+</tr>
+<tr style="height:2px;">
+<td colspan="2"></td>
+</tr>
+<tr>
+<td class="navbox-abovebelow" colspan="2">
+<div>
+<ul>
+<li><a href="/wiki/List_of_data_structures" title="List of data structures">List of data structures</a></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1026
+CPU time usage: 0.709 seconds
+Real time usage: 0.882 seconds
+Preprocessor visited node count: 2495/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 60801/2097152 bytes
+Template argument size: 2534/2097152 bytes
+Highest expansion depth: 14/40
+Expensive parser function count: 9/500
+Lua time usage: 0.141/10.000 seconds
+Lua memory usage: 3.54 MB/50 MB
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:13833-0!*!0!!en!4!* and timestamp 20141105123431 and revision id 631959154
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>									<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://en.wikipedia.org/w/index.php?title=Hash_table&amp;oldid=631959154">http://en.wikipedia.org/w/index.php?title=Hash_table&amp;oldid=631959154</a>"					</div>
+													<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Hashing" title="Category:Hashing">Hashing</a></li><li><a href="/wiki/Category:Search_algorithms" title="Category:Search algorithms">Search algorithms</a></li><li><a href="/wiki/Category:Data_structures" title="Category:Data structures">Data structures</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Pages_using_duplicate_arguments_in_template_calls" title="Category:Pages using duplicate arguments in template calls">Pages using duplicate arguments in template calls</a></li><li><a href="/wiki/Category:Use_mdy_dates_from_January_2013" title="Category:Use mdy dates from January 2013">Use mdy dates from January 2013</a></li><li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_July_2014" title="Category:Articles with unsourced statements from July 2014">Articles with unsourced statements from July 2014</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_January_2014" title="Category:Articles with unsourced statements from January 2014">Articles with unsourced statements from January 2014</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_April_2011" title="Category:Articles with unsourced statements from April 2011">Articles with unsourced statements from April 2011</a></li><li><a href="/wiki/Category:Articles_with_unsourced_statements_from_March_2012" title="Category:Articles with unsourced statements from March 2012">Articles with unsourced statements from March 2012</a></li><li><a href="/wiki/Category:Articles_needing_additional_references_from_July_2013" title="Category:Articles needing additional references from July 2013">Articles needing additional references from July 2013</a></li><li><a href="/wiki/Category:All_articles_needing_additional_references" title="Category:All articles needing additional references">All articles needing additional references</a></li><li><a href="/wiki/Category:Commons_category_with_local_link_same_as_on_Wikidata" title="Category:Commons category with local link same as on Wikidata">Commons category with local link same as on Wikidata</a></li><li><a href="/wiki/Category:Articles_with_example_C_code" title="Category:Articles with example C code">Articles with example C code</a></li></ul></div></div>												<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Hash+table&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Hash+table" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Hash_table"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Hash_table"  title="Discussion about the content page [t]" accesskey="t">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label"><span>Variants</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Hash_table" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Hash_table&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Hash_table&amp;action=history"  title="Past versions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+														<div id="simpleSearch">
+															<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if one exists" id="searchButton" class="searchButton" />								</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+													<li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+													<li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+													<li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+													<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li>
+													<li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li>
+													<li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikimedia Shop">Wikimedia Shop</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+													<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+													<li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+													<li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+													<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+													<li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact page</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+													<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Hash_table" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li>
+													<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Hash_table" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+													<li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li>
+													<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+													<li id="t-permalink"><a href="/w/index.php?title=Hash_table&amp;oldid=631959154" title="Permanent link to this revision of the page">Permanent link</a></li>
+													<li id="t-info"><a href="/w/index.php?title=Hash_table&amp;action=info" title="More information about this page">Page information</a></li>
+													<li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q207440" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>
+						<li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Hash_table&amp;id=631959154" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+													<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Hash+table">Create a book</a></li>
+													<li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Hash+table&amp;oldid=631959154&amp;writer=rdf2latex">Download as PDF</a></li>
+													<li id="t-print"><a href="/w/index.php?title=Hash_table&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+											</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+													<li class="interlanguage-link interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D8%AC%D8%AF%D9%88%D9%84_%D9%87%D8%A7%D8%B4" title="جدول هاش – Arabic" lang="ar" hreflang="ar">العربية</a></li>
+													<li class="interlanguage-link interwiki-bg"><a href="//bg.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0" title="Хеш-таблица – Bulgarian" lang="bg" hreflang="bg">Български</a></li>
+													<li class="interlanguage-link interwiki-cs"><a href="//cs.wikipedia.org/wiki/Ha%C5%A1ovac%C3%AD_tabulka" title="Hašovací tabulka – Czech" lang="cs" hreflang="cs">Čeština</a></li>
+													<li class="interlanguage-link interwiki-da"><a href="//da.wikipedia.org/wiki/Hashtabel" title="Hashtabel – Danish" lang="da" hreflang="da">Dansk</a></li>
+													<li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/Hashtabelle" title="Hashtabelle – German" lang="de" hreflang="de">Deutsch</a></li>
+													<li class="interlanguage-link interwiki-et"><a href="//et.wikipedia.org/wiki/Paisktabel" title="Paisktabel – Estonian" lang="et" hreflang="et">Eesti</a></li>
+													<li class="interlanguage-link interwiki-el"><a href="//el.wikipedia.org/wiki/%CE%A0%CE%AF%CE%BD%CE%B1%CE%BA%CE%B1%CF%82_%CE%BA%CE%B1%CF%84%CE%B1%CE%BA%CE%B5%CF%81%CE%BC%CE%B1%CF%84%CE%B9%CF%83%CE%BC%CE%BF%CF%8D" title="Πίνακας κατακερματισμού – Greek" lang="el" hreflang="el">Ελληνικά</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/Tabla_hash" title="Tabla hash – Spanish" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D8%AC%D8%AF%D9%88%D9%84_%D8%AF%D8%B1%D9%87%D9%85%E2%80%8C%D8%B3%D8%A7%D8%B2%DB%8C" title="جدول درهم‌سازی – Persian" lang="fa" hreflang="fa">فارسی</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="//fr.wikipedia.org/wiki/Table_de_hachage" title="Table de hachage – French" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-ko"><a href="//ko.wikipedia.org/wiki/%ED%95%B4%EC%8B%9C_%ED%85%8C%EC%9D%B4%EB%B8%94" title="해시 테이블 – Korean" lang="ko" hreflang="ko">한국어</a></li>
+													<li class="interlanguage-link interwiki-hr"><a href="//hr.wikipedia.org/wiki/Hash_tablica" title="Hash tablica – Croatian" lang="hr" hreflang="hr">Hrvatski</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="//it.wikipedia.org/wiki/Hash_table" title="Hash table – Italian" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-he"><a href="//he.wikipedia.org/wiki/%D7%98%D7%91%D7%9C%D7%AA_%D7%92%D7%99%D7%91%D7%95%D7%91" title="טבלת גיבוב – Hebrew" lang="he" hreflang="he">עברית</a></li>
+													<li class="interlanguage-link interwiki-lv"><a href="//lv.wikipedia.org/wiki/He%C5%A1tabula" title="Heštabula – Latvian" lang="lv" hreflang="lv">Latviešu</a></li>
+													<li class="interlanguage-link interwiki-lt"><a href="//lt.wikipedia.org/wiki/D%C4%97stymo_lentel%C4%97" title="Dėstymo lentelė – Lithuanian" lang="lt" hreflang="lt">Lietuvių</a></li>
+													<li class="interlanguage-link interwiki-hu"><a href="//hu.wikipedia.org/wiki/Hash_t%C3%A1bla" title="Hash tábla – Hungarian" lang="hu" hreflang="hu">Magyar</a></li>
+													<li class="interlanguage-link interwiki-ml"><a href="//ml.wikipedia.org/wiki/%E0%B4%B9%E0%B4%BE%E0%B4%B7%E0%B5%8D_%E0%B4%9F%E0%B5%87%E0%B4%AC%E0%B4%BF%E0%B5%BE" title="ഹാഷ് ടേബിൾ – Malayalam" lang="ml" hreflang="ml">മലയാളം</a></li>
+													<li class="interlanguage-link interwiki-nl"><a href="//nl.wikipedia.org/wiki/Hashtabel" title="Hashtabel – Dutch" lang="nl" hreflang="nl">Nederlands</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="//ja.wikipedia.org/wiki/%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB" title="ハッシュテーブル – Japanese" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-no"><a href="//no.wikipedia.org/wiki/Hashtabell" title="Hashtabell – Norwegian (bokmål)" lang="no" hreflang="no">Norsk bokmål</a></li>
+													<li class="interlanguage-link interwiki-nn"><a href="//nn.wikipedia.org/wiki/Hashtabell" title="Hashtabell – Norwegian Nynorsk" lang="nn" hreflang="nn">Norsk nynorsk</a></li>
+													<li class="interlanguage-link interwiki-pl"><a href="//pl.wikipedia.org/wiki/Tablica_mieszaj%C4%85ca" title="Tablica mieszająca – Polish" lang="pl" hreflang="pl">Polski</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="//pt.wikipedia.org/wiki/Tabela_de_dispers%C3%A3o" title="Tabela de dispersão – Portuguese" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-ru"><a href="//ru.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0" title="Хеш-таблица – Russian" lang="ru" hreflang="ru">Русский</a></li>
+													<li class="interlanguage-link interwiki-simple"><a href="//simple.wikipedia.org/wiki/Hash_table" title="Hash table – Simple English" lang="simple" hreflang="simple">Simple English</a></li>
+													<li class="interlanguage-link interwiki-sk"><a href="//sk.wikipedia.org/wiki/Ha%C5%A1ovacia_tabu%C4%BEka" title="Hašovacia tabuľka – Slovak" lang="sk" hreflang="sk">Slovenčina</a></li>
+													<li class="interlanguage-link interwiki-sr"><a href="//sr.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88_%D1%82%D0%B0%D0%B1%D0%B5%D0%BB%D0%B0" title="Хеш табела – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li>
+													<li class="interlanguage-link interwiki-fi"><a href="//fi.wikipedia.org/wiki/Hajautustaulu" title="Hajautustaulu – Finnish" lang="fi" hreflang="fi">Suomi</a></li>
+													<li class="interlanguage-link interwiki-sv"><a href="//sv.wikipedia.org/wiki/Hashtabell" title="Hashtabell – Swedish" lang="sv" hreflang="sv">Svenska</a></li>
+													<li class="interlanguage-link interwiki-th"><a href="//th.wikipedia.org/wiki/%E0%B8%95%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%AE%E0%B8%8A" title="ตารางแฮช – Thai" lang="th" hreflang="th">ไทย</a></li>
+													<li class="interlanguage-link interwiki-tr"><a href="//tr.wikipedia.org/wiki/Komut_%C3%A7izelgesi" title="Komut çizelgesi – Turkish" lang="tr" hreflang="tr">Türkçe</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="//uk.wikipedia.org/wiki/%D0%A5%D0%B5%D1%88-%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D1%8F" title="Хеш-таблиця – Ukrainian" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-vi"><a href="//vi.wikipedia.org/wiki/B%E1%BA%A3ng_b%C4%83m" title="Bảng băm – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li>
+													<li class="interlanguage-link interwiki-zh"><a href="//zh.wikipedia.org/wiki/%E5%93%88%E5%B8%8C%E8%A1%A8" title="哈希表 – Chinese" lang="zh" hreflang="zh">中文</a></li>
+													<li class="uls-p-lang-dummy"><a href="#"></a></li>
+											</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a action="edit" href="//www.wikidata.org/wiki/Q207440#sitelinks-wikipedia" text="Edit links" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 November 2014 at 01:06.<br /></li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Hash_table&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+															<a href="//wikimediafoundation.org/"><img src="//bits.wikimedia.org/images/wikimedia-button.png" srcset="//bits.wikimedia.org/images/wikimedia-button-1.5x.png 1.5x, //bits.wikimedia.org/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>
+													</li>
+											<li id="footer-poweredbyico">
+															<a href="//www.mediawiki.org/"><img src="//bits.wikimedia.org/static-1.25wmf6/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>
+													</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["ext.cite","mediawiki.toc","mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.eventLogging.subscriber","ext.navigationTiming","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"],null,true);
+}</script>
+<script>if(window.mw){
+document.write("\u003Cscript src=\"//bits.wikimedia.org/en.wikipedia.org/load.php?debug=false\u0026amp;lang=en\u0026amp;modules=site\u0026amp;only=scripts\u0026amp;skin=vector\u0026amp;*\"\u003E\u003C/script\u003E");
+}</script>
+<script>if(window.mw){
+mw.config.set({"wgBackendResponseTime":154,"wgHostname":"mw1029"});
+}</script>
+	</body>
+</html>

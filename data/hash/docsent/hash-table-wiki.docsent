@@ -1,0 +1,636 @@
+<?xml version='1.0'?>
+<!DOCTYPE DOCSENT SYSTEM "/home/tony/mead/dtd/docsent.dtd">
+ <DOCSENT DID='hash-table-wiki'>
+  <BODY>
+   <TEXT>
+   <S PAR='1' RSNT='1' SNO='1'>Hash table - Wikipedia, the free encyclopedia</S>
+   <S PAR='2' RSNT='1' SNO='2'>Hash table</S>
+   <S PAR='3' RSNT='1' SNO='3'>From Wikipedia, the free encyclopedia Jump to: navigation , search Not to be confused with Hash list or Hash tree .</S>
+   <S PAR='4' RSNT='1' SNO='4'>Hash table</S>
+   <S PAR='5' RSNT='1' SNO='5'>Type</S>
+   <S PAR='6' RSNT='1' SNO='6'>Unordered associative array</S>
+   <S PAR='7' RSNT='1' SNO='7'>Invented</S>
+   <S PAR='8' RSNT='1' SNO='8'>1953</S>
+   <S PAR='9' RSNT='1' SNO='9'>Time complexity</S>
+   <S PAR='10' RSNT='1' SNO='10'>in big O notation</S>
+   <S PAR='11' RSNT='1' SNO='11'>Average</S>
+   <S PAR='12' RSNT='1' SNO='12'>Worst case</S>
+   <S PAR='13' RSNT='1' SNO='13'>Space</S>
+   <S PAR='14' RSNT='1' SNO='14'>O n</S>
+   <S PAR='15' RSNT='1' SNO='15'>1</S>
+   <S PAR='16' RSNT='1' SNO='16'>O n</S>
+   <S PAR='17' RSNT='1' SNO='17'>Search</S>
+   <S PAR='18' RSNT='1' SNO='18'>O 1</S>
+   <S PAR='19' RSNT='1' SNO='19'>O n</S>
+   <S PAR='20' RSNT='1' SNO='20'>Insert</S>
+   <S PAR='21' RSNT='1' SNO='21'>O 1</S>
+   <S PAR='22' RSNT='1' SNO='22'>O n</S>
+   <S PAR='23' RSNT='1' SNO='23'>Delete</S>
+   <S PAR='24' RSNT='1' SNO='24'>O 1</S>
+   <S PAR='25' RSNT='1' SNO='25'>O n</S>
+   <S PAR='26' RSNT='1' SNO='26'>A small phone book as a hash table</S>
+   <S PAR='27' RSNT='1' SNO='27'>In computing , a hash table hash map is a data structure used to implement an associative array , a structure that can map keys to values .</S>
+   <S PAR='28' RSNT='1' SNO='28'>A hash table uses a hash function to compute an index into an array of buckets or slots , from which the correct value can be found.</S>
+   <S PAR='29' RSNT='1' SNO='29'>Ideally, the hash function will assign each key to a unique bucket, but this situation is rarely achievable in practice usually some keys will hash to the same bucket .</S>
+   <S PAR='30' RSNT='1' SNO='30'>Instead, most hash table designs assume that hash collisions different keys that are assigned by the hash function to the same bucket will occur and must be accommodated in some way.</S>
+   <S PAR='31' RSNT='1' SNO='31'>In a well-dimensioned hash table, the average cost number of instructions for each lookup is independent of the number of elements stored in the table.</S>
+   <S PAR='32' RSNT='1' SNO='32'>Many hash table designs also allow arbitrary insertions and deletions of key-value pairs, at amortized</S>
+   <S PAR='33' RSNT='1' SNO='33'>2</S>
+   <S PAR='34' RSNT='1' SNO='34'>constant average cost per operation.</S>
+   <S PAR='35' RSNT='1' SNO='35'>3</S>
+   <S PAR='36' RSNT='1' SNO='36'>4</S>
+   <S PAR='37' RSNT='1' SNO='37'>In many situations, hash tables turn out to be more efficient than search trees or any other table lookup structure.</S>
+   <S PAR='38' RSNT='1' SNO='38'>For this reason, they are widely used in many kinds of computer software , particularly for associative arrays, database indexing , caches , and sets .</S>
+   <S PAR='39' RSNT='1' SNO='39'>Contents</S>
+   <S PAR='40' RSNT='1' SNO='40'>1</S>
+   <S PAR='41' RSNT='1' SNO='41'>Hashing</S>
+   <S PAR='42' RSNT='1' SNO='42'>1.1</S>
+   <S PAR='43' RSNT='1' SNO='43'>Choosing a good hash function</S>
+   <S PAR='44' RSNT='1' SNO='44'>1.2</S>
+   <S PAR='45' RSNT='1' SNO='45'>Perfect hash function</S>
+   <S PAR='46' RSNT='1' SNO='46'>2</S>
+   <S PAR='47' RSNT='1' SNO='47'>Key statistics</S>
+   <S PAR='48' RSNT='1' SNO='48'>3</S>
+   <S PAR='49' RSNT='1' SNO='49'>Collision resolution</S>
+   <S PAR='50' RSNT='1' SNO='50'>3.1</S>
+   <S PAR='51' RSNT='1' SNO='51'>Separate chaining</S>
+   <S PAR='52' RSNT='1' SNO='52'>3.1.1</S>
+   <S PAR='53' RSNT='1' SNO='53'>Separate chaining with linked lists</S>
+   <S PAR='54' RSNT='1' SNO='54'>3.1.2</S>
+   <S PAR='55' RSNT='1' SNO='55'>Separate chaining with list head cells</S>
+   <S PAR='56' RSNT='1' SNO='56'>3.1.3</S>
+   <S PAR='57' RSNT='1' SNO='57'>Separate chaining with other structures</S>
+   <S PAR='58' RSNT='1' SNO='58'>3.2</S>
+   <S PAR='59' RSNT='1' SNO='59'>Open addressing</S>
+   <S PAR='60' RSNT='1' SNO='60'>3.2.1</S>
+   <S PAR='61' RSNT='1' SNO='61'>Coalesced hashing</S>
+   <S PAR='62' RSNT='1' SNO='62'>3.2.2</S>
+   <S PAR='63' RSNT='1' SNO='63'>Cuckoo hashing</S>
+   <S PAR='64' RSNT='1' SNO='64'>3.2.3</S>
+   <S PAR='65' RSNT='1' SNO='65'>Hopscotch hashing</S>
+   <S PAR='66' RSNT='1' SNO='66'>3.3</S>
+   <S PAR='67' RSNT='1' SNO='67'>Robin Hood hashing</S>
+   <S PAR='68' RSNT='1' SNO='68'>3.4</S>
+   <S PAR='69' RSNT='1' SNO='69'>2-choice hashing</S>
+   <S PAR='70' RSNT='1' SNO='70'>4</S>
+   <S PAR='71' RSNT='1' SNO='71'>Dynamic resizing</S>
+   <S PAR='72' RSNT='1' SNO='72'>4.1</S>
+   <S PAR='73' RSNT='1' SNO='73'>Resizing by copying all entries</S>
+   <S PAR='74' RSNT='1' SNO='74'>4.2</S>
+   <S PAR='75' RSNT='1' SNO='75'>Incremental resizing</S>
+   <S PAR='76' RSNT='1' SNO='76'>4.3</S>
+   <S PAR='77' RSNT='1' SNO='77'>Monotonic keys</S>
+   <S PAR='78' RSNT='1' SNO='78'>4.4</S>
+   <S PAR='79' RSNT='1' SNO='79'>Other solutions</S>
+   <S PAR='80' RSNT='1' SNO='80'>5</S>
+   <S PAR='81' RSNT='1' SNO='81'>Performance analysis</S>
+   <S PAR='82' RSNT='1' SNO='82'>6</S>
+   <S PAR='83' RSNT='1' SNO='83'>Features</S>
+   <S PAR='84' RSNT='1' SNO='84'>6.1</S>
+   <S PAR='85' RSNT='1' SNO='85'>Advantages</S>
+   <S PAR='86' RSNT='1' SNO='86'>6.2</S>
+   <S PAR='87' RSNT='1' SNO='87'>Drawbacks</S>
+   <S PAR='88' RSNT='1' SNO='88'>7</S>
+   <S PAR='89' RSNT='1' SNO='89'>Uses</S>
+   <S PAR='90' RSNT='1' SNO='90'>7.1</S>
+   <S PAR='91' RSNT='1' SNO='91'>Associative arrays</S>
+   <S PAR='92' RSNT='1' SNO='92'>7.2</S>
+   <S PAR='93' RSNT='1' SNO='93'>Database indexing</S>
+   <S PAR='94' RSNT='1' SNO='94'>7.3</S>
+   <S PAR='95' RSNT='1' SNO='95'>Caches</S>
+   <S PAR='96' RSNT='1' SNO='96'>7.4</S>
+   <S PAR='97' RSNT='1' SNO='97'>Sets</S>
+   <S PAR='98' RSNT='1' SNO='98'>7.5</S>
+   <S PAR='99' RSNT='1' SNO='99'>Object representation</S>
+   <S PAR='100' RSNT='1' SNO='100'>7.6</S>
+   <S PAR='101' RSNT='1' SNO='101'>Unique data representation</S>
+   <S PAR='102' RSNT='1' SNO='102'>7.7</S>
+   <S PAR='103' RSNT='1' SNO='103'>String interning</S>
+   <S PAR='104' RSNT='1' SNO='104'>8</S>
+   <S PAR='105' RSNT='1' SNO='105'>Implementations</S>
+   <S PAR='106' RSNT='1' SNO='106'>8.1</S>
+   <S PAR='107' RSNT='1' SNO='107'>In programming languages</S>
+   <S PAR='108' RSNT='1' SNO='108'>8.2</S>
+   <S PAR='109' RSNT='1' SNO='109'>Independent packages</S>
+   <S PAR='110' RSNT='1' SNO='110'>9</S>
+   <S PAR='111' RSNT='1' SNO='111'>History</S>
+   <S PAR='112' RSNT='1' SNO='112'>10</S>
+   <S PAR='113' RSNT='1' SNO='113'>See also</S>
+   <S PAR='114' RSNT='1' SNO='114'>10.1</S>
+   <S PAR='115' RSNT='1' SNO='115'>Related data structures</S>
+   <S PAR='116' RSNT='1' SNO='116'>11</S>
+   <S PAR='117' RSNT='1' SNO='117'>References</S>
+   <S PAR='118' RSNT='1' SNO='118'>12</S>
+   <S PAR='119' RSNT='1' SNO='119'>Further reading</S>
+   <S PAR='120' RSNT='1' SNO='120'>13</S>
+   <S PAR='121' RSNT='1' SNO='121'>External links</S>
+   <S PAR='122' RSNT='1' SNO='122'>Hashing</S>
+   <S PAR='123' RSNT='1' SNO='123'>edit</S>
+   <S PAR='124' RSNT='1' SNO='124'>Main article: Hash function</S>
+   <S PAR='125' RSNT='1' SNO='125'>The idea of hashing is to distribute the entries key/value pairs across an array of buckets .</S>
+   <S PAR='126' RSNT='1' SNO='126'>Given a key, the algorithm computes an index that suggests where the entry can be found:</S>
+   <S PAR='127' RSNT='1' SNO='127'>index f key, array_size</S>
+   <S PAR='128' RSNT='1' SNO='128'>Often this is done in two steps:</S>
+   <S PAR='129' RSNT='1' SNO='129'>hash hashfunc key index hash array_size</S>
+   <S PAR='130' RSNT='1' SNO='130'>In this method, the hash is independent of the array size, and it is then reduced to an index a number between 0 and array_size 1 using the modulo operator .</S>
+   <S PAR='131' RSNT='1' SNO='131'>In the case that the array size is a power of two , the remainder operation is reduced to masking , which improves speed, but can increase problems with a poor hash function.</S>
+   <S PAR='132' RSNT='1' SNO='132'>Choosing a good hash function</S>
+   <S PAR='133' RSNT='1' SNO='133'>edit</S>
+   <S PAR='134' RSNT='1' SNO='134'>A good hash function and implementation algorithm are essential for good hash table performance, but may be difficult to achieve.</S>
+   <S PAR='135' RSNT='1' SNO='135'>A basic requirement is that the function should provide a uniform distribution of hash values.</S>
+   <S PAR='136' RSNT='1' SNO='136'>A non-uniform distribution increases the number of collisions and the cost of resolving them.</S>
+   <S PAR='137' RSNT='1' SNO='137'>Uniformity is sometimes difficult to ensure by design, but may be evaluated empirically using statistical tests, e.g. a Pearson's chi-squared test for discrete uniform distributions.</S>
+   <S PAR='138' RSNT='1' SNO='138'>5</S>
+   <S PAR='139' RSNT='1' SNO='139'>6</S>
+   <S PAR='140' RSNT='1' SNO='140'>The distribution needs to be uniform only for table sizes that occur in the application.</S>
+   <S PAR='141' RSNT='1' SNO='141'>In particular, if one uses dynamic resizing with exact doubling and halving of the table size s , then the hash function needs to be uniform only when s is a power of two .</S>
+   <S PAR='142' RSNT='1' SNO='142'>On the other hand, some hashing algorithms provide uniform hashes only when s is a prime number .</S>
+   <S PAR='143' RSNT='1' SNO='143'>7</S>
+   <S PAR='144' RSNT='1' SNO='144'>For open addressing schemes, the hash function should also avoid clustering , the mapping of two or more keys to consecutive slots.</S>
+   <S PAR='145' RSNT='1' SNO='145'>Such clustering may cause the lookup cost to skyrocket, even if the load factor is low and collisions are infrequent.</S>
+   <S PAR='146' RSNT='1' SNO='146'>The popular multiplicative hash</S>
+   <S PAR='147' RSNT='1' SNO='147'>3</S>
+   <S PAR='148' RSNT='1' SNO='148'>is claimed to have particularly poor clustering behavior.</S>
+   <S PAR='149' RSNT='1' SNO='149'>7</S>
+   <S PAR='150' RSNT='1' SNO='150'>Cryptographic hash functions are believed to provide good hash functions for any table size s , either by modulo reduction or by bit masking</S>
+   <S PAR='151' RSNT='1' SNO='151'>citation needed</S>
+   <S PAR='152' RSNT='1' SNO='152'>. They may also be appropriate if there is a risk of malicious users trying to sabotage a network service by submitting requests designed to generate a large number of collisions in the server's hash tables.</S>
+   <S PAR='153' RSNT='1' SNO='153'>However, the risk of sabotage can also be avoided by cheaper methods such as applying a secret salt to the data, or using a universal hash function .</S>
+   <S PAR='154' RSNT='1' SNO='154'>Perfect hash function</S>
+   <S PAR='155' RSNT='1' SNO='155'>edit</S>
+   <S PAR='156' RSNT='1' SNO='156'>If all keys are known ahead of time, a perfect hash function can be used to create a perfect hash table that has no collisions.</S>
+   <S PAR='157' RSNT='1' SNO='157'>If minimal perfect hashing is used, every location in the hash table can be used as well.</S>
+   <S PAR='158' RSNT='1' SNO='158'>Perfect hashing allows for constant time lookups in the worst case.</S>
+   <S PAR='159' RSNT='1' SNO='159'>This is in contrast to most chaining and open addressing methods, where the time for lookup is low on average, but may be very large proportional to the number of entries for some sets of keys.</S>
+   <S PAR='160' RSNT='1' SNO='160'>Key statistics</S>
+   <S PAR='161' RSNT='1' SNO='161'>edit</S>
+   <S PAR='162' RSNT='1' SNO='162'>A critical statistic for a hash table is called the load factor .</S>
+   <S PAR='163' RSNT='1' SNO='163'>This is simply the number of entries divided by the number of buckets, that is, n / k where n is the number of entries and k is the number of buckets.</S>
+   <S PAR='164' RSNT='1' SNO='164'>If the load factor is kept reasonable, the hash table should perform well, provided the hashing is good.</S>
+   <S PAR='165' RSNT='1' SNO='165'>If the load factor grows too large, the hash table will become slow, or it may fail to work depending on the method used .</S>
+   <S PAR='166' RSNT='1' SNO='166'>The expected constant time property of a hash table assumes that the load factor is kept below some bound.</S>
+   <S PAR='167' RSNT='1' SNO='167'>For a fixed number of buckets, the time for a lookup grows with the number of entries and so does not achieve the desired constant time.</S>
+   <S PAR='168' RSNT='1' SNO='168'>Second to that, one can examine the variance of number of entries per bucket.</S>
+   <S PAR='169' RSNT='1' SNO='169'>For example, two tables both have 1000 entries and 1000 buckets; one has exactly one entry in each bucket, the other has all entries in the same bucket.</S>
+   <S PAR='170' RSNT='1' SNO='170'>Clearly the hashing is not working in the second one.</S>
+   <S PAR='171' RSNT='1' SNO='171'>A low load factor is not especially beneficial.</S>
+   <S PAR='172' RSNT='1' SNO='172'>As the load factor approaches 0, the proportion of unused areas in the hash table increases, but there is not necessarily any reduction in search cost.</S>
+   <S PAR='173' RSNT='1' SNO='173'>This results in wasted memory.</S>
+   <S PAR='174' RSNT='1' SNO='174'>Collision resolution</S>
+   <S PAR='175' RSNT='1' SNO='175'>edit</S>
+   <S PAR='176' RSNT='1' SNO='176'>Hash collisions are practically unavoidable when hashing a random subset of a large set of possible keys.</S>
+   <S PAR='177' RSNT='1' SNO='177'>For example, if 2,450 keys are hashed into a million buckets, even with a perfectly uniform random distribution, according to the birthday problem there is approximately a 95 chance of at least two of the keys being hashed to the same slot.</S>
+   <S PAR='178' RSNT='1' SNO='178'>Therefore, most hash table implementations have some collision resolution strategy to handle such events.</S>
+   <S PAR='179' RSNT='1' SNO='179'>Some common strategies are described below.</S>
+   <S PAR='180' RSNT='1' SNO='180'>All these methods require that the keys or pointers to them be stored in the table, together with the associated values.</S>
+   <S PAR='181' RSNT='1' SNO='181'>Separate chaining</S>
+   <S PAR='182' RSNT='1' SNO='182'>edit</S>
+   <S PAR='183' RSNT='1' SNO='183'>Hash collision resolved by separate chaining.</S>
+   <S PAR='184' RSNT='1' SNO='184'>In the method known as separate chaining , each bucket is independent, and has some sort of list of entries with the same index.</S>
+   <S PAR='185' RSNT='1' SNO='185'>The time for hash table operations is the time to find the bucket which is constant plus the time for the list operation.</S>
+   <S PAR='186' RSNT='1' SNO='186'>The technique is also called open hashing or closed addressing .</S>
+   <S PAR='187' RSNT='1' SNO='187'>In a good hash table, each bucket has zero or one entries, and sometimes two or three, but rarely more than that.</S>
+   <S PAR='188' RSNT='1' SNO='188'>Therefore, structures that are efficient in time and space for these cases are preferred.</S>
+   <S PAR='189' RSNT='1' SNO='189'>Structures that are efficient for a fairly large number of entries per bucket are not needed or desirable.</S>
+   <S PAR='190' RSNT='1' SNO='190'>If these cases happen often, the hashing is not working well, and this needs to be fixed.</S>
+   <S PAR='191' RSNT='1' SNO='191'>Separate chaining with linked lists</S>
+   <S PAR='192' RSNT='1' SNO='192'>edit</S>
+   <S PAR='193' RSNT='1' SNO='193'>Chained hash tables with linked lists are popular because they require only basic data structures with simple algorithms, and can use simple hash functions that are unsuitable for other methods.</S>
+   <S PAR='194' RSNT='1' SNO='194'>The cost of a table operation is that of scanning the entries of the selected bucket for the desired key.</S>
+   <S PAR='195' RSNT='1' SNO='195'>If the distribution of keys is sufficiently uniform , the average cost of a lookup depends only on the average number of keys per bucket that is, on the load factor.</S>
+   <S PAR='196' RSNT='1' SNO='196'>Chained hash tables remain effective even when the number of table entries n is much higher than the number of slots.</S>
+   <S PAR='197' RSNT='1' SNO='197'>Their performance degrades more gracefully linearly with the load factor.</S>
+   <S PAR='198' RSNT='1' SNO='198'>For example, a chained hash table with 1000 slots and 10,000 stored keys load factor 10 is five to ten times slower than a 10,000-slot table load factor 1 ; but still 1000 times faster than a plain sequential list, and possibly even faster than a balanced search tree.</S>
+   <S PAR='199' RSNT='1' SNO='199'>citation needed</S>
+   <S PAR='200' RSNT='1' SNO='200'>For separate-chaining, the worst-case scenario is when all entries are inserted into the same bucket, in which case the hash table is ineffective and the cost is that of searching the bucket data structure.</S>
+   <S PAR='201' RSNT='1' SNO='201'>If the latter is a linear list, the lookup procedure may have to scan all its entries, so the worst-case cost is proportional to the number n of entries in the table.</S>
+   <S PAR='202' RSNT='1' SNO='202'>The bucket chains are often implemented as ordered lists , sorted by the key field; this choice approximately halves the average cost of unsuccessful lookups, compared to an unordered list</S>
+   <S PAR='203' RSNT='1' SNO='203'>citation needed</S>
+   <S PAR='204' RSNT='1' SNO='204'>. However, if some keys are much more likely to come up than others, an unordered list with move-to-front heuristic may be more effective.</S>
+   <S PAR='205' RSNT='1' SNO='205'>More sophisticated data structures, such as balanced search trees, are worth considering only if the load factor is large about 10 or more , or if the hash distribution is likely to be very non-uniform, or if one must guarantee good performance even in a worst-case scenario.</S>
+   <S PAR='206' RSNT='1' SNO='206'>However, using a larger table and/or a better hash function may be even more effective in those cases.</S>
+   <S PAR='207' RSNT='1' SNO='207'>Chained hash tables also inherit the disadvantages of linked lists.</S>
+   <S PAR='208' RSNT='1' SNO='208'>When storing small keys and values, the space overhead of the next pointer in each entry record can be significant.</S>
+   <S PAR='209' RSNT='1' SNO='209'>An additional disadvantage is that traversing a linked list has poor cache performance , making the processor cache ineffective.</S>
+   <S PAR='210' RSNT='1' SNO='210'>Separate chaining with list head cells</S>
+   <S PAR='211' RSNT='1' SNO='211'>edit</S>
+   <S PAR='212' RSNT='1' SNO='212'>Hash collision by separate chaining with head records in the bucket array.</S>
+   <S PAR='213' RSNT='1' SNO='213'>Some chaining implementations store the first record of each chain in the slot array itself.</S>
+   <S PAR='214' RSNT='1' SNO='214'>4</S>
+   <S PAR='215' RSNT='1' SNO='215'>The number of pointer traversals is decreased by one for most cases.</S>
+   <S PAR='216' RSNT='1' SNO='216'>The purpose is to increase cache efficiency of hash table access.</S>
+   <S PAR='217' RSNT='1' SNO='217'>The disadvantage is that an empty bucket takes the same space as a bucket with one entry.</S>
+   <S PAR='218' RSNT='1' SNO='218'>To save space, such hash tables often have about as many slots as stored entries, meaning that many slots have two or more entries.</S>
+   <S PAR='219' RSNT='1' SNO='219'>Separate chaining with other structures</S>
+   <S PAR='220' RSNT='1' SNO='220'>edit</S>
+   <S PAR='221' RSNT='1' SNO='221'>Instead of a list, one can use any other data structure that supports the required operations.</S>
+   <S PAR='222' RSNT='1' SNO='222'>For example, by using a self-balancing tree , the theoretical worst-case time of common hash table operations insertion, deletion, lookup can be brought down to O log n rather than O n .</S>
+   <S PAR='223' RSNT='1' SNO='223'>However, this approach is only worth the trouble and extra memory cost if long delays must be avoided at all costs e.g. in a real-time application , or if one must guard against many entries hashed to the same slot e.g. if one expects extremely non-uniform distributions, or in the case of web sites or other publicly accessible services, which are vulnerable to malicious key distributions in requests .</S>
+   <S PAR='224' RSNT='1' SNO='224'>The variant called array hash table uses a dynamic array to store all the entries that hash to the same slot.</S>
+   <S PAR='225' RSNT='1' SNO='225'>8</S>
+   <S PAR='226' RSNT='1' SNO='226'>9</S>
+   <S PAR='227' RSNT='1' SNO='227'>10</S>
+   <S PAR='228' RSNT='1' SNO='228'>Each newly inserted entry gets appended to the end of the dynamic array that is assigned to the slot.</S>
+   <S PAR='229' RSNT='1' SNO='229'>The dynamic array is resized in an exact-fit manner, meaning it is grown only by as many bytes as needed.</S>
+   <S PAR='230' RSNT='1' SNO='230'>Alternative techniques such as growing the array by block sizes or pages were found to improve insertion performance, but at a cost in space.</S>
+   <S PAR='231' RSNT='1' SNO='231'>This variation makes more efficient use of CPU caching and the translation lookaside buffer TLB , because slot entries are stored in sequential memory positions.</S>
+   <S PAR='232' RSNT='1' SNO='232'>It also dispenses with the next pointers that are required by linked lists, which saves space.</S>
+   <S PAR='233' RSNT='1' SNO='233'>Despite frequent array resizing, space overheads incurred by operating system such as memory fragmentation, were found to be small.</S>
+   <S PAR='234' RSNT='1' SNO='234'>An elaboration on this approach is the so-called dynamic perfect hashing ,</S>
+   <S PAR='235' RSNT='1' SNO='235'>11</S>
+   <S PAR='236' RSNT='1' SNO='236'>where a bucket that contains k entries is organized as a perfect hash table with k 2 slots.</S>
+   <S PAR='237' RSNT='1' SNO='237'>While it uses more memory n 2 slots for n entries, in the worst case and n k slots in the average case , this variant has guaranteed constant worst-case lookup time, and low amortized time for insertion.</S>
+   <S PAR='238' RSNT='1' SNO='238'>Open addressing</S>
+   <S PAR='239' RSNT='1' SNO='239'>edit</S>
+   <S PAR='240' RSNT='1' SNO='240'>Hash collision resolved by open addressing with linear probing interval 1 .</S>
+   <S PAR='241' RSNT='1' SNO='241'>Note that "Ted Baker" has a unique hash, but nevertheless collided with "Sandra Dee", that had previously collided with "John Smith".</S>
+   <S PAR='242' RSNT='1' SNO='242'>In another strategy, called open addressing , all entry records are stored in the bucket array itself.</S>
+   <S PAR='243' RSNT='1' SNO='243'>When a new entry has to be inserted, the buckets are examined, starting with the hashed-to slot and proceeding in some probe sequence , until an unoccupied slot is found.</S>
+   <S PAR='244' RSNT='1' SNO='244'>When searching for an entry, the buckets are scanned in the same sequence, until either the target record is found, or an unused array slot is found, which indicates that there is no such key in the table.</S>
+   <S PAR='245' RSNT='1' SNO='245'>12</S>
+   <S PAR='246' RSNT='1' SNO='246'>The name "open addressing" refers to the fact that the location "address" of the item is not determined by its hash value.</S>
+   <S PAR='247' RSNT='1' SNO='247'>This method is also called closed hashing ; it should not be confused with "open hashing" or "closed addressing" that usually mean separate chaining.</S>
+   <S PAR='248' RSNT='1' SNO='248'>Well-known probe sequences include:</S>
+   <S PAR='249' RSNT='1' SNO='249'>Linear probing , in which the interval between probes is fixed usually 1 Quadratic probing , in which the interval between probes is increased by adding the successive outputs of a quadratic polynomial to the starting value given by the original hash computation Double hashing , in which the interval between probes is computed by another hash function</S>
+   <S PAR='250' RSNT='1' SNO='250'>A drawback of all these open addressing schemes is that the number of stored entries cannot exceed the number of slots in the bucket array.</S>
+   <S PAR='251' RSNT='1' SNO='251'>In fact, even with good hash functions, their performance dramatically degrades when the load factor grows beyond 0.7 or so.</S>
+   <S PAR='252' RSNT='1' SNO='252'>For many applications, these restrictions mandate the use of dynamic resizing, with its attendant costs.</S>
+   <S PAR='253' RSNT='1' SNO='253'>Open addressing schemes also put more stringent requirements on the hash function: besides distributing the keys more uniformly over the buckets, the function must also minimize the clustering of hash values that are consecutive in the probe order.</S>
+   <S PAR='254' RSNT='1' SNO='254'>Using separate chaining, the only concern is that too many objects map to the same hash value; whether they are adjacent or nearby is completely irrelevant.</S>
+   <S PAR='255' RSNT='1' SNO='255'>Open addressing only saves memory if the entries are small less than four times the size of a pointer and the load factor is not too small.</S>
+   <S PAR='256' RSNT='1' SNO='256'>If the load factor is close to zero that is, there are far more buckets than stored entries , open addressing is wasteful even if each entry is just two words .</S>
+   <S PAR='257' RSNT='1' SNO='257'>This graph compares the average number of cache misses required to look up elements in tables with chaining and linear probing.</S>
+   <S PAR='258' RSNT='1' SNO='258'>As the table passes the 80 -full mark, linear probing's performance drastically degrades.</S>
+   <S PAR='259' RSNT='1' SNO='259'>Open addressing avoids the time overhead of allocating each new entry record, and can be implemented even in the absence of a memory allocator.</S>
+   <S PAR='260' RSNT='1' SNO='260'>It also avoids the extra indirection required to access the first entry of each bucket that is, usually the only one .</S>
+   <S PAR='261' RSNT='1' SNO='261'>It also has better locality of reference , particularly with linear probing.</S>
+   <S PAR='262' RSNT='1' SNO='262'>With small record sizes, these factors can yield better performance than chaining, particularly for lookups.</S>
+   <S PAR='263' RSNT='1' SNO='263'>Hash tables with open addressing are also easier to serialize , because they do not use pointers.</S>
+   <S PAR='264' RSNT='1' SNO='264'>On the other hand, normal open addressing is a poor choice for large elements, because these elements fill entire CPU cache lines negating the cache advantage , and a large amount of space is wasted on large empty table slots.</S>
+   <S PAR='265' RSNT='1' SNO='265'>If the open addressing table only stores references to elements external storage , it uses space comparable to chaining even for large records but loses its speed advantage.</S>
+   <S PAR='266' RSNT='1' SNO='266'>Generally speaking, open addressing is better used for hash tables with small records that can be stored within the table internal storage and fit in a cache line.</S>
+   <S PAR='267' RSNT='1' SNO='267'>They are particularly suitable for elements of one word or less.</S>
+   <S PAR='268' RSNT='1' SNO='268'>If the table is expected to have a high load factor, the records are large, or the data is variable-sized, chained hash tables often perform as well or better.</S>
+   <S PAR='269' RSNT='1' SNO='269'>Ultimately, used sensibly, any kind of hash table algorithm is usually fast enough ; and the percentage of a calculation spent in hash table code is low.</S>
+   <S PAR='270' RSNT='1' SNO='270'>Memory usage is rarely considered excessive.</S>
+   <S PAR='271' RSNT='1' SNO='271'>Therefore, in most cases the differences between these algorithms are marginal, and other considerations typically come into play.</S>
+   <S PAR='272' RSNT='1' SNO='272'>citation needed</S>
+   <S PAR='273' RSNT='1' SNO='273'>Coalesced hashing</S>
+   <S PAR='274' RSNT='1' SNO='274'>edit</S>
+   <S PAR='275' RSNT='1' SNO='275'>A hybrid of chaining and open addressing, coalesced hashing links together chains of nodes within the table itself.</S>
+   <S PAR='276' RSNT='1' SNO='276'>12</S>
+   <S PAR='277' RSNT='1' SNO='277'>Like open addressing, it achieves space usage and somewhat diminished cache advantages over chaining.</S>
+   <S PAR='278' RSNT='1' SNO='278'>Like chaining, it does not exhibit clustering effects; in fact, the table can be efficiently filled to a high density.</S>
+   <S PAR='279' RSNT='1' SNO='279'>Unlike chaining, it cannot have more elements than table slots.</S>
+   <S PAR='280' RSNT='1' SNO='280'>Cuckoo hashing</S>
+   <S PAR='281' RSNT='1' SNO='281'>edit</S>
+   <S PAR='282' RSNT='1' SNO='282'>Another alternative open-addressing solution is cuckoo hashing , which ensures constant lookup time in the worst case, and constant amortized time for insertions and deletions.</S>
+   <S PAR='283' RSNT='1' SNO='283'>It uses two or more hash functions, which means any key/value pair could be in two or more locations.</S>
+   <S PAR='284' RSNT='1' SNO='284'>For lookup, the first hash function is used; if the key/value is not found, then the second hash function is used, and so on.</S>
+   <S PAR='285' RSNT='1' SNO='285'>If a collision happens during insertion, then the key is re-hashed with the second hash function to map it to another bucket.</S>
+   <S PAR='286' RSNT='1' SNO='286'>If all hash functions are used and there is still a collision, then the key it collided with is removed to make space for the new key, and the old key is re-hashed with one of the other hash functions, which maps it to another bucket.</S>
+   <S PAR='287' RSNT='1' SNO='287'>If that location also results in a collision, then the process repeats until there is no collision or the process traverses all the buckets, at which point the table is resized.</S>
+   <S PAR='288' RSNT='1' SNO='288'>By combining multiple hash functions with multiple cells per bucket, very high space utilisation can be achieved.</S>
+   <S PAR='289' RSNT='1' SNO='289'>Hopscotch hashing</S>
+   <S PAR='290' RSNT='1' SNO='290'>edit</S>
+   <S PAR='291' RSNT='1' SNO='291'>Another alternative open-addressing solution is hopscotch hashing ,</S>
+   <S PAR='292' RSNT='1' SNO='292'>13</S>
+   <S PAR='293' RSNT='1' SNO='293'>which combines the approaches of cuckoo hashing and linear probing , yet seems in general to avoid their limitations.</S>
+   <S PAR='294' RSNT='1' SNO='294'>In particular it works well even when the load factor grows beyond 0.9.</S>
+   <S PAR='295' RSNT='1' SNO='295'>The algorithm is well suited for implementing a resizable concurrent hash table .</S>
+   <S PAR='296' RSNT='1' SNO='296'>The hopscotch hashing algorithm works by defining a neighborhood of buckets near the original hashed bucket, where a given entry is always found.</S>
+   <S PAR='297' RSNT='1' SNO='297'>Thus, search is limited to the number of entries in this neighborhood, which is logarithmic in the worst case, constant on average, and with proper alignment of the neighborhood typically requires one cache miss.</S>
+   <S PAR='298' RSNT='1' SNO='298'>When inserting an entry, one first attempts to add it to a bucket in the neighborhood.</S>
+   <S PAR='299' RSNT='1' SNO='299'>However, if all buckets in this neighborhood are occupied, the algorithm traverses buckets in sequence until an open slot an unoccupied bucket is found as in linear probing .</S>
+   <S PAR='300' RSNT='1' SNO='300'>At that point, since the empty bucket is outside the neighborhood, items are repeatedly displaced in a sequence of hops.</S>
+   <S PAR='301' RSNT='1' SNO='301'>This is similar to cuckoo hashing, but with the difference that in this case the empty slot is being moved into the neighborhood, instead of items being moved out with the hope of eventually finding an empty slot.</S>
+   <S PAR='302' RSNT='1' SNO='302'>Each hop brings the open slot closer to the original neighborhood, without invalidating the neighborhood property of any of the buckets along the way.</S>
+   <S PAR='303' RSNT='1' SNO='303'>In the end, the open slot has been moved into the neighborhood, and the entry being inserted can be added to it.</S>
+   <S PAR='304' RSNT='1' SNO='304'>Robin Hood hashing</S>
+   <S PAR='305' RSNT='1' SNO='305'>edit</S>
+   <S PAR='306' RSNT='1' SNO='306'>One interesting variation on double-hashing collision resolution is Robin Hood hashing.</S>
+   <S PAR='307' RSNT='1' SNO='307'>14</S>
+   <S PAR='308' RSNT='1' SNO='308'>15</S>
+   <S PAR='309' RSNT='1' SNO='309'>The idea is that a new key may displace a key already inserted, if its probe count is larger than that of the key at the current position.</S>
+   <S PAR='310' RSNT='1' SNO='310'>The net effect of this is that it reduces worst case search times in the table.</S>
+   <S PAR='311' RSNT='1' SNO='311'>This is similar to ordered hash tables</S>
+   <S PAR='312' RSNT='1' SNO='312'>16</S>
+   <S PAR='313' RSNT='1' SNO='313'>except that the criterion for bumping a key does not depend on a direct relationship between the keys.</S>
+   <S PAR='314' RSNT='1' SNO='314'>Since both the worst case and the variation in the number of probes is reduced dramatically, an interesting variation is to probe the table starting at the expected successful probe value and then expand from that position in both directions.</S>
+   <S PAR='315' RSNT='1' SNO='315'>17</S>
+   <S PAR='316' RSNT='1' SNO='316'>External Robin Hashing is an extension of this algorithm where the table is stored in an external file and each table position corresponds to a fixed-sized page or bucket with B records.</S>
+   <S PAR='317' RSNT='1' SNO='317'>18</S>
+   <S PAR='318' RSNT='1' SNO='318'>2-choice hashing</S>
+   <S PAR='319' RSNT='1' SNO='319'>edit</S>
+   <S PAR='320' RSNT='1' SNO='320'>2-choice hashing employs 2 different hash functions, h 1 x and h 2 x , for the hash table.</S>
+   <S PAR='321' RSNT='1' SNO='321'>Both hash functions are used to compute two table locations.</S>
+   <S PAR='322' RSNT='1' SNO='322'>When an object is inserted in the table, then it is placed in the table location that contains fewer objects with the default being the h 1 x table location if there is equality in bucket size .</S>
+   <S PAR='323' RSNT='1' SNO='323'>2-choice hashing employs the principle of the power of two choices.</S>
+   <S PAR='324' RSNT='1' SNO='324'>19</S>
+   <S PAR='325' RSNT='1' SNO='325'>Dynamic resizing</S>
+   <S PAR='326' RSNT='1' SNO='326'>edit</S>
+   <S PAR='327' RSNT='1' SNO='327'>The good functioning of a hash table depends on the fact that the table size is proportional to the number of entries.</S>
+   <S PAR='328' RSNT='1' SNO='328'>With a fixed size, and the common structures, it is similar to linear search, except with a better constant factor.</S>
+   <S PAR='329' RSNT='1' SNO='329'>In some cases, the number of entries may be definitely known in advance, for example keywords in a language.</S>
+   <S PAR='330' RSNT='1' SNO='330'>More commonly, this is not known for sure, if only due to later changes in code and data.</S>
+   <S PAR='331' RSNT='1' SNO='331'>It is one serious, although common, mistake to not provide any way for the table to resize.</S>
+   <S PAR='332' RSNT='1' SNO='332'>A general-purpose hash table "class" will almost always have some way to resize, and it is good practice even for simple "custom" tables.</S>
+   <S PAR='333' RSNT='1' SNO='333'>An implementation should check the load factor, and do something if it becomes too large this needs to be done only on inserts, since that is the only thing that would increase it .</S>
+   <S PAR='334' RSNT='1' SNO='334'>To keep the load factor under a certain limit, e.g. under 3/4, many table implementations expand the table when items are inserted.</S>
+   <S PAR='335' RSNT='1' SNO='335'>For example, in Java's HashMap class the default load factor threshold for table expansion is 0.75 and in Python's dict , table size is resized when load factor is greater than 2/3.</S>
+   <S PAR='336' RSNT='1' SNO='336'>Since buckets are usually implemented on top of a dynamic array and any constant proportion for resizing greater than 1 will keep the load factor under the desired limit, the exact choice of the constant is determined by the same space-time tradeoff as for dynamic arrays .</S>
+   <S PAR='337' RSNT='1' SNO='337'>Resizing is accompanied by a full or incremental table rehash whereby existing items are mapped to new bucket locations.</S>
+   <S PAR='338' RSNT='1' SNO='338'>To limit the proportion of memory wasted due to empty buckets, some implementations also shrink the size of the table followed by a rehash when items are deleted.</S>
+   <S PAR='339' RSNT='1' SNO='339'>From the point of space-time tradeoffs , this operation is similar to the deallocation in dynamic arrays.</S>
+   <S PAR='340' RSNT='1' SNO='340'>Resizing by copying all entries</S>
+   <S PAR='341' RSNT='1' SNO='341'>edit</S>
+   <S PAR='342' RSNT='1' SNO='342'>A common approach is to automatically trigger a complete resizing when the load factor exceeds some threshold r max .</S>
+   <S PAR='343' RSNT='1' SNO='343'>Then a new larger table is allocated , all the entries of the old table are removed and inserted into this new table, and the old table is returned to the free storage pool.</S>
+   <S PAR='344' RSNT='1' SNO='344'>Symmetrically, when the load factor falls below a second threshold r min , all entries are moved to a new smaller table.</S>
+   <S PAR='345' RSNT='1' SNO='345'>If the table size increases or decreases by a fixed percentage at each expansion, the total cost of these resizings, amortized over all insert and delete operations, is still a constant, independent of the number of entries n and of the number m of operations performed.</S>
+   <S PAR='346' RSNT='1' SNO='346'>For example, consider a table that was created with the minimum possible size and is doubled each time the load ratio exceeds some threshold.</S>
+   <S PAR='347' RSNT='1' SNO='347'>If m elements are inserted into that table, the total number of extra re-insertions that occur in all dynamic resizings of the table is at most m 1.</S>
+   <S PAR='348' RSNT='1' SNO='348'>In other words, dynamic resizing roughly doubles the cost of each insert or delete operation.</S>
+   <S PAR='349' RSNT='1' SNO='349'>Incremental resizing</S>
+   <S PAR='350' RSNT='1' SNO='350'>edit</S>
+   <S PAR='351' RSNT='1' SNO='351'>Some hash table implementations, notably in real-time systems , cannot pay the price of enlarging the hash table all at once, because it may interrupt time-critical operations.</S>
+   <S PAR='352' RSNT='1' SNO='352'>If one cannot avoid dynamic resizing, a solution is to perform the resizing gradually:</S>
+   <S PAR='353' RSNT='1' SNO='353'>During the resize, allocate the new hash table, but keep the old table unchanged.</S>
+   <S PAR='354' RSNT='1' SNO='354'>In each lookup or delete operation, check both tables.</S>
+   <S PAR='355' RSNT='1' SNO='355'>Perform insertion operations only in the new table.</S>
+   <S PAR='356' RSNT='1' SNO='356'>At each insertion also move r elements from the old table to the new table.</S>
+   <S PAR='357' RSNT='1' SNO='357'>When all elements are removed from the old table, deallocate it.</S>
+   <S PAR='358' RSNT='1' SNO='358'>To ensure that the old table is completely copied over before the new table itself needs to be enlarged, it is necessary to increase the size of the table by a factor of at least r 1 / r during resizing.</S>
+   <S PAR='359' RSNT='1' SNO='359'>Monotonic keys</S>
+   <S PAR='360' RSNT='1' SNO='360'>edit</S>
+   <S PAR='361' RSNT='1' SNO='361'>If it is known that key values will always increase or decrease monotonically , then a variation of consistent hashing can be achieved by keeping a list of the single most recent key value at each hash table resize operation.</S>
+   <S PAR='362' RSNT='1' SNO='362'>Upon lookup, keys that fall in the ranges defined by these list entries are directed to the appropriate hash function and indeed hash table both of which can be different for each range.</S>
+   <S PAR='363' RSNT='1' SNO='363'>Since it is common to grow the overall number of entries by doubling, there will only be O lg N ranges to check, and binary search time for the redirection would be O lg lg N .</S>
+   <S PAR='364' RSNT='1' SNO='364'>As with consistent hashing, this approach guarantees that any key's hash, once issued, will never change, even when the hash table is later grown.</S>
+   <S PAR='365' RSNT='1' SNO='365'>Other solutions</S>
+   <S PAR='366' RSNT='1' SNO='366'>edit</S>
+   <S PAR='367' RSNT='1' SNO='367'>Linear hashing</S>
+   <S PAR='368' RSNT='1' SNO='368'>20</S>
+   <S PAR='369' RSNT='1' SNO='369'>is a hash table algorithm that permits incremental hash table expansion.</S>
+   <S PAR='370' RSNT='1' SNO='370'>It is implemented using a single hash table, but with two possible look-up functions.</S>
+   <S PAR='371' RSNT='1' SNO='371'>Another way to decrease the cost of table resizing is to choose a hash function in such a way that the hashes of most values do not change when the table is resized.</S>
+   <S PAR='372' RSNT='1' SNO='372'>This approach, called consistent hashing , is prevalent in disk-based and distributed hashes, where rehashing is prohibitively costly.</S>
+   <S PAR='373' RSNT='1' SNO='373'>Performance analysis</S>
+   <S PAR='374' RSNT='1' SNO='374'>edit</S>
+   <S PAR='375' RSNT='1' SNO='375'>In the simplest model, the hash function is completely unspecified and the table does not resize.</S>
+   <S PAR='376' RSNT='1' SNO='376'>For the best possible choice of hash function, a table of size k with open addressing has no collisions and holds up to k elements, with a single comparison for successful lookup, and a table of size k with chaining and n keys has the minimum max 0, n - k collisions and O 1 n / k comparisons for lookup.</S>
+   <S PAR='377' RSNT='1' SNO='377'>For the worst choice of hash function, every insertion causes a collision, and hash tables degenerate to linear search, with n amortized comparisons per insertion and up to n comparisons for a successful lookup.</S>
+   <S PAR='378' RSNT='1' SNO='378'>Adding rehashing to this model is straightforward.</S>
+   <S PAR='379' RSNT='1' SNO='379'>As in a dynamic array , geometric resizing by a factor of b implies that only n / b i keys are inserted i or more times, so that the total number of insertions is bounded above by bn / b -1 , which is O n .</S>
+   <S PAR='380' RSNT='1' SNO='380'>By using rehashing to maintain n &lt; k , tables using both chaining and open addressing can have unlimited elements and perform successful lookup in a single comparison for the best choice of hash function.</S>
+   <S PAR='381' RSNT='1' SNO='381'>In more realistic models, the hash function is a random variable over a probability distribution of hash functions, and performance is computed on average over the choice of hash function.</S>
+   <S PAR='382' RSNT='1' SNO='382'>When this distribution is uniform , the assumption is called "simple uniform hashing" and it can be shown that hashing with chaining requires 1 n / k comparisons on average for an unsuccessful lookup, and hashing with open addressing requires 1/ 1 - n / k .</S>
+   <S PAR='383' RSNT='1' SNO='383'>21</S>
+   <S PAR='384' RSNT='1' SNO='384'>Both these bounds are constant, if we maintain n / k &lt; c using table resizing, where c is a fixed constant less than 1.</S>
+   <S PAR='385' RSNT='1' SNO='385'>Features</S>
+   <S PAR='386' RSNT='1' SNO='386'>edit</S>
+   <S PAR='387' RSNT='1' SNO='387'>Advantages</S>
+   <S PAR='388' RSNT='1' SNO='388'>edit</S>
+   <S PAR='389' RSNT='1' SNO='389'>The main advantage of hash tables over other table data structures is speed.</S>
+   <S PAR='390' RSNT='1' SNO='390'>This advantage is more apparent when the number of entries is large.</S>
+   <S PAR='391' RSNT='1' SNO='391'>Hash tables are particularly efficient when the maximum number of entries can be predicted in advance, so that the bucket array can be allocated once with the optimum size and never resized.</S>
+   <S PAR='392' RSNT='1' SNO='392'>If the set of key-value pairs is fixed and known ahead of time so insertions and deletions are not allowed , one may reduce the average lookup cost by a careful choice of the hash function, bucket table size, and internal data structures.</S>
+   <S PAR='393' RSNT='1' SNO='393'>In particular, one may be able to devise a hash function that is collision-free, or even perfect see below .</S>
+   <S PAR='394' RSNT='1' SNO='394'>In this case the keys need not be stored in the table.</S>
+   <S PAR='395' RSNT='1' SNO='395'>Drawbacks</S>
+   <S PAR='396' RSNT='1' SNO='396'>edit</S>
+   <S PAR='397' RSNT='1' SNO='397'>Although operations on a hash table take constant time on average, the cost of a good hash function can be significantly higher than the inner loop of the lookup algorithm for a sequential list or search tree.</S>
+   <S PAR='398' RSNT='1' SNO='398'>Thus hash tables are not effective when the number of entries is very small.</S>
+   <S PAR='399' RSNT='1' SNO='399'>However, in some cases the high cost of computing the hash function can be mitigated by saving the hash value together with the key.</S>
+   <S PAR='400' RSNT='1' SNO='400'>For certain string processing applications, such as spell-checking , hash tables may be less efficient than tries , finite automata , or Judy arrays .</S>
+   <S PAR='401' RSNT='1' SNO='401'>Also, if each key is represented by a small enough number of bits, then, instead of a hash table, one may use the key directly as the index into an array of values.</S>
+   <S PAR='402' RSNT='1' SNO='402'>Note that there are no collisions in this case.</S>
+   <S PAR='403' RSNT='1' SNO='403'>The entries stored in a hash table can be enumerated efficiently at constant cost per entry , but only in some pseudo-random order.</S>
+   <S PAR='404' RSNT='1' SNO='404'>Therefore, there is no efficient way to locate an entry whose key is nearest to a given key.</S>
+   <S PAR='405' RSNT='1' SNO='405'>Listing all n entries in some specific order generally requires a separate sorting step, whose cost is proportional to log n per entry.</S>
+   <S PAR='406' RSNT='1' SNO='406'>In comparison, ordered search trees have lookup and insertion cost proportional to log n , but allow finding the nearest key at about the same cost, and ordered enumeration of all entries at constant cost per entry.</S>
+   <S PAR='407' RSNT='1' SNO='407'>If the keys are not stored because the hash function is collision-free , there may be no easy way to enumerate the keys that are present in the table at any given moment.</S>
+   <S PAR='408' RSNT='1' SNO='408'>Although the average cost per operation is constant and fairly small, the cost of a single operation may be quite high.</S>
+   <S PAR='409' RSNT='1' SNO='409'>In particular, if the hash table uses dynamic resizing , an insertion or deletion operation may occasionally take time proportional to the number of entries.</S>
+   <S PAR='410' RSNT='1' SNO='410'>This may be a serious drawback in real-time or interactive applications.</S>
+   <S PAR='411' RSNT='1' SNO='411'>Hash tables in general exhibit poor locality of reference that is, the data to be accessed is distributed seemingly at random in memory.</S>
+   <S PAR='412' RSNT='1' SNO='412'>Because hash tables cause access patterns that jump around, this can trigger microprocessor cache misses that cause long delays.</S>
+   <S PAR='413' RSNT='1' SNO='413'>Compact data structures such as arrays searched with linear search may be faster, if the table is relatively small and keys are compact.</S>
+   <S PAR='414' RSNT='1' SNO='414'>The optimal performance point varies from system to system.</S>
+   <S PAR='415' RSNT='1' SNO='415'>Hash tables become quite inefficient when there are many collisions.</S>
+   <S PAR='416' RSNT='1' SNO='416'>While extremely uneven hash distributions are extremely unlikely to arise by chance, a malicious adversary with knowledge of the hash function may be able to supply information to a hash that creates worst-case behavior by causing excessive collisions, resulting in very poor performance, e.g. a denial of service attack .</S>
+   <S PAR='417' RSNT='1' SNO='417'>22</S>
+   <S PAR='418' RSNT='1' SNO='418'>In critical applications, universal hashing can be used; a data structure with better worst-case guarantees may be preferable.</S>
+   <S PAR='419' RSNT='1' SNO='419'>23</S>
+   <S PAR='420' RSNT='1' SNO='420'>Uses</S>
+   <S PAR='421' RSNT='1' SNO='421'>edit</S>
+   <S PAR='422' RSNT='1' SNO='422'>This section does not cite any references or sources .</S>
+   <S PAR='423' RSNT='1' SNO='423'>Please help improve this section by adding citations to reliable sources .</S>
+   <S PAR='424' RSNT='1' SNO='424'>Unsourced material may be challenged and removed .</S>
+   <S PAR='425' RSNT='1' SNO='425'>July 2013</S>
+   <S PAR='426' RSNT='1' SNO='426'>Associative arrays</S>
+   <S PAR='427' RSNT='1' SNO='427'>edit</S>
+   <S PAR='428' RSNT='1' SNO='428'>Hash tables are commonly used to implement many types of in-memory tables.</S>
+   <S PAR='429' RSNT='1' SNO='429'>They are used to implement associative arrays arrays whose indices are arbitrary strings or other complicated objects , especially in interpreted programming languages like Ruby , Python , and PHP .</S>
+   <S PAR='430' RSNT='1' SNO='430'>When storing a new item into a multimap and a hash collision occurs, the multimap unconditionally stores both items.</S>
+   <S PAR='431' RSNT='1' SNO='431'>When storing a new item into a typical associative array and a hash collision occurs, but the actual keys themselves are different, the associative array likewise stores both items.</S>
+   <S PAR='432' RSNT='1' SNO='432'>However, if the key of the new item exactly matches the key of an old item, the associative array typically erases the old item and overwrites it with the new item, so every item in the table has a unique key.</S>
+   <S PAR='433' RSNT='1' SNO='433'>Database indexing</S>
+   <S PAR='434' RSNT='1' SNO='434'>edit</S>
+   <S PAR='435' RSNT='1' SNO='435'>Hash tables may also be used as disk -based data structures and database indices such as in dbm although B-trees are more popular in these applications.</S>
+   <S PAR='436' RSNT='1' SNO='436'>Caches</S>
+   <S PAR='437' RSNT='1' SNO='437'>edit</S>
+   <S PAR='438' RSNT='1' SNO='438'>Hash tables can be used to implement caches , auxiliary data tables that are used to speed up the access to data that is primarily stored in slower media.</S>
+   <S PAR='439' RSNT='1' SNO='439'>In this application, hash collisions can be handled by discarding one of the two colliding entries usually erasing the old item that is currently stored in the table and overwriting it with the new item, so every item in the table has a unique hash value.</S>
+   <S PAR='440' RSNT='1' SNO='440'>Sets</S>
+   <S PAR='441' RSNT='1' SNO='441'>edit</S>
+   <S PAR='442' RSNT='1' SNO='442'>Besides recovering the entry that has a given key, many hash table implementations can also tell whether such an entry exists or not.</S>
+   <S PAR='443' RSNT='1' SNO='443'>Those structures can therefore be used to implement a set data structure , which merely records whether a given key belongs to a specified set of keys.</S>
+   <S PAR='444' RSNT='1' SNO='444'>In this case, the structure can be simplified by eliminating all parts that have to do with the entry values.</S>
+   <S PAR='445' RSNT='1' SNO='445'>Hashing can be used to implement both static and dynamic sets.</S>
+   <S PAR='446' RSNT='1' SNO='446'>Object representation</S>
+   <S PAR='447' RSNT='1' SNO='447'>edit</S>
+   <S PAR='448' RSNT='1' SNO='448'>Several dynamic languages, such as Perl , Python , JavaScript , and Ruby , use hash tables to implement objects.</S>
+   <S PAR='449' RSNT='1' SNO='449'>In this representation, the keys are the names of the members and methods of the object, and the values are pointers to the corresponding member or method.</S>
+   <S PAR='450' RSNT='1' SNO='450'>Unique data representation</S>
+   <S PAR='451' RSNT='1' SNO='451'>edit</S>
+   <S PAR='452' RSNT='1' SNO='452'>Hash tables can be used by some programs to avoid creating multiple character strings with the same contents.</S>
+   <S PAR='453' RSNT='1' SNO='453'>For that purpose, all strings in use by the program are stored in a single string pool implemented as a hash table, which is checked whenever a new string has to be created.</S>
+   <S PAR='454' RSNT='1' SNO='454'>This technique was introduced in Lisp interpreters under the name hash consing , and can be used with many other kinds of data expression trees in a symbolic algebra system, records in a database, files in a file system, binary decision diagrams, etc.</S>
+   <S PAR='455' RSNT='1' SNO='455'>String interning</S>
+   <S PAR='456' RSNT='1' SNO='456'>edit</S>
+   <S PAR='457' RSNT='1' SNO='457'>Main article: String interning</S>
+   <S PAR='458' RSNT='1' SNO='458'>Implementations</S>
+   <S PAR='459' RSNT='1' SNO='459'>edit</S>
+   <S PAR='460' RSNT='1' SNO='460'>In programming languages</S>
+   <S PAR='461' RSNT='1' SNO='461'>edit</S>
+   <S PAR='462' RSNT='1' SNO='462'>Many programming languages provide hash table functionality, either as built-in associative arrays or as standard library modules.</S>
+   <S PAR='463' RSNT='1' SNO='463'>In C 11 , for example, the unordered_map class provides hash tables for keys and values of arbitrary type.</S>
+   <S PAR='464' RSNT='1' SNO='464'>In PHP 5, the Zend 2 engine uses one of the hash functions from Daniel J. Bernstein to generate the hash values used in managing the mappings of data pointers stored in a hash table.</S>
+   <S PAR='465' RSNT='1' SNO='465'>In the PHP source code, it is labelled as DJBX33A Daniel J. Bernstein, Times 33 with Addition .</S>
+   <S PAR='466' RSNT='1' SNO='466'>Python 's built-in hash table implementation, in the form of the dict type, as well as Perl 's hash type are used internally to implement namespaces and therefore need to pay more attention to security, i.e. collision attacks.</S>
+   <S PAR='467' RSNT='1' SNO='467'>In the .NET Framework , support for hash tables is provided via the non-generic Hashtable and generic Dictionary classes, which store key-value pairs, and the generic HashSet class, which stores only values.</S>
+   <S PAR='468' RSNT='1' SNO='468'>Independent packages</S>
+   <S PAR='469' RSNT='1' SNO='469'>edit</S>
+   <S PAR='470' RSNT='1' SNO='470'>SparseHash formerly Google SparseHash An extremely memory-efficient hash_map implementation, with only 2 bits/entry of overhead.</S>
+   <S PAR='471' RSNT='1' SNO='471'>The SparseHash library has several C hash map implementations with different performance characteristics, including one that optimizes for memory use and another that optimizes for speed.</S>
+   <S PAR='472' RSNT='1' SNO='472'>SunriseDD An open source C library for hash table storage of arbitrary data objects with lock-free lookups, built-in reference counting and guaranteed order iteration.</S>
+   <S PAR='473' RSNT='1' SNO='473'>The library can participate in external reference counting systems or use its own built-in reference counting.</S>
+   <S PAR='474' RSNT='1' SNO='474'>It comes with a variety of hash functions and allows the use of runtime supplied hash functions via callback mechanism.</S>
+   <S PAR='475' RSNT='1' SNO='475'>Source code is well documented. uthash This is an easy-to-use hash table for C structures.</S>
+   <S PAR='476' RSNT='1' SNO='476'>History</S>
+   <S PAR='477' RSNT='1' SNO='477'>edit</S>
+   <S PAR='478' RSNT='1' SNO='478'>The idea of hashing arose independently in different places.</S>
+   <S PAR='479' RSNT='1' SNO='479'>In January 1953, H. P. Luhn wrote an internal IBM memorandum that used hashing with chaining.</S>
+   <S PAR='480' RSNT='1' SNO='480'>24</S>
+   <S PAR='481' RSNT='1' SNO='481'>G. N. Amdahl , E. M. Boehme, N. Rochester , and Arthur Samuel implemented a program using hashing at about the same time.</S>
+   <S PAR='482' RSNT='1' SNO='482'>Open addressing with linear probing relatively prime stepping is credited to Amdahl, but Ershov in Russia had the same idea.</S>
+   <S PAR='483' RSNT='1' SNO='483'>24</S>
+   <S PAR='484' RSNT='1' SNO='484'>See also</S>
+   <S PAR='485' RSNT='1' SNO='485'>edit</S>
+   <S PAR='486' RSNT='1' SNO='486'>Rabin Karp string search algorithm Stable hashing Consistent hashing Extendible hashing Lazy deletion Pearson hashing</S>
+   <S PAR='487' RSNT='1' SNO='487'>Related data structures</S>
+   <S PAR='488' RSNT='1' SNO='488'>edit</S>
+   <S PAR='489' RSNT='1' SNO='489'>There are several data structures that use hash functions but cannot be considered special cases of hash tables:</S>
+   <S PAR='490' RSNT='1' SNO='490'>Bloom filter , memory efficient data-structure designed for constant-time approximate lookups; uses hash function s and can be seen as an approximate hash table.</S>
+   <S PAR='491' RSNT='1' SNO='491'>Distributed hash table DHT , a resilient dynamic table spread over several nodes of a network.</S>
+   <S PAR='492' RSNT='1' SNO='492'>Hash array mapped trie , a trie structure, similar to the array mapped trie , but where each key is hashed first.</S>
+   <S PAR='493' RSNT='1' SNO='493'>References</S>
+   <S PAR='494' RSNT='1' SNO='494'>edit</S>
+   <S PAR='495' RSNT='1' SNO='495'>Cormen, Thomas H. ; Leiserson, Charles E. ; Rivest, Ronald L. ; Stein, Clifford 2009 . Introduction to Algorithms 3rd ed. . Massachusetts Institute of Technology. pp.</S>
+   <S PAR='496' RSNT='1' SNO='496'>253 280.</S>
+   <S PAR='497' RSNT='1' SNO='497'>ISBN 978-0-262-03384-8 .</S>
+   <S PAR='498' RSNT='1' SNO='498'>Charles E. Leiserson , Amortized Algorithms, Table Doubling, Potential Method Lecture 13, course MIT 6.046J/18.410J Introduction to Algorithms Fall 2005</S>
+   <S PAR='499' RSNT='1' SNO='499'>a b</S>
+   <S PAR='500' RSNT='1' SNO='500'>Knuth, Donald 1998 .</S>
+   <S PAR='501' RSNT='1' SNO='501'>'The Art of Computer Programming' .</S>
+   <S PAR='502' RSNT='1' SNO='502'>3: Sorting and Searching 2nd ed. . Addison-Wesley. pp.</S>
+   <S PAR='503' RSNT='1' SNO='503'>513 558.</S>
+   <S PAR='504' RSNT='1' SNO='504'>ISBN 0-201-89685-0 .</S>
+   <S PAR='505' RSNT='1' SNO='505'>a b</S>
+   <S PAR='506' RSNT='1' SNO='506'>Cormen, Thomas H. ; Leiserson, Charles E. ; Rivest, Ronald L. ; Stein, Clifford 2001 . Introduction to Algorithms 2nd ed. . MIT Press and McGraw-Hill.</S>
+   <S PAR='507' RSNT='1' SNO='507'>221 252.</S>
+   <S PAR='508' RSNT='1' SNO='508'>ISBN 978-0-262-53196-2 .</S>
+   <S PAR='509' RSNT='1' SNO='509'>Pearson, Karl 1900 .</S>
+   <S PAR='510' RSNT='1' SNO='510'>"On the criterion that a given system of deviations from the probable in the case of a correlated system of variables is such that it can be reasonably supposed to have arisen from random sampling".</S>
+   <S PAR='511' RSNT='1' SNO='511'>Philosophical Magazine, Series 5 50 302 . pp.</S>
+   <S PAR='512' RSNT='1' SNO='512'>157 175. doi : 10.1080/14786440009463897 .</S>
+   <S PAR='513' RSNT='1' SNO='513'>Plackett, Robin 1983 .</S>
+   <S PAR='514' RSNT='1' SNO='514'>"Karl Pearson and the Chi-Squared Test".</S>
+   <S PAR='515' RSNT='1' SNO='515'>International Statistical Review International Statistical Institute ISI 51 1 . pp.</S>
+   <S PAR='516' RSNT='1' SNO='516'>59 72. doi : 10.2307/1402731 .</S>
+   <S PAR='517' RSNT='1' SNO='517'>a b</S>
+   <S PAR='518' RSNT='1' SNO='518'>Thomas Wang 1997 , Prime Double Hash Table .</S>
+   <S PAR='519' RSNT='1' SNO='519'>Retrieved April 27, 2012</S>
+   <S PAR='520' RSNT='1' SNO='520'>Askitis, Nikolas; Zobel, Justin October 2005 .</S>
+   <S PAR='521' RSNT='1' SNO='521'>Cache-conscious Collision Resolution in String Hash Tables .</S>
+   <S PAR='522' RSNT='1' SNO='522'>Proceedings of the 12th International Conference, String Processing and Information Retrieval SPIRE 2005 .</S>
+   <S PAR='523' RSNT='1' SNO='523'>3772/2005. pp.</S>
+   <S PAR='524' RSNT='1' SNO='524'>91 102. doi : 10.1007/11575832_11 .</S>
+   <S PAR='525' RSNT='1' SNO='525'>ISBN 978-3-540-29740-6 .</S>
+   <S PAR='526' RSNT='1' SNO='526'>Askitis, Nikolas; Sinha, Ranjan 2010 .</S>
+   <S PAR='527' RSNT='1' SNO='527'>"Engineering scalable, cache and space efficient tries for strings" .</S>
+   <S PAR='528' RSNT='1' SNO='528'>The VLDB Journal 17 5 : 633 660. doi : 10.1007/s00778-010-0183-9 .</S>
+   <S PAR='529' RSNT='1' SNO='529'>ISSN 1066-8888 .</S>
+   <S PAR='530' RSNT='1' SNO='530'>Askitis, Nikolas 2009 .</S>
+   <S PAR='531' RSNT='1' SNO='531'>Fast and Compact Hash Tables for Integer Keys .</S>
+   <S PAR='532' RSNT='1' SNO='532'>Proceedings of the 32nd Australasian Computer Science Conference ACSC 2009 91 . pp.</S>
+   <S PAR='533' RSNT='1' SNO='533'>113 122.</S>
+   <S PAR='534' RSNT='1' SNO='534'>ISBN 978-1-920682-72-9 .</S>
+   <S PAR='535' RSNT='1' SNO='535'>Erik Demaine, Jeff Lind.</S>
+   <S PAR='536' RSNT='1' SNO='536'>6.897: Advanced Data Structures.</S>
+   <S PAR='537' RSNT='1' SNO='537'>MIT Computer Science and Artificial Intelligence Laboratory.</S>
+   <S PAR='538' RSNT='1' SNO='538'>Spring 2003. http://courses.csail.mit.edu/6.897/spring03/scribe_notes/L2/lecture2.pdf</S>
+   <S PAR='539' RSNT='1' SNO='539'>a b</S>
+   <S PAR='540' RSNT='1' SNO='540'>Tenenbaum, Aaron M.; Langsam, Yedidyah; Augenstein, Moshe J. 1990 . Data Structures Using C . Prentice Hall. pp.</S>
+   <S PAR='541' RSNT='1' SNO='541'>456 461, p.</S>
+   <S PAR='542' RSNT='1' SNO='542'>472.</S>
+   <S PAR='543' RSNT='1' SNO='543'>ISBN 0-13-199746-7 .</S>
+   <S PAR='544' RSNT='1' SNO='544'>Herlihy, Maurice; Shavit, Nir; Tzafrir, Moran 2008 .</S>
+   <S PAR='545' RSNT='1' SNO='545'>"Hopscotch Hashing".</S>
+   <S PAR='546' RSNT='1' SNO='546'>"DISC '08: Proceedings of the 22nd international symposium on Distributed Computing".</S>
+   <S PAR='547' RSNT='1' SNO='547'>Berlin, Heidelberg: Springer-Verlag. pp.</S>
+   <S PAR='548' RSNT='1' SNO='548'>350 364.</S>
+   <S PAR='549' RSNT='1' SNO='549'>Celis, Pedro 1986 .</S>
+   <S PAR='550' RSNT='1' SNO='550'>Robin Hood hashing Technical report .</S>
+   <S PAR='551' RSNT='1' SNO='551'>Computer Science Department, University of Waterloo.</S>
+   <S PAR='552' RSNT='1' SNO='552'>CS-86-14.</S>
+   <S PAR='553' RSNT='1' SNO='553'>Goossaert, Emmanuel 2013 .</S>
+   <S PAR='554' RSNT='1' SNO='554'>"Robin Hood hashing" .</S>
+   <S PAR='555' RSNT='1' SNO='555'>Amble, Ole; Knuth, Don 1974 .</S>
+   <S PAR='556' RSNT='1' SNO='556'>"Ordered hash tables".</S>
+   <S PAR='557' RSNT='1' SNO='557'>Computer Journal 17 2 : 135. doi : 10.1093/comjnl/17.2.135 .</S>
+   <S PAR='558' RSNT='1' SNO='558'>Viola, Alfredo October 2005 .</S>
+   <S PAR='559' RSNT='1' SNO='559'>"Exact distribution of individual displacements in linear probing hashing".</S>
+   <S PAR='560' RSNT='1' SNO='560'>Transactions on Algorithms TALG ACM 1 2, : 214 242. doi : 10.1145/1103963.1103965 .</S>
+   <S PAR='561' RSNT='1' SNO='561'>Celis, Pedro March 1988 .</S>
+   <S PAR='562' RSNT='1' SNO='562'>External Robin Hood Hashing Technical report .</S>
+   <S PAR='563' RSNT='1' SNO='563'>Computer Science Department, Indiana University.</S>
+   <S PAR='564' RSNT='1' SNO='564'>TR246.</S>
+   <S PAR='565' RSNT='1' SNO='565'>http://www.eecs.harvard.edu/~michaelm/postscripts/handbook2001.pdf</S>
+   <S PAR='566' RSNT='1' SNO='566'>Litwin, Witold 1980 .</S>
+   <S PAR='567' RSNT='1' SNO='567'>"Linear hashing: A new tool for file and table addressing".</S>
+   <S PAR='568' RSNT='1' SNO='568'>"Proc.</S>
+   <S PAR='569' RSNT='1' SNO='569'>6th Conference on Very Large Databases". pp.</S>
+   <S PAR='570' RSNT='1' SNO='570'>212 223.</S>
+   <S PAR='571' RSNT='1' SNO='571'>Doug Dunham.</S>
+   <S PAR='572' RSNT='1' SNO='572'>CS 4521 Lecture Notes .</S>
+   <S PAR='573' RSNT='1' SNO='573'>University of Minnesota Duluth.</S>
+   <S PAR='574' RSNT='1' SNO='574'>Theorems 11.2, 11.6.</S>
+   <S PAR='575' RSNT='1' SNO='575'>Last modified April 21, 2009.</S>
+   <S PAR='576' RSNT='1' SNO='576'>Alexander Klink and Julian W lde's Efficient Denial of Service Attacks on Web Application Platforms , December 28, 2011, 28th Chaos Communication Congress.</S>
+   <S PAR='577' RSNT='1' SNO='577'>Berlin, Germany.</S>
+   <S PAR='578' RSNT='1' SNO='578'>Crosby and Wallach's Denial of Service via Algorithmic Complexity Attacks .</S>
+   <S PAR='579' RSNT='1' SNO='579'>a b</S>
+   <S PAR='580' RSNT='1' SNO='580'>Mehta, Dinesh P.; Sahni, Sartaj .</S>
+   <S PAR='581' RSNT='1' SNO='581'>Handbook of Datastructures and Applications . pp.</S>
+   <S PAR='582' RSNT='1' SNO='582'>9 15.</S>
+   <S PAR='583' RSNT='1' SNO='583'>ISBN 1-58488-435-5 .</S>
+   <S PAR='584' RSNT='1' SNO='584'>Further reading</S>
+   <S PAR='585' RSNT='1' SNO='585'>edit</S>
+   <S PAR='586' RSNT='1' SNO='586'>Tamassia, Roberto; Goodrich, Michael T. 2006 . "Chapter Nine: Maps and Dictionaries". Data structures and algorithms in Java : updated for Java 5.0 4th ed. . Hoboken, NJ: Wiley. pp.</S>
+   <S PAR='587' RSNT='1' SNO='587'>369 418.</S>
+   <S PAR='588' RSNT='1' SNO='588'>ISBN 0-471-73884-0 .</S>
+   <S PAR='589' RSNT='1' SNO='589'>McKenzie, B. J.; Harries, R.; Bell, T. Feb 1990 . "Selecting a hashing algorithm". Software Practice &amp; Experience 20 2 : 209 224. doi : 10.1002/spe.4380200207 .</S>
+   <S PAR='590' RSNT='1' SNO='590'>External links</S>
+   <S PAR='591' RSNT='1' SNO='591'>edit</S>
+   <S PAR='592' RSNT='1' SNO='592'>Wikimedia Commons has media related to Hash tables .</S>
+   <S PAR='593' RSNT='1' SNO='593'>A Hash Function for Hash Table Lookup by Bob Jenkins.</S>
+   <S PAR='594' RSNT='1' SNO='594'>Hash Tables by SparkNotes explanation using C Hash functions by Paul Hsieh Design of Compact and Efficient Hash Tables for Java link not working Libhashish hash library NIST entry on hash tables Open addressing hash table removal algorithm from ICI programming language , ici_set_unassign in set.c and other occurrences, with permission .</S>
+   <S PAR='595' RSNT='1' SNO='595'>A basic explanation of how the hash table works by Reliable Software Lecture on Hash Tables Hash-tables in C two simple and clear examples of hash tables implementation in C with linear probing and chaining Open Data Structures - Chapter 5 - Hash Tables MIT's Introduction to Algorithms: Hashing 1 MIT OCW lecture Video MIT's Introduction to Algorithms: Hashing 2 MIT OCW lecture Video How to sort a HashMap Java and keep the duplicate entries How python dictionary works</S>
+   <S PAR='596' RSNT='1' SNO='596'>v</S>
+   <S PAR='597' RSNT='1' SNO='597'>t</S>
+   <S PAR='598' RSNT='1' SNO='598'>e</S>
+   <S PAR='599' RSNT='1' SNO='599'>Data structures</S>
+   <S PAR='600' RSNT='1' SNO='600'>Types</S>
+   <S PAR='601' RSNT='1' SNO='601'>Collection Container</S>
+   <S PAR='602' RSNT='1' SNO='602'>Abstract</S>
+   <S PAR='603' RSNT='1' SNO='603'>Associative array Double-ended priority queue Double-ended queue List Map Multimap Priority queue Queue Set multiset Disjoint Sets Stack</S>
+   <S PAR='604' RSNT='1' SNO='604'>Arrays</S>
+   <S PAR='605' RSNT='1' SNO='605'>Bit array Circular buffer Dynamic array Hash table Hashed array tree Sparse array</S>
+   <S PAR='606' RSNT='1' SNO='606'>Linked</S>
+   <S PAR='607' RSNT='1' SNO='607'>Association list Linked list Skip list Unrolled linked list XOR linked list</S>
+   <S PAR='608' RSNT='1' SNO='608'>Trees</S>
+   <S PAR='609' RSNT='1' SNO='609'>B-tree Binary search tree AA AVL red-black self-balancing splay Heap binary binomial Fibonacci R-tree R R Hilbert Trie Hash tree</S>
+   <S PAR='610' RSNT='1' SNO='610'>Graphs</S>
+   <S PAR='611' RSNT='1' SNO='611'>Binary decision diagram Directed acyclic graph Directed acyclic word graph</S>
+   <S PAR='612' RSNT='1' SNO='612'>List of data structures</S>
+   <S PAR='613' RSNT='1' SNO='613'>Retrieved from " http://en.wikipedia.org/w/index.php?title Hash_table&amp;oldid 631959154 " Categories : Hashing Search algorithms Data structures Hidden categories: Pages using duplicate arguments in template calls Use mdy dates from January 2013 All articles with unsourced statements Articles with unsourced statements from July 2014 Articles with unsourced statements from January 2014 Articles with unsourced statements from April 2011 Articles with unsourced statements from March 2012 Articles needing additional references from July 2013 All articles needing additional references Commons category with local link same as on Wikidata Articles with example C code Navigation menu Personal tools Create account Log in Namespaces</S>
+   <S PAR='614' RSNT='1' SNO='614'>Article</S>
+   <S PAR='615' RSNT='1' SNO='615'>Talk</S>
+   <S PAR='616' RSNT='1' SNO='616'>Variants</S>
+   <S PAR='617' RSNT='1' SNO='617'>Views</S>
+   <S PAR='618' RSNT='1' SNO='618'>Read</S>
+   <S PAR='619' RSNT='1' SNO='619'>Edit</S>
+   <S PAR='620' RSNT='1' SNO='620'>View history</S>
+   <S PAR='621' RSNT='1' SNO='621'>More</S>
+   <S PAR='622' RSNT='1' SNO='622'>Search Navigation Main page Contents Featured content Current events Random article Donate to Wikipedia Wikimedia Shop Interaction Help About Wikipedia Community portal Recent changes Contact page Tools What links here Related changes Upload file Special pages Permanent link Page information Wikidata item Cite this page Print/export Create a book Download as PDF Printable version Languages e tina Dansk Deutsch Eesti Espa ol Fran ais Hrvatski Italiano Latvie u Lietuvi Magyar &copy; Nederlands Norsk bokm l Norsk nynorsk Polski Portugu s Simple English Sloven ina / srpski Suomi Svenska T rk e Ti ng Vi t</S>
+   <S PAR='623' RSNT='1' SNO='623'>Edit links</S>
+   <S PAR='624' RSNT='1' SNO='624'>This page was last modified on 1 November 2014 at 01:06.</S>
+   <S PAR='625' RSNT='1' SNO='625'>Text is available under the Creative Commons Attribution-ShareAlike License ; additional terms may apply.</S>
+   <S PAR='626' RSNT='1' SNO='626'>By using this site, you agree to the Terms of Use and Privacy Policy .</S>
+   <S PAR='627' RSNT='1' SNO='627'>Wikipedia &copy; is a registered trademark of the Wikimedia Foundation, Inc. , a non-profit organization.</S>
+   <S PAR='628' RSNT='1' SNO='628'>Privacy policy About Wikipedia Disclaimers Contact Wikipedia Developers Mobile view</S>
+   </TEXT>
+  </BODY>
+</DOCSENT>

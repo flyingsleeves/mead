@@ -1,0 +1,39 @@
+# Time-stamp: "2000-11-03 17:13:56 MST"
+
+XML::TreeBuilder
+----------------
+
+This module uses XML::Parser to make XML document trees constructed of
+XML::Element objects (and XML::Element is a subclass of HTML::Element
+adapted for XML).  XML::TreeBuilder is meant particularly for people
+who are used to the HTML::TreeBuilder / HTML::Element interface to
+document trees, and who don't want to learn some other document
+interface like XML::Twig or XML::DOM.
+
+
+PREREQUISITES
+
+In order to install and use this package you will need Perl version
+5.004 or better.  You will also need to have the XML-Parser and
+HTML-Tree distributions installed.  All of these should be available
+from CPAN.
+
+
+
+INSTALLATION
+
+Just follow the usual procedure:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+
+
+COPYRIGHT
+
+  (c) 2000  Sean M. Burke
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.

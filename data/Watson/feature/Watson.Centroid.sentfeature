@@ -1,0 +1,804 @@
+<?xml version='1.0'?>
+<SENT-FEATURE>
+	<S DID="hash-table" SNO="1" >
+		<FEATURE N="Centroid" V="0.162266456263708" />
+	</S>
+	<S DID="hash-table" SNO="2" >
+		<FEATURE N="Centroid" V="0.520366840861937" />
+	</S>
+	<S DID="hash-table" SNO="3" >
+		<FEATURE N="Centroid" V="0.478693099287114" />
+	</S>
+	<S DID="hash-table" SNO="4" >
+		<FEATURE N="Centroid" V="0.514407723790054" />
+	</S>
+	<S DID="hash-table" SNO="5" >
+		<FEATURE N="Centroid" V="0.572614606858858" />
+	</S>
+	<S DID="hash-table" SNO="6" >
+		<FEATURE N="Centroid" V="0.554387393412013" />
+	</S>
+	<S DID="hash-table" SNO="7" >
+		<FEATURE N="Centroid" V="0.351670805125873" />
+	</S>
+	<S DID="hash-table" SNO="8" >
+		<FEATURE N="Centroid" V="0.357474784499023" />
+	</S>
+	<S DID="hash-table" SNO="9" >
+		<FEATURE N="Centroid" V="0.139845061898992" />
+	</S>
+	<S DID="hash-table" SNO="10" >
+		<FEATURE N="Centroid" V="0.000000000000000" />
+	</S>
+	<S DID="hash-table" SNO="11" >
+		<FEATURE N="Centroid" V="0.230345945862649" />
+	</S>
+	<S DID="hash-table" SNO="12" >
+		<FEATURE N="Centroid" V="0.140700210268400" />
+	</S>
+	<S DID="hash-table" SNO="13" >
+		<FEATURE N="Centroid" V="0.038862902787362" />
+	</S>
+	<S DID="hash-table" SNO="14" >
+		<FEATURE N="Centroid" V="0.258869480122256" />
+	</S>
+	<S DID="hash-table" SNO="15" >
+		<FEATURE N="Centroid" V="0.325368271678042" />
+	</S>
+	<S DID="hash-table" SNO="16" >
+		<FEATURE N="Centroid" V="0.077427357828971" />
+	</S>
+	<S DID="hash-table" SNO="17" >
+		<FEATURE N="Centroid" V="0.315573330131674" />
+	</S>
+	<S DID="hash-table" SNO="18" >
+		<FEATURE N="Centroid" V="0.167450244219899" />
+	</S>
+	<S DID="hash-table" SNO="19" >
+		<FEATURE N="Centroid" V="0.153361794167538" />
+	</S>
+	<S DID="hash-table" SNO="20" >
+		<FEATURE N="Centroid" V="0.146268201755137" />
+	</S>
+	<S DID="hash-table" SNO="21" >
+		<FEATURE N="Centroid" V="0.264975105885122" />
+	</S>
+	<S DID="hash-table" SNO="22" >
+		<FEATURE N="Centroid" V="0.484004691650963" />
+	</S>
+	<S DID="hash-table" SNO="23" >
+		<FEATURE N="Centroid" V="0.132017016916502" />
+	</S>
+	<S DID="hash-table" SNO="24" >
+		<FEATURE N="Centroid" V="0.296480273836520" />
+	</S>
+	<S DID="hash-table" SNO="25" >
+		<FEATURE N="Centroid" V="0.265253840076668" />
+	</S>
+	<S DID="hash-table" SNO="26" >
+		<FEATURE N="Centroid" V="0.067665844234068" />
+	</S>
+	<S DID="hash-table" SNO="27" >
+		<FEATURE N="Centroid" V="0.305541879184983" />
+	</S>
+	<S DID="hash-table" SNO="28" >
+		<FEATURE N="Centroid" V="0.295540097159705" />
+	</S>
+	<S DID="hash-table" SNO="29" >
+		<FEATURE N="Centroid" V="0.218848899207115" />
+	</S>
+	<S DID="hash-table" SNO="30" >
+		<FEATURE N="Centroid" V="0.057730995934092" />
+	</S>
+	<S DID="hash-table" SNO="31" >
+		<FEATURE N="Centroid" V="0.521075734651502" />
+	</S>
+	<S DID="hash-table" SNO="32" >
+		<FEATURE N="Centroid" V="0.309333312761644" />
+	</S>
+	<S DID="hash-table" SNO="33" >
+		<FEATURE N="Centroid" V="0.113078113925212" />
+	</S>
+	<S DID="hash-table" SNO="34" >
+		<FEATURE N="Centroid" V="0.430091683675874" />
+	</S>
+	<S DID="hash-table" SNO="35" >
+		<FEATURE N="Centroid" V="0.003186969393789" />
+	</S>
+	<S DID="hash-table" SNO="36" >
+		<FEATURE N="Centroid" V="0.312359277685513" />
+	</S>
+	<S DID="hash-table" SNO="37" >
+		<FEATURE N="Centroid" V="0.510997310797942" />
+	</S>
+	<S DID="hash-table" SNO="38" >
+		<FEATURE N="Centroid" V="0.341038584899345" />
+	</S>
+	<S DID="hash-table" SNO="39" >
+		<FEATURE N="Centroid" V="0.390098760358363" />
+	</S>
+	<S DID="hash-table" SNO="40" >
+		<FEATURE N="Centroid" V="0.393201245493071" />
+	</S>
+	<S DID="hash-table" SNO="41" >
+		<FEATURE N="Centroid" V="0.345989011028844" />
+	</S>
+	<S DID="hash-table" SNO="42" >
+		<FEATURE N="Centroid" V="0.275075028639457" />
+	</S>
+	<S DID="hash-table" SNO="43" >
+		<FEATURE N="Centroid" V="0.592469626417794" />
+	</S>
+	<S DID="hash-table" SNO="44" >
+		<FEATURE N="Centroid" V="0.051960569346719" />
+	</S>
+	<S DID="hash-table" SNO="45" >
+		<FEATURE N="Centroid" V="0.134024229818288" />
+	</S>
+	<S DID="hash-table" SNO="46" >
+		<FEATURE N="Centroid" V="0.412136293738239" />
+	</S>
+	<S DID="hash-table" SNO="47" >
+		<FEATURE N="Centroid" V="0.042644569927234" />
+	</S>
+	<S DID="hash-table" SNO="48" >
+		<FEATURE N="Centroid" V="0.007931376609175" />
+	</S>
+	<S DID="hash-table" SNO="49" >
+		<FEATURE N="Centroid" V="0.204468689903416" />
+	</S>
+	<S DID="hash-table" SNO="50" >
+		<FEATURE N="Centroid" V="0.486674968831267" />
+	</S>
+	<S DID="hash-table" SNO="51" >
+		<FEATURE N="Centroid" V="0.258127946973038" />
+	</S>
+	<S DID="hash-table" SNO="52" >
+		<FEATURE N="Centroid" V="0.029457195767584" />
+	</S>
+	<S DID="hash-table" SNO="53" >
+		<FEATURE N="Centroid" V="0.378343538986692" />
+	</S>
+	<S DID="hash-table" SNO="54" >
+		<FEATURE N="Centroid" V="0.002424168037166" />
+	</S>
+	<S DID="hash-table" SNO="55" >
+		<FEATURE N="Centroid" V="0.325466865330181" />
+	</S>
+	<S DID="hash-table" SNO="56" >
+		<FEATURE N="Centroid" V="0.445080441586820" />
+	</S>
+	<S DID="hash-table" SNO="57" >
+		<FEATURE N="Centroid" V="0.103445242384943" />
+	</S>
+	<S DID="hash-table" SNO="58" >
+		<FEATURE N="Centroid" V="0.508290737052843" />
+	</S>
+	<S DID="hash-table" SNO="59" >
+		<FEATURE N="Centroid" V="0.126918760222538" />
+	</S>
+	<S DID="hash-table" SNO="60" >
+		<FEATURE N="Centroid" V="0.319542657556328" />
+	</S>
+	<S DID="hash-table" SNO="61" >
+		<FEATURE N="Centroid" V="0.104428550797531" />
+	</S>
+	<S DID="hash-table" SNO="62" >
+		<FEATURE N="Centroid" V="0.278840999195847" />
+	</S>
+	<S DID="hash-table" SNO="63" >
+		<FEATURE N="Centroid" V="0.488468983997597" />
+	</S>
+	<S DID="hash-table" SNO="64" >
+		<FEATURE N="Centroid" V="0.586953138512791" />
+	</S>
+	<S DID="hash-table" SNO="65" >
+		<FEATURE N="Centroid" V="0.486091387924518" />
+	</S>
+	<S DID="hash-table" SNO="66" >
+		<FEATURE N="Centroid" V="0.134360921523167" />
+	</S>
+	<S DID="hash-table" SNO="67" >
+		<FEATURE N="Centroid" V="0.988757729556191" />
+	</S>
+	<S DID="hash-table" SNO="68" >
+		<FEATURE N="Centroid" V="0.768788807353038" />
+	</S>
+	<S DID="hash-table" SNO="69" >
+		<FEATURE N="Centroid" V="0.607914462048666" />
+	</S>
+	<S DID="hash-table" SNO="70" >
+		<FEATURE N="Centroid" V="0.309578189555432" />
+	</S>
+	<S DID="hash-table" SNO="71" >
+		<FEATURE N="Centroid" V="0.225186802258105" />
+	</S>
+	<S DID="hash-table" SNO="72" >
+		<FEATURE N="Centroid" V="0.546973182144944" />
+	</S>
+	<S DID="hash-table" SNO="73" >
+		<FEATURE N="Centroid" V="0.332619978986456" />
+	</S>
+	<S DID="hash-table" SNO="74" >
+		<FEATURE N="Centroid" V="0.090965837086219" />
+	</S>
+	<S DID="hash-table" SNO="75" >
+		<FEATURE N="Centroid" V="0.234289858789180" />
+	</S>
+	<S DID="hash-table" SNO="76" >
+		<FEATURE N="Centroid" V="0.165905285639545" />
+	</S>
+	<S DID="hash-table" SNO="77" >
+		<FEATURE N="Centroid" V="0.161397646239970" />
+	</S>
+	<S DID="hash-table" SNO="78" >
+		<FEATURE N="Centroid" V="0.077044013729281" />
+	</S>
+	<S DID="hash-table" SNO="79" >
+		<FEATURE N="Centroid" V="0.234662991795026" />
+	</S>
+	<S DID="hash-table" SNO="80" >
+		<FEATURE N="Centroid" V="0.378092158255427" />
+	</S>
+	<S DID="hash-table" SNO="81" >
+		<FEATURE N="Centroid" V="0.422479734922031" />
+	</S>
+	<S DID="hash-table" SNO="82" >
+		<FEATURE N="Centroid" V="0.147996289360930" />
+	</S>
+	<S DID="hash-table" SNO="83" >
+		<FEATURE N="Centroid" V="0.486770576550852" />
+	</S>
+	<S DID="hash-table" SNO="84" >
+		<FEATURE N="Centroid" V="0.628805531610817" />
+	</S>
+	<S DID="hash-table" SNO="85" >
+		<FEATURE N="Centroid" V="0.499673448661621" />
+	</S>
+	<S DID="hash-table" SNO="86" >
+		<FEATURE N="Centroid" V="0.231821607769819" />
+	</S>
+	<S DID="hash-table" SNO="87" >
+		<FEATURE N="Centroid" V="0.192909151432603" />
+	</S>
+	<S DID="hash-table" SNO="88" >
+		<FEATURE N="Centroid" V="0.216872619060350" />
+	</S>
+	<S DID="hash-table" SNO="89" >
+		<FEATURE N="Centroid" V="0.262200978577336" />
+	</S>
+	<S DID="hash-table" SNO="90" >
+		<FEATURE N="Centroid" V="0.107801021079914" />
+	</S>
+	<S DID="hash-table" SNO="91" >
+		<FEATURE N="Centroid" V="0.154355007246212" />
+	</S>
+	<S DID="hash-table" SNO="92" >
+		<FEATURE N="Centroid" V="0.582177309455517" />
+	</S>
+	<S DID="hash-table" SNO="93" >
+		<FEATURE N="Centroid" V="0.550973283137898" />
+	</S>
+	<S DID="hash-table" SNO="94" >
+		<FEATURE N="Centroid" V="0.043186443704071" />
+	</S>
+	<S DID="hash-table" SNO="95" >
+		<FEATURE N="Centroid" V="0.344408751266767" />
+	</S>
+	<S DID="hash-table" SNO="96" >
+		<FEATURE N="Centroid" V="0.338233291316903" />
+	</S>
+	<S DID="hash-table" SNO="97" >
+		<FEATURE N="Centroid" V="0.574930804317753" />
+	</S>
+	<S DID="hash-table" SNO="98" >
+		<FEATURE N="Centroid" V="0.101534462043343" />
+	</S>
+	<S DID="hash-table" SNO="99" >
+		<FEATURE N="Centroid" V="0.132341560302373" />
+	</S>
+	<S DID="hash-table" SNO="100" >
+		<FEATURE N="Centroid" V="0.030695047422558" />
+	</S>
+	<S DID="hash-table" SNO="101" >
+		<FEATURE N="Centroid" V="0.481882213168671" />
+	</S>
+	<S DID="hash-table" SNO="102" >
+		<FEATURE N="Centroid" V="0.246438029550672" />
+	</S>
+	<S DID="hash-table" SNO="103" >
+		<FEATURE N="Centroid" V="0.096464187873959" />
+	</S>
+	<S DID="hash-table" SNO="104" >
+		<FEATURE N="Centroid" V="0.378806533497894" />
+	</S>
+	<S DID="hash-table" SNO="105" >
+		<FEATURE N="Centroid" V="0.157232379147024" />
+	</S>
+	<S DID="hash-table" SNO="106" >
+		<FEATURE N="Centroid" V="0.395778889656538" />
+	</S>
+	<S DID="hash-table" SNO="107" >
+		<FEATURE N="Centroid" V="0.524627915999763" />
+	</S>
+	<S DID="hash-table" SNO="108" >
+		<FEATURE N="Centroid" V="0.234704443959769" />
+	</S>
+	<S DID="hash-table" SNO="109" >
+		<FEATURE N="Centroid" V="0.254229180366882" />
+	</S>
+	<S DID="hash-table" SNO="110" >
+		<FEATURE N="Centroid" V="0.083906763984966" />
+	</S>
+	<S DID="hash-table" SNO="111" >
+		<FEATURE N="Centroid" V="0.088902097197353" />
+	</S>
+	<S DID="hash-table" SNO="112" >
+		<FEATURE N="Centroid" V="0.177553635353073" />
+	</S>
+	<S DID="hash-table" SNO="113" >
+		<FEATURE N="Centroid" V="0.552109377111240" />
+	</S>
+	<S DID="hash-table" SNO="114" >
+		<FEATURE N="Centroid" V="0.394020943106477" />
+	</S>
+	<S DID="hash-table" SNO="115" >
+		<FEATURE N="Centroid" V="0.496874250008031" />
+	</S>
+	<S DID="hash-table" SNO="116" >
+		<FEATURE N="Centroid" V="0.075681298462701" />
+	</S>
+	<S DID="hash-table" SNO="117" >
+		<FEATURE N="Centroid" V="0.524557757269206" />
+	</S>
+	<S DID="hash-table" SNO="118" >
+		<FEATURE N="Centroid" V="0.458512951036157" />
+	</S>
+	<S DID="hash-table" SNO="119" >
+		<FEATURE N="Centroid" V="0.032990729891228" />
+	</S>
+	<S DID="hash-table" SNO="120" >
+		<FEATURE N="Centroid" V="0.073581018507312" />
+	</S>
+	<S DID="hash-table" SNO="121" >
+		<FEATURE N="Centroid" V="0.259269178584866" />
+	</S>
+	<S DID="hash-table" SNO="122" >
+		<FEATURE N="Centroid" V="0.136265073373075" />
+	</S>
+	<S DID="hash-table" SNO="123" >
+		<FEATURE N="Centroid" V="0.274015221812491" />
+	</S>
+	<S DID="hash-table" SNO="124" >
+		<FEATURE N="Centroid" V="0.252064494405175" />
+	</S>
+	<S DID="hash-table" SNO="125" >
+		<FEATURE N="Centroid" V="0.259130758689757" />
+	</S>
+	<S DID="hash-table" SNO="126" >
+		<FEATURE N="Centroid" V="0.131240335450557" />
+	</S>
+	<S DID="hash-table" SNO="127" >
+		<FEATURE N="Centroid" V="0.242092520620924" />
+	</S>
+	<S DID="hash-table" SNO="128" >
+		<FEATURE N="Centroid" V="0.348935066185492" />
+	</S>
+	<S DID="hash-table" SNO="129" >
+		<FEATURE N="Centroid" V="0.559254290266736" />
+	</S>
+	<S DID="hash-table" SNO="130" >
+		<FEATURE N="Centroid" V="0.421646130995438" />
+	</S>
+	<S DID="hash-table" SNO="131" >
+		<FEATURE N="Centroid" V="0.229701020216424" />
+	</S>
+	<S DID="hash-table" SNO="132" >
+		<FEATURE N="Centroid" V="0.158495797553364" />
+	</S>
+	<S DID="hash-table" SNO="133" >
+		<FEATURE N="Centroid" V="0.181584190179079" />
+	</S>
+	<S DID="hash-table" SNO="134" >
+		<FEATURE N="Centroid" V="0.208583376586843" />
+	</S>
+	<S DID="hash-table" SNO="135" >
+		<FEATURE N="Centroid" V="0.305096475030522" />
+	</S>
+	<S DID="hash-table" SNO="136" >
+		<FEATURE N="Centroid" V="0.417810844999168" />
+	</S>
+	<S DID="hash-table" SNO="137" >
+		<FEATURE N="Centroid" V="0.243090106397734" />
+	</S>
+	<S DID="hash-table" SNO="138" >
+		<FEATURE N="Centroid" V="0.466889425713206" />
+	</S>
+	<S DID="hash-table" SNO="139" >
+		<FEATURE N="Centroid" V="0.250898323784779" />
+	</S>
+	<S DID="hash-table" SNO="140" >
+		<FEATURE N="Centroid" V="0.321173746842252" />
+	</S>
+	<S DID="hash-table" SNO="141" >
+		<FEATURE N="Centroid" V="0.224968460786530" />
+	</S>
+	<S DID="hash-table" SNO="142" >
+		<FEATURE N="Centroid" V="0.224383552678082" />
+	</S>
+	<S DID="hash-table" SNO="143" >
+		<FEATURE N="Centroid" V="0.007630508320374" />
+	</S>
+	<S DID="hash-table" SNO="144" >
+		<FEATURE N="Centroid" V="0.070090645305677" />
+	</S>
+	<S DID="hash-table" SNO="145" >
+		<FEATURE N="Centroid" V="0.309973841463270" />
+	</S>
+	<S DID="hash-table" SNO="146" >
+		<FEATURE N="Centroid" V="0.290565744891482" />
+	</S>
+	<S DID="hash-table" SNO="147" >
+		<FEATURE N="Centroid" V="0.277451298476269" />
+	</S>
+	<S DID="hash-table" SNO="148" >
+		<FEATURE N="Centroid" V="0.426760622342155" />
+	</S>
+	<S DID="hash-table" SNO="149" >
+		<FEATURE N="Centroid" V="0.643418291812299" />
+	</S>
+	<S DID="hash-table" SNO="150" >
+		<FEATURE N="Centroid" V="0.021981879106062" />
+	</S>
+	<S DID="hash-table" SNO="151" >
+		<FEATURE N="Centroid" V="0.267506697478739" />
+	</S>
+	<S DID="hash-table" SNO="152" >
+		<FEATURE N="Centroid" V="0.233587635620666" />
+	</S>
+	<S DID="hash-table" SNO="153" >
+		<FEATURE N="Centroid" V="0.848872164520991" />
+	</S>
+	<S DID="hash-table" SNO="154" >
+		<FEATURE N="Centroid" V="0.055472376950395" />
+	</S>
+	<S DID="hash-table" SNO="155" >
+		<FEATURE N="Centroid" V="0.002762231202035" />
+	</S>
+	<S DID="hash-table" SNO="156" >
+		<FEATURE N="Centroid" V="0.538108963628036" />
+	</S>
+	<S DID="hash-table" SNO="157" >
+		<FEATURE N="Centroid" V="0.259441508248417" />
+	</S>
+	<S DID="hash-table" SNO="158" >
+		<FEATURE N="Centroid" V="0.200536499723545" />
+	</S>
+	<S DID="hash-table" SNO="159" >
+		<FEATURE N="Centroid" V="0.124961726265164" />
+	</S>
+	<S DID="hash-table" SNO="160" >
+		<FEATURE N="Centroid" V="0.243065978096714" />
+	</S>
+	<S DID="hash-table" SNO="161" >
+		<FEATURE N="Centroid" V="0.327717474944729" />
+	</S>
+	<S DID="hash-table" SNO="162" >
+		<FEATURE N="Centroid" V="0.282195840982827" />
+	</S>
+	<S DID="hash-table" SNO="163" >
+		<FEATURE N="Centroid" V="0.564086328721384" />
+	</S>
+	<S DID="hash-table" SNO="164" >
+		<FEATURE N="Centroid" V="0.682980656045342" />
+	</S>
+	<S DID="hash-table" SNO="165" >
+		<FEATURE N="Centroid" V="0.573533773737541" />
+	</S>
+	<S DID="hash-table" SNO="166" >
+		<FEATURE N="Centroid" V="0.367768472262286" />
+	</S>
+	<S DID="hash-table" SNO="167" >
+		<FEATURE N="Centroid" V="0.405323938257244" />
+	</S>
+	<S DID="hash-table" SNO="168" >
+		<FEATURE N="Centroid" V="0.149837212137728" />
+	</S>
+	<S DID="hash-table" SNO="169" >
+		<FEATURE N="Centroid" V="0.083481277857834" />
+	</S>
+	<S DID="hash-table" SNO="170" >
+		<FEATURE N="Centroid" V="0.192744890499797" />
+	</S>
+	<S DID="hash-table" SNO="171" >
+		<FEATURE N="Centroid" V="0.893803138321530" />
+	</S>
+	<S DID="hash-table" SNO="172" >
+		<FEATURE N="Centroid" V="0.432688999983927" />
+	</S>
+	<S DID="hash-table" SNO="173" >
+		<FEATURE N="Centroid" V="0.611991184344327" />
+	</S>
+	<S DID="hash-table" SNO="174" >
+		<FEATURE N="Centroid" V="0.373462368725290" />
+	</S>
+	<S DID="hash-table" SNO="175" >
+		<FEATURE N="Centroid" V="0.563530418725272" />
+	</S>
+	<S DID="hash-table" SNO="176" >
+		<FEATURE N="Centroid" V="0.132522158683057" />
+	</S>
+	<S DID="hash-table" SNO="177" >
+		<FEATURE N="Centroid" V="0.000000000000000" />
+	</S>
+	<S DID="hash-table" SNO="178" >
+		<FEATURE N="Centroid" V="0.484047724847239" />
+	</S>
+	<S DID="hash-table" SNO="179" >
+		<FEATURE N="Centroid" V="0.109190079559602" />
+	</S>
+	<S DID="hash-table" SNO="180" >
+		<FEATURE N="Centroid" V="0.726144269006588" />
+	</S>
+	<S DID="hash-table" SNO="181" >
+		<FEATURE N="Centroid" V="0.073176385442613" />
+	</S>
+	<S DID="hash-table" SNO="182" >
+		<FEATURE N="Centroid" V="0.503451001802967" />
+	</S>
+	<S DID="hash-table" SNO="183" >
+		<FEATURE N="Centroid" V="0.498989321916323" />
+	</S>
+	<S DID="hash-table" SNO="184" >
+		<FEATURE N="Centroid" V="0.270649033360976" />
+	</S>
+	<S DID="hash-table" SNO="185" >
+		<FEATURE N="Centroid" V="0.281670965498200" />
+	</S>
+	<S DID="hash-table" SNO="186" >
+		<FEATURE N="Centroid" V="0.002858925532526" />
+	</S>
+	<S DID="hash-table" SNO="187" >
+		<FEATURE N="Centroid" V="0.388969205406260" />
+	</S>
+	<S DID="hash-table" SNO="188" >
+		<FEATURE N="Centroid" V="0.274156396867863" />
+	</S>
+	<S DID="hash-table" SNO="189" >
+		<FEATURE N="Centroid" V="0.578879832474930" />
+	</S>
+	<S DID="hash-table" SNO="190" >
+		<FEATURE N="Centroid" V="0.088445402223567" />
+	</S>
+	<S DID="hash-table" SNO="191" >
+		<FEATURE N="Centroid" V="0.003145770264184" />
+	</S>
+	<S DID="hash-table" SNO="192" >
+		<FEATURE N="Centroid" V="0.275302545209163" />
+	</S>
+	<S DID="hash-table" SNO="193" >
+		<FEATURE N="Centroid" V="1.000000000000000" />
+	</S>
+	<S DID="hash-table" SNO="194" >
+		<FEATURE N="Centroid" V="0.458009659492853" />
+	</S>
+	<S DID="hash-table" SNO="195" >
+		<FEATURE N="Centroid" V="0.033092232093393" />
+	</S>
+	<S DID="hash-table" SNO="196" >
+		<FEATURE N="Centroid" V="0.487490546747223" />
+	</S>
+	<S DID="hash-table" SNO="197" >
+		<FEATURE N="Centroid" V="0.372376089730608" />
+	</S>
+	<S DID="hash-table" SNO="198" >
+		<FEATURE N="Centroid" V="0.307521235935136" />
+	</S>
+	<S DID="hash-table" SNO="199" >
+		<FEATURE N="Centroid" V="0.306141151888223" />
+	</S>
+	<S DID="hash-table" SNO="200" >
+		<FEATURE N="Centroid" V="0.353955694503705" />
+	</S>
+	<S DID="hash-table" SNO="201" >
+		<FEATURE N="Centroid" V="0.006142029503532" />
+	</S>
+	<S DID="hash-table" SNO="202" >
+		<FEATURE N="Centroid" V="0.313243067372751" />
+	</S>
+	<S DID="hash-table" SNO="203" >
+		<FEATURE N="Centroid" V="0.177177914627978" />
+	</S>
+	<S DID="hash-table" SNO="204" >
+		<FEATURE N="Centroid" V="0.487711335937802" />
+	</S>
+	<S DID="hash-table" SNO="205" >
+		<FEATURE N="Centroid" V="0.686344176932389" />
+	</S>
+	<S DID="hash-table" SNO="206" >
+		<FEATURE N="Centroid" V="0.226394300966195" />
+	</S>
+	<S DID="hash-table" SNO="207" >
+		<FEATURE N="Centroid" V="0.332879841213562" />
+	</S>
+	<S DID="hash-table" SNO="208" >
+		<FEATURE N="Centroid" V="0.000000000000000" />
+	</S>
+	<S DID="hash-table" SNO="209" >
+		<FEATURE N="Centroid" V="0.499022018643704" />
+	</S>
+	<S DID="hash-table" SNO="210" >
+		<FEATURE N="Centroid" V="0.228183306805480" />
+	</S>
+	<S DID="hash-table" SNO="211" >
+		<FEATURE N="Centroid" V="0.222073223400545" />
+	</S>
+	<S DID="hash-table" SNO="212" >
+		<FEATURE N="Centroid" V="0.202639149846557" />
+	</S>
+	<S DID="hash-table" SNO="213" >
+		<FEATURE N="Centroid" V="0.508539698725059" />
+	</S>
+	<S DID="hash-table" SNO="214" >
+		<FEATURE N="Centroid" V="0.101613555827739" />
+	</S>
+	<S DID="hash-table" SNO="215" >
+		<FEATURE N="Centroid" V="0.474645913599954" />
+	</S>
+	<S DID="hash-table" SNO="216" >
+		<FEATURE N="Centroid" V="0.201533078452685" />
+	</S>
+	<S DID="hash-table" SNO="217" >
+		<FEATURE N="Centroid" V="0.320012519315046" />
+	</S>
+	<S DID="hash-table" SNO="218" >
+		<FEATURE N="Centroid" V="0.470981291512106" />
+	</S>
+	<S DID="hash-table" SNO="219" >
+		<FEATURE N="Centroid" V="0.576296681841105" />
+	</S>
+	<S DID="hash-table" SNO="220" >
+		<FEATURE N="Centroid" V="0.221261129084264" />
+	</S>
+	<S DID="hash-table" SNO="221" >
+		<FEATURE N="Centroid" V="0.447363212008767" />
+	</S>
+	<S DID="hash-table" SNO="222" >
+		<FEATURE N="Centroid" V="0.096686703052916" />
+	</S>
+	<S DID="hash-table" SNO="223" >
+		<FEATURE N="Centroid" V="0.221365245896947" />
+	</S>
+	<S DID="hash-table" SNO="224" >
+		<FEATURE N="Centroid" V="0.178513731370163" />
+	</S>
+	<S DID="hash-table" SNO="225" >
+		<FEATURE N="Centroid" V="0.464032638863371" />
+	</S>
+	<S DID="hash-table" SNO="226" >
+		<FEATURE N="Centroid" V="0.029562638003259" />
+	</S>
+	<S DID="hash-table" SNO="227" >
+		<FEATURE N="Centroid" V="0.142440368889087" />
+	</S>
+	<S DID="hash-table" SNO="228" >
+		<FEATURE N="Centroid" V="0.359908334869797" />
+	</S>
+	<S DID="hash-table" SNO="229" >
+		<FEATURE N="Centroid" V="0.191492356842333" />
+	</S>
+	<S DID="hash-table" SNO="230" >
+		<FEATURE N="Centroid" V="0.030089286611118" />
+	</S>
+	<S DID="hash-table" SNO="231" >
+		<FEATURE N="Centroid" V="0.210378733648595" />
+	</S>
+	<S DID="hash-table" SNO="232" >
+		<FEATURE N="Centroid" V="0.197656018424603" />
+	</S>
+	<S DID="hash-table" SNO="233" >
+		<FEATURE N="Centroid" V="0.136510304481509" />
+	</S>
+	<S DID="hash-table" SNO="234" >
+		<FEATURE N="Centroid" V="0.344096929106709" />
+	</S>
+	<S DID="hash-table" SNO="235" >
+		<FEATURE N="Centroid" V="0.535655070158213" />
+	</S>
+	<S DID="hash-table" SNO="236" >
+		<FEATURE N="Centroid" V="0.009521827805030" />
+	</S>
+	<S DID="hash-table" SNO="237" >
+		<FEATURE N="Centroid" V="0.247102904796179" />
+	</S>
+	<S DID="hash-table" SNO="238" >
+		<FEATURE N="Centroid" V="0.000000000000000" />
+	</S>
+	<S DID="hash-table" SNO="239" >
+		<FEATURE N="Centroid" V="0.370900080430229" />
+	</S>
+	<S DID="hash-table" SNO="240" >
+		<FEATURE N="Centroid" V="0.726301212020156" />
+	</S>
+	<S DID="hash-table" SNO="241" >
+		<FEATURE N="Centroid" V="0.003140890735415" />
+	</S>
+	<S DID="hash-table" SNO="242" >
+		<FEATURE N="Centroid" V="0.393408402559173" />
+	</S>
+	<S DID="hash-table" SNO="243" >
+		<FEATURE N="Centroid" V="0.305904990187527" />
+	</S>
+	<S DID="hash-table" SNO="244" >
+		<FEATURE N="Centroid" V="0.172621710577442" />
+	</S>
+	<S DID="hash-table" SNO="245" >
+		<FEATURE N="Centroid" V="0.106208618587319" />
+	</S>
+	<S DID="hash-table" SNO="246" >
+		<FEATURE N="Centroid" V="0.008788885865534" />
+	</S>
+	<S DID="hash-table" SNO="247" >
+		<FEATURE N="Centroid" V="0.148937674547814" />
+	</S>
+	<S DID="hash-table" SNO="248" >
+		<FEATURE N="Centroid" V="0.214621215615404" />
+	</S>
+	<S DID="hash-table" SNO="249" >
+		<FEATURE N="Centroid" V="0.034555817679555" />
+	</S>
+	<S DID="hash-table" SNO="250" >
+		<FEATURE N="Centroid" V="0.170302005013456" />
+	</S>
+	<S DID="hash-table" SNO="251" >
+		<FEATURE N="Centroid" V="0.404913019970852" />
+	</S>
+	<S DID="hash-table" SNO="252" >
+		<FEATURE N="Centroid" V="0.241003593848901" />
+	</S>
+	<S DID="hash-table" SNO="253" >
+		<FEATURE N="Centroid" V="0.029176033410906" />
+	</S>
+	<S DID="hash-table" SNO="254" >
+		<FEATURE N="Centroid" V="0.257488901727177" />
+	</S>
+	<S DID="hash-table" SNO="255" >
+		<FEATURE N="Centroid" V="0.208343624514245" />
+	</S>
+	<S DID="hash-table" SNO="256" >
+		<FEATURE N="Centroid" V="0.410745731012366" />
+	</S>
+	<S DID="hash-table" SNO="257" >
+		<FEATURE N="Centroid" V="0.079713119933198" />
+	</S>
+	<S DID="hash-table" SNO="258" >
+		<FEATURE N="Centroid" V="0.330120415205464" />
+	</S>
+	<S DID="hash-table" SNO="259" >
+		<FEATURE N="Centroid" V="0.254745190370252" />
+	</S>
+	<S DID="hash-table" SNO="260" >
+		<FEATURE N="Centroid" V="0.005285616067559" />
+	</S>
+	<S DID="hash-table" SNO="261" >
+		<FEATURE N="Centroid" V="0.029652235775896" />
+	</S>
+	<S DID="hash-table" SNO="262" >
+		<FEATURE N="Centroid" V="0.081069974466735" />
+	</S>
+	<S DID="hash-table" SNO="263" >
+		<FEATURE N="Centroid" V="0.101009377650909" />
+	</S>
+	<S DID="hash-table" SNO="264" >
+		<FEATURE N="Centroid" V="0.154814088702263" />
+	</S>
+	<S DID="hash-table" SNO="265" >
+		<FEATURE N="Centroid" V="0.045468627599150" />
+	</S>
+	<S DID="hash-table" SNO="266" >
+		<FEATURE N="Centroid" V="0.145317897116529" />
+	</S>
+	<S DID="hash-table" SNO="267" >
+		<FEATURE N="Centroid" V="0.046098022708976" />
+	</S>
+</SENT-FEATURE>
